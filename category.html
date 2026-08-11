@@ -42,16 +42,21 @@
   nav.side a.home{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    font-size:13px;
-    color:var(--ink-soft);
+    gap:7px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    color:var(--navy);
     text-decoration:none;
     margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    width:100%;
   }
-  nav.side a.home .mark{
-    width:8px; height:8px;
-    background:var(--navy);
-    transform:rotate(45deg);
+  nav.side a.home:hover{color:var(--blue);}
+  nav.side a.home svg{
+    width:15px; height:15px;
+    flex:0 0 auto;
   }
   nav.side ul{list-style:none; margin:0; padding:0;}
   nav.side li{margin-bottom:4px;}
@@ -191,7 +196,10 @@
 <div class="shell">
 
   <nav class="side">
-    <a class="home" href="index.html"><span class="mark"></span>영어Ⅱ 수업자료</a>
+    <a class="home" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+      HOME
+    </a>
     <ul id="nav-list"></ul>
   </nav>
 
@@ -225,25 +233,25 @@
     },
     textbook: {
       label:'교과서',
-      eyebrow:'2026 · 2학기 · 고등학교 2학년',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'NE 능률 · Grammar · 5차시',
       folder:'textbook', type:'lessons', count:5, unitLabel:'문법'
     },
     performance: {
       label:'수행평가',
-      eyebrow:'2026 · 2학기 · 고등학교 2학년',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'영자신문 비평문 쓰기 · 5차시',
       folder:'performance', type:'lessons', count:5, unitLabel:'수행평가'
     },
     block: {
       label:'블록활동',
-      eyebrow:'2026 · 2학기 · 고등학교 2학년',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'원서 읽기 · 6차시',
       folder:'block', type:'lessons', count:6, unitLabel:'블록활동'
     },
     vocab: {
       label:'단어시험',
-      eyebrow:'2026 · 2학기 · 고등학교 2학년',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'단어시험 자료 · 총 24회',
       folder:'vocab', type:'lessons', count:24, unitLabel:'단어시험', roundWord:true
     }
