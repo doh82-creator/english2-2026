@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영어Ⅱ 수업자료</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+  :root{
+    --navy:#005DAA;
+    --blue:#007DC3;
+    --sky:#13B5EA;
+    --ink:#1B2733;
+    --ink-soft:#5C6B7A;
+    --paper:#F4F7FA;
+    --card:#FFFFFF;
+    --line:#DCE3EC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard', -apple-system, sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .wrap{width:100%; max-width:760px; padding:56px 24px;}
+
+  .mark{
+    width:16px; height:16px;
+    background:var(--navy);
+    transform:rotate(45deg);
+    margin-bottom:22px;
+  }
+  .eyebrow{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.08em;
+    color:var(--blue);
+    margin:0 0 10px;
+  }
+  h1{
+    font-size:42px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0 0 12px;
+    color:var(--navy);
+  }
+  .sub{
+    font-size:15px;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+  }
+  a.cat{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:28px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:24px 22px;
+    text-decoration:none;
+    color:var(--ink);
+    min-height:132px;
+    position:relative;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  a.cat:hover, a.cat:focus-visible{
+    border-color:var(--blue);
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,93,170,0.10);
+    outline:none;
+  }
+  a.cat .diamond{
+    width:12px; height:12px;
+    border:2px solid var(--sky);
+    transform:rotate(45deg);
+    transition:background .15s ease;
+  }
+  a.cat:hover .diamond, a.cat:focus-visible .diamond{
+    background:var(--sky);
+  }
+  a.cat .name{
+    font-size:19px;
+    font-weight:700;
+    color:var(--navy);
+  }
+  a.cat .count{
+    font-size:12.5px;
+    color:var(--blue);
+    margin-top:2px;
+  }
+
+  footer{
+    margin-top:36px;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr;}
+    h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mark"></div>
+  <p class="eyebrow">2026 · 2학기 · 고등학교 2학년</p>
+  <h1>영어Ⅱ 수업자료</h1>
+  <p class="sub">카테고리를 선택하면 해당 차시별 자료로 이동합니다.</p>
+
+  <div class="grid">
+    <a class="cat" href="category.html?cat=supplement">
+      <div class="diamond"></div>
+      <div>
+        <div class="name">부교재</div>
+        <div class="count">자이스토리 · 24차시</div>
+      </div>
+    </a>
+    <a class="cat" href="category.html?cat=textbook">
+      <div class="diamond"></div>
+      <div>
+        <div class="name">교과서</div>
+        <div class="count">NE 능률 · Grammar · 5차시</div>
+      </div>
+    </a>
+    <a class="cat" href="category.html?cat=performance">
+      <div class="diamond"></div>
+      <div>
+        <div class="name">수행평가</div>
+        <div class="count">영자신문 비평문 쓰기 · 5차시</div>
+      </div>
+    </a>
+    <a class="cat" href="category.html?cat=block">
+      <div class="diamond"></div>
+      <div>
+        <div class="name">블록활동</div>
+        <div class="count">원서 읽기 · 6차시</div>
+      </div>
+    </a>
+    <a class="cat" href="category.html?cat=vocab">
+      <div class="diamond"></div>
+      <div>
+        <div class="name">단어시험</div>
+        <div class="count">총 24회</div>
+      </div>
+    </a>
+  </div>
+
+  <footer>CNSA · Chungnam Samsung Academy · 영어과</footer>
+</div>
+</body>
+</html>

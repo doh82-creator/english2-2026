@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>EnglishⅡ. '25-3월. Q-39 | 문장 삽입</title>
+  <style>
+    :root {
+      --navy: #17325c;
+      --blue: #2f67b2;
+      --sky: #eaf3ff;
+      --ink: #192434;
+      --muted: #64748b;
+      --line: #d9e2ef;
+      --paper: #fff;
+      --canvas: #eef3f8;
+      --green: #16745b;
+      --green-bg: #eaf8f3;
+      --red: #b13a42;
+      --red-bg: #fff0f1;
+      --amber: #9a650e;
+      --amber-bg: #fff8e8;
+      --shadow: 0 18px 50px rgba(28, 50, 80, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 8% 4%, rgba(90,145,217,.12), transparent 25rem), var(--canvas);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+    button, label { font: inherit; }
+    em { font-family: Georgia, "Times New Roman", serif; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: min(100% - 32px, 1040px);
+      margin: 18px auto 0;
+    }
+    .tool-button {
+      border: 1px solid rgba(23,50,92,.14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      background: rgba(255,255,255,.94);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(28,50,80,.08);
+      backdrop-filter: blur(8px);
+    }
+    .tool-button:hover { background: #fff; transform: translateY(-1px); }
+
+    .sheet {
+      width: min(100% - 32px, 1040px);
+      margin: 14px auto 52px;
+      overflow: hidden;
+      border: 1px solid rgba(23,50,92,.09);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 38px 54px 34px;
+      overflow: hidden;
+      background: linear-gradient(128deg, #142d52 0%, #214a80 70%, #2f67b2 100%);
+      color: #fff;
+    }
+    .hero::after {
+      content: "39";
+      position: absolute;
+      right: 34px;
+      top: -14px;
+      color: rgba(255,255,255,.07);
+      font: 900 128px/1 Arial, sans-serif;
+      letter-spacing: -9px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      color: #cfe3ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: #8ec1ff; }
+    h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(28px,4vw,42px); line-height: 1.2; letter-spacing: -.04em; }
+    .subtitle { position: relative; z-index: 1; margin: 10px 0 0; color: #dceafd; font-size: 15px; }
+
+    .content { padding: 42px 54px 50px; }
+    .instruction { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 24px; font-size: 18px; font-weight: 800; line-height: 1.55; }
+    .set-badge {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      min-width: 52px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #fff;
+      font: 800 16px/1 Arial, sans-serif;
+      box-shadow: 0 7px 16px rgba(23,50,92,.2);
+    }
+    .passage {
+      position: relative;
+      margin-bottom: 28px;
+      padding: 28px 30px 25px;
+      border: 1px solid #bdd1ea;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7faff, #fff);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18.5px;
+      line-height: 1.8;
+    }
+    .passage::before {
+      content: "READING PASSAGE";
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    .passage p { margin: 0; }
+    .passage p + p { margin-top: .525em; text-indent: 1.5em; }
+    .notes { margin-top: 12px; color: #586b82; font: 13px/1.6 "Pretendard", "Noto Sans KR", sans-serif; }
+    .given-sentence { margin: 0 0 22px; padding: 20px 22px; border: 2px solid #7ba5d5; border-radius: 14px; background: #eef6ff; color: #183c67; font: 700 17px/1.75 Georgia, "Times New Roman", serif; }
+    .given-label { display: block; margin-bottom: 7px; color: var(--blue); font: 900 12px/1.3 "Pretendard", "Noto Sans KR", sans-serif; letter-spacing: .08em; }
+    .position-marker { display: inline-grid; place-items: center; min-width: 27px; height: 27px; margin: 0 3px; border-radius: 50%; background: #dcecff; color: var(--navy); font: 900 13px/1 Arial, sans-serif; vertical-align: middle; }
+
+    .question-card { margin-top: 20px; padding: 24px 25px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 6px 17px rgba(35,62,96,.045); }
+    .question-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 16px; color: var(--navy); font-size: 17px; font-weight: 850; line-height: 1.55; }
+    .number-badge { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--sky); color: var(--blue); font: 900 17px/1 Arial, sans-serif; }
+    .summary-box { margin-bottom: 17px; padding: 18px 20px; border: 1px solid #c7d7e9; border-radius: 12px; background: #f8fbff; color: #2b3c51; font: 16px/1.7 Georgia, "Times New Roman", serif; }
+    .blank { display: inline-block; min-width: 70px; padding: 0 7px 2px; border-bottom: 2px solid #5d7fa8; color: var(--navy); text-align: center; font-weight: 800; }
+    .choices { display: grid; gap: 9px; }
+    .choice { position: relative; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice span { display: grid; grid-template-columns: 32px 1fr 30px 1fr; align-items: center; min-height: 46px; padding: 10px 13px; border: 1px solid #cfd9e5; border-radius: 11px; background: #fff; color: #334155; font: 15.5px/1.55 Georgia, "Times New Roman", serif; transition: .18s ease; }
+    .choice-num { color: var(--blue); font-family: "Pretendard", "Noto Sans KR", sans-serif; font-weight: 900; }
+    .choice-dots { color: #93a4b8; text-align: center; }
+    .choice:hover span { border-color: #8aadd8; background: #f7faff; }
+    .choice input:checked + span { border-color: var(--blue); background: var(--sky); color: var(--navy); box-shadow: inset 0 0 0 1px var(--blue); }
+    .position-choices { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .position-choice span { display: flex; justify-content: center; min-height: 48px; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: 17px; font-weight: 900; }
+    .actions { display: flex; gap: 10px; margin-top: 16px; }
+    .primary, .secondary { border-radius: 11px; padding: 10px 17px; font-weight: 800; cursor: pointer; }
+    .primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
+    .secondary { border: 1px solid #ccd7e4; background: #fff; color: var(--muted); }
+    .feedback { display: none; margin-top: 14px; padding: 13px 16px; border-radius: 11px; font-size: 14px; font-weight: 750; }
+    .feedback.show { display: block; animation: rise .25s ease-out; }
+    .feedback.correct { background: var(--green-bg); color: var(--green); border: 1px solid #a7d9c7; }
+    .feedback.wrong { background: var(--red-bg); color: var(--red); border: 1px solid #efbdc1; }
+    .feedback.notice { background: var(--amber-bg); color: var(--amber); border: 1px solid #ead39a; }
+    @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+    .solution { display: none; border-top: 10px solid var(--canvas); padding: 44px 54px 58px; background: #fff; }
+    .solution.open { display: block; }
+    .section-kicker { margin-bottom: 7px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    h2 { margin: 0 0 22px; color: var(--navy); font-size: 28px; letter-spacing: -.035em; }
+    h3 { margin: 34px 0 15px; color: var(--navy); font-size: 21px; letter-spacing: -.025em; }
+    .answer-banner { display: flex; align-items: center; gap: 15px; padding: 18px 20px; border-radius: 15px; background: linear-gradient(135deg, #17325c, #2d609f); color: #fff; }
+    .answer-round { display: grid; flex: 0 0 auto; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--navy); font-size: 21px; font-weight: 900; }
+    .answer-banner strong { display: block; font-size: 17px; }
+    .answer-banner small { color: #d9e9ff; font-size: 13px; line-height: 1.45; }
+    .core-message { margin-top: 22px; padding: 19px 21px; border-left: 5px solid var(--blue); border-radius: 4px 13px 13px 4px; background: var(--sky); color: #263f62; }
+    .core-message b { display: block; margin-bottom: 5px; color: var(--navy); }
+    .logic-flow { display: grid; grid-template-columns: 1fr 46px 1fr 46px 1fr; align-items: stretch; gap: 8px; margin-top: 19px; }
+    .logic-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .logic-card b { display: block; margin-bottom: 7px; color: var(--blue); font-size: 16px; }
+    .logic-card p { margin: 0; color: #45566c; font-size: 13.5px; line-height: 1.65; }
+    .arrow { display: grid; place-items: center; color: #8ca2bd; font-size: 18px; font-weight: 900; }
+    .clue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .clue-card { padding: 18px 19px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .clue-card b { display: block; margin-bottom: 7px; color: var(--navy); }
+    .clue-card .quote { display: block; margin-bottom: 8px; color: #284b78; font: 700 14px/1.55 Georgia, "Times New Roman", serif; }
+    .clue-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.65; }
+    .analysis-box { margin-top: 13px; padding: 19px 21px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .analysis-box.correct-box { border-color: #a7d9c7; background: #f8fdfa; }
+    .analysis-box p { margin: 0; }
+    .analysis-box p + p { margin-top: 9px; }
+    .tag-correct { color: var(--green); font-weight: 850; }
+    .tag-wrong { color: var(--red); font-weight: 850; }
+    .stats-panel { margin-top: 18px; padding: 18px 20px; border: 1px solid #c8d8ea; border-radius: 14px; background: #f7faff; }
+    .stats-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-bottom: 12px; }
+    .stats-head b { color: var(--navy); }
+    .stats-head small { color: var(--muted); }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .stat-item { padding: 10px 8px; border: 1px solid #d8e3ef; border-radius: 10px; background: #fff; text-align: center; }
+    .stat-item b { display: block; color: var(--blue); font-size: 13px; }
+    .stat-item span { color: #394b61; font-size: 16px; font-weight: 850; }
+    .stat-item.correct-stat { border-color: #83c6b1; background: var(--green-bg); }
+    .stat-item.correct-stat b, .stat-item.correct-stat span { color: var(--green); }
+    .stats-summary { margin: 12px 0 0; color: #53657a; font-size: 13px; line-height: 1.65; }
+
+    .choice-analysis { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; font-size: 14px; }
+    .choice-analysis th, .choice-analysis td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .choice-analysis tr:last-child td { border-bottom: 0; }
+    .choice-analysis th { background: #f1f5fa; color: var(--navy); font-weight: 850; }
+    .choice-analysis td:first-child { color: var(--blue); font-weight: 900; white-space: nowrap; }
+    .choice-source { margin-bottom: 5px; color: #203a60; font: 700 15px/1.5 Georgia, "Times New Roman", serif; }
+    .choice-translation { margin-bottom: 5px; color: #52657c; font-size: 13.5px; line-height: 1.55; }
+    .choice-reason { padding-top: 5px; border-top: 1px dashed #dbe3ed; color: var(--ink); line-height: 1.65; }
+
+    .reading-list { display: grid; gap: 12px; }
+    .reading-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .reading-card.given-reading-card { border: 3px solid var(--navy); box-shadow: 0 4px 13px rgba(23, 50, 92, .12); }
+    .given-reading-label { padding: 8px 18px; background: var(--navy); color: #fff; font-size: 12px; font-weight: 850; letter-spacing: .045em; }
+    .sentence-en { padding: 17px 18px 15px; background: #f7f9fc; color: #24354c; font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size: 17.5px; font-weight: 650; line-height: 1.75; }
+    .syntax-focus { padding: 1px 4px; border-radius: 4px; background: #fff0a8; color: #123d69; font-weight: 850; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .sentence-vocab { padding: 10px 18px 11px; border-top: 1px solid #e8edf4; background: #fbfcfe; color: #53657a; font: 15.5px/1.7 Georgia, "Times New Roman", serif; }
+    .sentence-vocab b { color: var(--blue); }
+    .sentence-ko { padding: 12px 18px 14px; color: #42546a; font-size: 14px; line-height: 1.7; }
+    .slash { color: var(--blue); font-weight: 900; }
+
+    .grammar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grammar-card { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .grammar-card b { display: block; margin-bottom: 6px; color: var(--navy); }
+    .grammar-role { margin: -1px 0 9px; color: var(--blue); font-size: 12.5px; font-weight: 750; }
+    .grammar-card code { display: block; margin-bottom: 8px; color: #3f4f63; font: 400 14px/1.55 Georgia, "Times New Roman", serif; white-space: normal; }
+    .grammar-card code .grammar-focus { padding: 1px 3px; border-radius: 4px; background: #fff0a8; color: #123d69; font-weight: 800; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .grammar-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.6; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+    .vocab-card { display: grid; grid-template-columns: 145px 1fr; gap: 13px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fff; font-size: 14px; }
+    .vocab-card b { color: var(--blue); font-family: Georgia, "Times New Roman", serif; }
+    .footer-note { margin: 28px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
+
+    @media (max-width: 760px) {
+      .hero, .content, .solution { padding-left: 24px; padding-right: 24px; }
+      .hero::after { font-size: 82px; top: 4px; right: 18px; }
+      .passage { padding: 25px 21px 21px; font-size: 17px; }
+      .logic-flow, .clue-grid, .grammar-grid, .vocab-grid { grid-template-columns: 1fr; }
+      .position-choices, .stats-grid { grid-template-columns: repeat(5, 1fr); }
+      .arrow { min-height: 24px; transform: rotate(90deg); }
+      .choice span { grid-template-columns: 28px 1fr 25px 1fr; font-size: 14px; }
+      .vocab-card { grid-template-columns: 125px 1fr; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; line-height: 1.52; }
+      .toolbar, .actions, .feedback { display: none !important; }
+      .sheet { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .hero { padding: 14mm 13mm 10mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .content { padding: 9mm 13mm 10mm; }
+      .instruction { margin-bottom: 16px; font-size: 15px; }
+      .passage { padding: 17px 19px; margin-bottom: 15px; font-size: 13.4px; line-height: 1.52; }
+      .passage p + p { margin-top: .36em; }
+      .question-card { padding: 15px 17px; margin-top: 12px; break-inside: avoid; }
+      .question-head { margin-bottom: 10px; font-size: 14px; }
+      .number-badge { width: 34px; height: 34px; }
+      .summary-box { padding: 11px 13px; font-size: 11.8px; }
+      .choice span { min-height: 33px; padding: 6px 9px; font-size: 11.8px; line-height: 1.35; }
+      .given-sentence { padding: 13px 15px; margin-bottom: 13px; font-size: 12.8px; }
+      .position-marker { min-width: 22px; height: 22px; font-size: 11px; }
+      .stats-panel { padding: 13px 15px; }
+      .solution { display: block !important; page-break-before: always; border-top: 0; padding: 12mm 13mm; }
+      .answer-banner, .logic-card, .core-message, .grammar-focus, .syntax-focus, .given-reading-card, .given-reading-label { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h2 { font-size: 23px; }
+      h3 { margin-top: 23px; font-size: 17px; }
+      .answer-banner { padding: 13px 15px; }
+      .answer-round { width: 41px; height: 41px; }
+      .reading-card, .grammar-card, .analysis-box, .choice-analysis tr, .clue-card { break-inside: avoid; }
+      .sentence-en { padding: 10px 13px 8px; font-size: 12.3px; }
+      .sentence-ko { padding: 8px 13px 10px; font-size: 11.5px; }
+      .grammar-card, .analysis-box { padding: 13px 14px; }
+      .vocab-card { padding: 8px 10px; font-size: 11.5px; }
+      .footer-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="문서 도구">
+    <button class="tool-button" id="solutionButton" type="button" onclick="toggleSolution()">해설 보기</button>
+    <button class="tool-button" type="button" onclick="window.print()">인쇄하기</button>
+  </nav>
+
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">English Ⅱ · '25-3월 학력평가</div>
+      <h1>39번 문장 삽입</h1>
+      <p class="subtitle">일반 설명과 구체적 사례의 연결을 추적하여 문장의 정확한 위치를 찾으세요.</p>
+    </header>
+
+    <section class="content" aria-labelledby="set-title">
+      <div class="instruction" id="set-title">
+        <span class="set-badge">39</span>
+        <span>글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳을 고르시오.</span>
+      </div>
+
+      <div class="given-sentence">
+        <span class="given-label">GIVEN SENTENCE</span>
+        For example, we do not have a term in ordinary language that describes a memory that is not necessarily a memory of something the person having it has experienced.
+      </div>
+
+      <article class="passage">
+        <p>As a general rule, it’s better if your definition corresponds as closely as possible to the way in which the term is ordinarily used in the kinds of debates to which your claims are pertinent. <span class="position-marker">①</span> There will be, however, occasions where it is appropriate, even necessary, to coin special uses through what philosophers call stimulative definition. <span class="position-marker">②</span> This would be the case where the current lexicon is not able to make distinctions that you think are philosophically important. <span class="position-marker">③</span> Such a thing would occur, for example, if I could somehow share your memories: I would have a memory-type experience, but this would not be of something that I had actually experienced. <span class="position-marker">④</span> To call this a memory would be misleading. <span class="position-marker">⑤</span> For this reason, philosophers have coined the special term ‘quasi-memory’ to refer to these hypothetical memory-like experiences.</p>
+        <div class="notes">* pertinent: 관련 있는</div>
+      </article>
+
+      <section class="question-card" aria-labelledby="q39-title">
+        <div class="question-head" id="q39-title">
+          <span class="number-badge">39</span>
+          <span>주어진 문장이 들어갈 위치를 선택하세요.</span>
+        </div>
+        <div class="choices position-choices" role="radiogroup" aria-label="39번 정답 선택지">
+          <label class="choice position-choice"><input type="radio" name="q39" value="1"><span>①</span></label>
+          <label class="choice position-choice"><input type="radio" name="q39" value="2"><span>②</span></label>
+          <label class="choice position-choice"><input type="radio" name="q39" value="3"><span>③</span></label>
+          <label class="choice position-choice"><input type="radio" name="q39" value="4"><span>④</span></label>
+          <label class="choice position-choice"><input type="radio" name="q39" value="5"><span>⑤</span></label>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" onclick="checkAnswer()">정답 확인</button>
+          <button class="secondary" type="button" onclick="resetQuestion()">다시 풀기</button>
+        </div>
+        <div class="feedback" id="feedback-q39" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="solution" id="solution" aria-labelledby="solution-title">
+      <div class="section-kicker">ANSWER &amp; LECTURE NOTES</div>
+      <h2 id="solution-title">정답과 핵심 논리</h2>
+
+      <div class="answer-banner">
+        <div class="answer-round">39</div>
+        <div><strong>정답 ③</strong><small>어휘 체계의 한계에 관한 일반 설명 뒤에 예시를 놓고,<br>이어지는 타인의 기억 공유 사례로 구체화해야 함.</small></div>
+      </div>
+
+      <div class="stats-panel" aria-label="EBSi 선택지별 응답 비율">
+        <div class="stats-head"><b>문항 반응 데이터</b><small>EBSi 채점 이용자 기준 · 정답률 23.1% · 오답률 76.9%</small></div>
+        <div class="stats-grid">
+          <div class="stat-item"><b>①</b><span>9.1%</span></div>
+          <div class="stat-item"><b>②</b><span>28.5%</span></div>
+          <div class="stat-item correct-stat"><b>③ 정답</b><span>23.1%</span></div>
+          <div class="stat-item"><b>④</b><span>24.6%</span></div>
+          <div class="stat-item"><b>⑤</b><span>14.7%</span></div>
+        </div>
+        <p class="stats-summary">정답 ③보다 ②와 ④의 선택률이 더 높았다. 특히 ②는 ‘특별한 용법을 만든다’는 문장만 보고 예시를 바로 붙인 경우, ④는 타인의 기억 공유 사례와 주어진 문장의 내용적 유사성만 보고 일반 설명과 구체 사례의 순서를 놓친 경우에 선택하기 쉽다.</p>
+      </div>
+
+      <div class="core-message">
+        <b>한 문장 핵심 요약</b>
+        일상적 용법에 맞춰 용어를 정의하는 것이 원칙이지만, 기존 어휘로 철학적으로 중요한 구분을 표현할 수 없을 때에는 ‘준기억’과 같은 특별한 용어를 새로 만들 필요가 있다.
+      </div>
+
+      <h3>1. 글의 전체 구조: 일반 원칙에서 특별한 용어의 탄생까지</h3>
+      <div class="logic-flow" aria-label="글의 논리 전개">
+        <div class="logic-card"><b>일반적 정의 원칙</b><p>용어의 정의는 실제 논쟁에서 통상적으로 사용되는 방식과 최대한 가까워야 함.</p></div>
+        <div class="arrow">→</div>
+        <div class="logic-card"><b>기존 어휘의 한계</b><p>철학적으로 중요한 구분을 현재의 어휘 체계가 표현하지 못하는 경우가 있음.</p></div>
+        <div class="arrow">→</div>
+        <div class="logic-card"><b>특별한 용어 창안</b><p>타인의 기억을 공유하는 가상 경험을 ‘준기억’이라는 새 용어로 구분함.</p></div>
+      </div>
+
+      <h3>2. 삽입 위치를 결정하는 연결 단서</h3>
+      <div class="clue-grid">
+        <article class="clue-card">
+          <b>앞 문장: 일반 설명</b>
+          <span class="quote">“the current lexicon is not able to make distinctions”</span>
+          <p>현재의 어휘 목록이 필요한 구분을 만들지 못할 수 있다고 설명한다. 주어진 문장의 <em>For example</em>은 바로 이 일반 설명을 예시해야 한다.</p>
+        </article>
+        <article class="clue-card">
+          <b>주어진 문장: 어휘 부재의 예시</b>
+          <span class="quote">“we do not have a term in ordinary language”</span>
+          <p>자신이 직접 경험하지 않은 내용에 관한 기억을 표현할 일상 언어의 용어가 없다는 사례를 제시한다.</p>
+        </article>
+        <article class="clue-card">
+          <b>뒤 문장: 구체적 가상 상황</b>
+          <span class="quote">“if I could somehow share your memories”</span>
+          <p><em>Such a thing</em>은 앞에서 말한 특수한 기억이 실제로 생기는 상황을 가리키며, 타인의 기억을 공유하는 경우로 더 구체화한다.</p>
+        </article>
+        <article class="clue-card">
+          <b>결론: 새 용어의 필요</b>
+          <span class="quote">“philosophers have coined the special term ‘quasi-memory’”</span>
+          <p>기존의 <em>memory</em>라고 부르면 오해를 낳기 때문에 철학자들이 ‘준기억’이라는 특별한 용어를 만들었다.</p>
+        </article>
+      </div>
+      <div class="analysis-box correct-box">
+        <p><b class="tag-correct">정답 위치 ③</b></p>
+        <p><b>일반 설명</b>인 ‘현재 어휘가 중요한 구분을 하지 못함’ → <b>예시</b>인 ‘일상 언어에 적절한 기억 용어가 없음’ → <b>구체적 상황</b>인 ‘타인의 기억을 공유함’의 순서가 가장 자연스럽다.</p>
+      </div>
+
+      <h3>3. 선택지별 분석</h3>
+      <table class="choice-analysis" aria-label="39번 선택지 분석">
+        <thead><tr><th>위치</th><th>판단</th><th>앞뒤 원문 · 해석 · 분석</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>①</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">… your claims are pertinent. ① There will be, however, occasions …</div><div class="choice-translation">… 여러분의 주장이 관련된 논쟁들. ① 그러나 특별한 경우들이 있을 것이다 …</div><div class="choice-reason">주어진 문장은 ‘기존 어휘로 중요한 구분을 할 수 없는 경우’의 예시이다. ① 앞에는 아직 그러한 어휘의 한계가 제시되지 않아 <em>For example</em>이 받을 일반 설명이 없다.</div></td>
+          </tr>
+          <tr>
+            <td>②</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">… what philosophers call stimulative definition. ② This would be the case where the current lexicon …</div><div class="choice-translation">… 철학자들이 자극적 정의라고 부르는 것. ② 이것은 현재의 어휘 목록이 …인 경우일 것이다.</div><div class="choice-reason">②에 넣으면 주어진 예시가 먼저 나오고, 그 뒤에야 ‘현재 어휘가 구분을 하지 못하는 경우’라는 일반 설명이 나온다. 일반 설명 뒤에 예시가 이어지는 흐름이 더 자연스럽다.</div></td>
+          </tr>
+          <tr>
+            <td>③</td><td class="tag-correct">정답</td>
+            <td><div class="choice-source">… distinctions that you think are philosophically important. ③ Such a thing would occur, for example, if I could somehow share your memories …</div><div class="choice-translation">… 여러분이 철학적으로 중요하다고 생각하는 구분들. ③ 그러한 일은, 예를 들어, 내가 어떻게든 여러분의 기억을 공유할 수 있다면 일어날 것이다 …</div><div class="choice-reason">현재 어휘가 중요한 구분을 못 한다는 일반 설명을 주어진 문장이 예시하고, 이어지는 <em>Such a thing</em>이 그 특수한 기억 경험을 타인의 기억 공유 상황으로 구체화한다.</div></td>
+          </tr>
+          <tr>
+            <td>④</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">… something that I had actually experienced. ④ To call this a memory would be misleading.</div><div class="choice-translation">… 내가 실제로 경험했던 어떤 것. ④ 이것을 기억이라고 부르는 것은 오해를 불러일으킬 것이다.</div><div class="choice-reason">주어진 문장은 타인의 기억 공유라는 구체적 사례보다 범위가 넓은 설명이다. ④에 놓으면 구체적 사례 뒤에 일반적 예시가 되돌아와 전개 순서가 역전된다.</div></td>
+          </tr>
+          <tr>
+            <td>⑤</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">To call this a memory would be misleading. ⑤ For this reason, philosophers have coined …</div><div class="choice-translation">이것을 기억이라고 부르는 것은 오해를 불러일으킬 것이다. ⑤ 이러한 이유로 철학자들은 …을 만들어 냈다.</div><div class="choice-reason"><em>For this reason</em>은 ‘기억이라고 부르면 오해를 낳는다’는 바로 앞 문장을 직접적인 이유로 받는다. 그 사이에 주어진 문장을 넣으면 긴밀한 인과관계가 끊어진다.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. 문장별 슬래시 리딩과 직독직해</h3>
+      <div class="reading-list">
+        <article class="reading-card given-reading-card">
+          <div class="given-reading-label">GIVEN SENTENCE · 주어진 문장</div>
+          <div class="sentence-en">For example, <span class="slash">/</span> we do not have a term <span class="slash">/</span> in ordinary language <span class="slash">/</span> that describes a memory <span class="slash">/</span> that is not necessarily a memory <span class="slash">/</span> of something <span class="slash">/</span> the person having it has experienced.</div>
+          <div class="sentence-vocab"><b>ordinary language</b> 일상 언어 · <b>not necessarily</b> 반드시 ~인 것은 아닌 · <b>the person having it</b> 그것을 가진 사람</div>
+          <div class="sentence-ko">예를 들어 / 우리는 용어를 가지고 있지 않다 / 일상 언어에서 / 그 용어는 어떤 기억을 묘사한다 / 그 기억은 반드시 기억인 것은 아니다 / 어떤 것에 대한 / 그것을 그 기억을 가진 사람이 경험했다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">As a general rule, <span class="slash">/</span> it’s better <span class="slash">/</span> if your definition corresponds <span class="slash">/</span> as closely as possible <span class="slash">/</span> to the way <span class="slash">/</span> in which <span class="slash">/</span> the term is ordinarily used <span class="slash">/</span> in the kinds of debates <span class="slash">/</span> to which <span class="slash">/</span> your claims are pertinent.</div>
+          <div class="sentence-vocab"><b>correspond to</b> ~에 부합하다 · <b>ordinarily</b> 통상적으로 · <b>pertinent</b> 관련 있는 · <b>claim</b> 주장</div>
+          <div class="sentence-ko">일반적인 원칙으로서 / 그것이 더 낫다 / 만약 여러분의 정의가 부합한다면 / 가능한 한 밀접하게 / 그 방식에 / 그러한 방식으로 / 그 용어는 통상적으로 사용된다 / 그러한 종류의 논쟁들에서 / 그러한 논쟁들에 / 여러분의 주장은 관련되어 있다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">There will be, however, occasions <span class="slash">/</span> where <span class="slash">/</span> <span class="syntax-focus">it</span> is appropriate, even necessary, <span class="slash">/</span> <span class="syntax-focus">to coin special uses</span> <span class="slash">/</span> through what philosophers call stimulative definition.</div>
+          <div class="sentence-vocab"><b>occasion</b> 경우, 때 · <b>appropriate</b> 적절한 · <b>coin</b> 새로운 말·용법을 만들다 · <b>stimulative definition</b> 자극적 정의</div>
+          <div class="sentence-ko">그러나 경우들이 있을 것이다 / 그러한 경우에는 / 적절하고, 심지어 필요하다 / 특별한 용법을 만들어 내는 것이 / 철학자들이 자극적 정의라고 부르는 것을 통해.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">This would be the case <span class="slash">/</span> where <span class="slash">/</span> the current lexicon is not able <span class="slash">/</span> to make distinctions <span class="slash">/</span> that <span class="slash">/</span> you think <span class="slash">/</span> are philosophically important.</div>
+          <div class="sentence-vocab"><b>lexicon</b> 어휘 목록, 어휘 체계 · <b>distinction</b> 구분 · <b>philosophically</b> 철학적으로</div>
+          <div class="sentence-ko">이것은 그 경우일 것이다 / 그 경우에는 / 현재의 어휘 목록이 할 수 없다 / 구분들을 만드는 것을 / 그러한 구분들이 / 여러분이 생각하기에 / 철학적으로 중요하다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Such a thing would occur, for example, <span class="slash">/</span> if I could somehow share your memories: <span class="slash">/</span> I would have a memory-type experience, <span class="slash">/</span> but this would not be of something <span class="slash">/</span> that I had actually experienced.</div>
+          <div class="sentence-vocab"><b>occur</b> 일어나다 · <b>somehow</b> 어떻게든 · <b>memory-type</b> 기억 유형의 · <b>actually</b> 실제로</div>
+          <div class="sentence-ko">그러한 일은 예를 들어 일어날 것이다 / 만약 내가 어떻게든 여러분의 기억을 공유할 수 있다면 / 나는 기억 유형의 경험을 갖게 될 것이다 / 그러나 이것은 어떤 것에 대한 것이 아닐 것이다 / 그것을 나는 실제로 경험했었다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">To call this a memory <span class="slash">/</span> would be misleading.</div>
+          <div class="sentence-vocab"><b>call A B</b> A를 B라고 부르다 · <b>misleading</b> 오해를 불러일으키는</div>
+          <div class="sentence-ko">이것을 기억이라고 부르는 것은 / 오해를 불러일으킬 것이다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">For this reason, <span class="slash">/</span> philosophers have coined the special term ‘quasi-memory’ <span class="slash">/</span> to refer to these hypothetical memory-like experiences.</div>
+          <div class="sentence-vocab"><b>quasi-memory</b> 준기억 · <b>refer to</b> ~을 가리키다 · <b>hypothetical</b> 가상의 · <b>memory-like</b> 기억과 같은</div>
+          <div class="sentence-ko">이러한 이유로 / 철학자들은 ‘준기억’이라는 특별한 용어를 만들어 냈다 / 이러한 가상의 기억과 같은 경험들을 가리키기 위해.</div>
+        </article>
+      </div>
+
+      <h3>5. 핵심 구문·문법</h3>
+      <div class="grammar-grid">
+        <article class="grammar-card">
+          <b>as closely as possible</b>
+          <code>As a general rule, it’s better if your definition corresponds <span class="grammar-focus">as closely as possible</span> to the way in which the term is ordinarily used in the kinds of debates to which your claims are pertinent.</code>
+          <p>‘가능한 한 밀접하게’라는 뜻의 <em>as + 부사 + as possible</em> 구조이다. 정의와 실제 용법이 최대한 가까워야 한다는 원칙을 나타낸다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>관계부사 in which</b>
+          <code>As a general rule, it’s better if your definition corresponds as closely as possible to the way <span class="grammar-focus">in which the term is ordinarily used</span> in the kinds of debates to which your claims are pertinent.</code>
+          <p><em>in which</em>는 선행사 <em>the way</em>를 받아 ‘그러한 방식으로’라고 해석한다. 직독직해에서는 별도의 의미 단위로 분리한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>전치사 + 관계대명사 to which</b>
+          <code>As a general rule, it’s better if your definition corresponds as closely as possible to the way in which the term is ordinarily used in the kinds of debates <span class="grammar-focus">to which your claims are pertinent</span>.</code>
+          <p><em>which</em>는 <em>debates</em>를 가리키며 원래 구조는 <em>your claims are pertinent to them</em>이다. ‘그러한 논쟁들에 여러분의 주장은 관련되어 있다’로 관계를 복원한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>관계부사 where</b>
+          <code>There will be, however, occasions <span class="grammar-focus">where <span class="syntax-focus">it</span> is appropriate, even necessary, <span class="syntax-focus">to coin special uses</span></span> through what philosophers call stimulative definition.</code>
+          <p><em>where</em>는 장소가 아니라 <em>occasions</em>를 받아 ‘그러한 경우에는’이라는 의미를 나타낸다. 이때 <em>it</em>은 가주어이고, <em>to coin special uses</em>는 진주어이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>선행사를 포함한 관계대명사 what</b>
+          <div class="grammar-role">전치사 <em>through</em>의 목적어 역할 명사절</div>
+          <code>There will be, however, occasions where it is appropriate, even necessary, to coin special uses through <span class="grammar-focus">what philosophers call stimulative definition</span>.</code>
+          <p><em>what</em>은 ‘~하는 것’이라는 뜻으로, <em>the thing that</em>의 의미를 포함한다. 철학자들이 ‘자극적 정의’라고 부르는 것을 가리킨다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>삽입절 you think</b>
+          <code>This would be the case where the current lexicon is not able to make distinctions <span class="grammar-focus">that you think are philosophically important</span>.</code>
+          <p><em>that</em>은 <em>distinctions</em>를 받아 <em>are</em>의 주어 역할을 한다. <em>you think</em>를 괄호처럼 빼면 <em>distinctions that are philosophically important</em>가 남는다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>현재분사 having의 후치수식</b>
+          <code>For example, we do not have a term in ordinary language that describes a memory that is not necessarily a memory of something <span class="grammar-focus">the person having it has experienced</span>.</code>
+          <p><em>having it</em>은 앞의 <em>the person</em>을 꾸며 ‘그 기억을 가진 사람’이라는 뜻이다. <em>something</em> 뒤에는 목적격 관계대명사 <em>that</em>이 생략되어 있다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>가정법 과거 if + could, would</b>
+          <code>Such a thing would occur, for example, <span class="grammar-focus">if I could somehow share your memories: I would have a memory-type experience</span>, but this would not be of something that I had actually experienced.</code>
+          <p>현재 사실과 다른 가상 상황을 나타낸다. ‘타인의 기억을 공유할 수 있다면 기억과 같은 경험을 하게 될 것’이라는 철학적 사고 실험이다.</p>
+        </article>
+      </div>
+
+      <h3>6. 주요 어휘 카드</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><b>stimulative</b><span>사고를 자극하는</span></div>
+        <div class="vocab-card"><b>pertinent</b><span>관련 있는, 적절한</span></div>
+        <div class="vocab-card"><b>lexicon</b><span>어휘 목록, 어휘 체계</span></div>
+        <div class="vocab-card"><b>distinction</b><span>구분, 차이</span></div>
+        <div class="vocab-card"><b>correspond to</b><span>~에 부합하다, 일치하다</span></div>
+        <div class="vocab-card"><b>coin</b><span>새로운 말·용법을 만들다</span></div>
+        <div class="vocab-card"><b>ordinary</b><span>보통의, 일상적인</span></div>
+        <div class="vocab-card"><b>necessarily</b><span>반드시, 필연적으로</span></div>
+        <div class="vocab-card"><b>misleading</b><span>오해를 불러일으키는</span></div>
+        <div class="vocab-card"><b>hypothetical</b><span>가상의, 가정에 근거한</span></div>
+        <div class="vocab-card"><b>quasi-memory</b><span>준기억</span></div>
+        <div class="vocab-card"><b>refer to</b><span>~을 가리키다</span></div>
+      </div>
+
+      <p class="footer-note">English Ⅱ · 2025학년도 3월 고2 전국연합학력평가 · 문항 통계 출처: EBSi</p>
+    </section>
+  </main>
+
+  <script>
+    const solution = document.getElementById('solution');
+    const solutionButton = document.getElementById('solutionButton');
+
+    function toggleSolution() {
+      const isOpen = solution.classList.toggle('open');
+      solutionButton.textContent = isOpen ? '해설 닫기' : '해설 보기';
+      if (isOpen) solution.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="q39"]:checked');
+      const feedback = document.getElementById('feedback-q39');
+      feedback.className = 'feedback show';
+
+      if (!selected) {
+        feedback.classList.add('notice');
+        feedback.textContent = '먼저 선택지 하나를 골라 주세요.';
+        return;
+      }
+      if (selected.value === '3') {
+        feedback.classList.add('correct');
+        feedback.textContent = '정답입니다. 현재 어휘의 한계라는 일반 설명 뒤에 예시를 놓고, 타인의 기억 공유라는 구체적 상황으로 이어집니다.';
+      } else {
+        feedback.classList.add('wrong');
+        feedback.textContent = '다시 확인해 보세요. For example이 무엇을 예시하는지, Such a thing이 무엇을 가리키는지 앞뒤 문맥을 연결하세요.';
+      }
+    }
+
+    function resetQuestion() {
+      document.querySelectorAll('input[name="q39"]').forEach(input => input.checked = false);
+      const feedback = document.getElementById('feedback-q39');
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+    }
+  </script>
+</body>
+</html>

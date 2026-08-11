@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부교재 · 1회 · 1차시 | 영어Ⅱ 수업자료</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+  :root{
+    --navy:#005DAA;
+    --blue:#007DC3;
+    --sky:#13B5EA;
+    --ink:#1B2733;
+    --ink-soft:#5C6B7A;
+    --paper:#F4F7FA;
+    --card:#FFFFFF;
+    --line:#DCE3EC;
+    --disabled-bg:#F0F2F5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard', -apple-system, sans-serif;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 24px 80px;}
+
+  a.back{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    margin-bottom:22px;
+  }
+  a.back:hover{color:var(--navy);}
+
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--blue);
+    letter-spacing:.06em;
+    margin:0 0 8px;
+  }
+  h1{
+    font-size:26px;
+    font-weight:800;
+    color:var(--navy);
+    margin:0 0 6px;
+  }
+  .desc{font-size:13.5px; color:var(--ink-soft); margin:0 0 32px;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px,1fr));
+    gap:10px;
+  }
+  a.q{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:12px 13px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:13.5px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  a.q:hover, a.q:focus-visible{
+    border-color:var(--blue);
+    background:#EEF6FC;
+    outline:none;
+  }
+  .num{
+    flex:0 0 auto;
+    width:28px; height:28px;
+    border-radius:50%;
+    border:1.5px solid var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    color:var(--navy);
+    transition:all .15s ease;
+  }
+  a.q:hover .num, a.q:focus-visible .num{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#fff;
+  }
+  .label{display:flex; flex-direction:column; gap:1px; min-width:0;}
+  .label .tag{font-size:11px; color:var(--blue);}
+  .label .name{font-weight:700; color:var(--navy); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../category.html?cat=supplement">← 부교재 목록으로</a>
+  <p class="eyebrow">부교재 · 1회 · 25-3월 학력평가</p>
+  <h1>1차시 · 18~32번</h1>
+  <p class="desc">문항을 선택하면 해당 문제 페이지가 열립니다.</p>
+
+  <div class="grid" id="q-list"></div>
+</div>
+
+<script>
+  // 문항이 추가되면 이 목록에 한 줄만 추가하면 됩니다.
+  const QUESTIONS = [
+    { num:21, file:'q21.html', topic:'함축 의미 추론' },
+    { num:30, file:'q30.html', topic:'문맥상 낱말의 쓰임' },
+    { num:32, file:'q32.html', topic:'빈칸 추론' }
+  ];
+
+  const list = document.getElementById('q-list');
+  const sorted = QUESTIONS.slice().sort(function(a, b){ return a.num - b.num; });
+  list.innerHTML = sorted.map(function(q){
+    return '<a class="q" href="round01-1/' + q.file + '">'
+      + '<span class="num">' + q.num + '</span>'
+      + '<span class="label"><span class="tag">문항 ' + q.num + '번</span><span class="name">' + q.topic + '</span></span>'
+      + '</a>';
+  }).join('');
+</script>
+</body>
+</html>

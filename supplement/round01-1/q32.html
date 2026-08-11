@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>EnglishⅡ. '25-3월. Q-32 | 빈칸 추론</title>
+  <style>
+    :root {
+      --navy: #17325c;
+      --blue: #2f67b2;
+      --sky: #eaf3ff;
+      --ink: #192434;
+      --muted: #64748b;
+      --line: #d9e2ef;
+      --paper: #fff;
+      --canvas: #eef3f8;
+      --green: #16745b;
+      --green-bg: #eaf8f3;
+      --red: #b13a42;
+      --red-bg: #fff0f1;
+      --amber: #9a650e;
+      --amber-bg: #fff8e8;
+      --shadow: 0 18px 50px rgba(28, 50, 80, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 8% 4%, rgba(90,145,217,.12), transparent 25rem), var(--canvas);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+    button, label { font: inherit; }
+    em { font-family: Georgia, "Times New Roman", serif; }
+    .phrase-lock { white-space: nowrap; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: min(100% - 32px, 1040px);
+      margin: 18px auto 0;
+    }
+    .tool-button {
+      border: 1px solid rgba(23,50,92,.14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      background: rgba(255,255,255,.94);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(28,50,80,.08);
+      backdrop-filter: blur(8px);
+    }
+    .tool-button:hover { background: #fff; transform: translateY(-1px); }
+
+    .sheet {
+      width: min(100% - 32px, 1040px);
+      margin: 14px auto 52px;
+      overflow: hidden;
+      border: 1px solid rgba(23,50,92,.09);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 38px 54px 34px;
+      overflow: hidden;
+      background: linear-gradient(128deg, #142d52 0%, #214a80 70%, #2f67b2 100%);
+      color: #fff;
+    }
+    .hero::after {
+      content: "32";
+      position: absolute;
+      right: 34px;
+      top: -14px;
+      color: rgba(255,255,255,.07);
+      font: 900 128px/1 Arial, sans-serif;
+      letter-spacing: -9px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      color: #cfe3ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: #8ec1ff; }
+    h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(28px,4vw,42px); line-height: 1.2; letter-spacing: -.04em; }
+    .subtitle { position: relative; z-index: 1; margin: 10px 0 0; color: #dceafd; font-size: 15px; }
+
+    .content { padding: 42px 54px 50px; }
+    .instruction { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 24px; font-size: 18px; font-weight: 800; line-height: 1.55; }
+    .set-badge {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      min-width: 52px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #fff;
+      font: 800 16px/1 Arial, sans-serif;
+      box-shadow: 0 7px 16px rgba(23,50,92,.2);
+    }
+    .passage {
+      position: relative;
+      margin-bottom: 28px;
+      padding: 28px 30px 25px;
+      border: 1px solid #bdd1ea;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7faff, #fff);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18.5px;
+      line-height: 1.8;
+    }
+    .passage::before {
+      content: "READING PASSAGE";
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    .passage p { margin: 0; }
+    .passage p + p { margin-top: .525em; text-indent: 1.5em; }
+    .notes { margin-top: 12px; color: #586b82; font: 13px/1.6 "Pretendard", "Noto Sans KR", sans-serif; }
+    .given-sentence { margin: 0 0 22px; padding: 20px 22px; border: 2px solid #7ba5d5; border-radius: 14px; background: #eef6ff; color: #183c67; font: 700 17px/1.75 Georgia, "Times New Roman", serif; }
+    .given-label { display: block; margin-bottom: 7px; color: var(--blue); font: 900 12px/1.3 "Pretendard", "Noto Sans KR", sans-serif; letter-spacing: .08em; }
+    .position-marker { display: inline-grid; place-items: center; min-width: 27px; height: 27px; margin: 0 3px; border-radius: 50%; background: #dcecff; color: var(--navy); font: 900 13px/1 Arial, sans-serif; vertical-align: middle; }
+
+    .question-card { margin-top: 20px; padding: 24px 25px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 6px 17px rgba(35,62,96,.045); }
+    .question-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 16px; color: var(--navy); font-size: 17px; font-weight: 850; line-height: 1.55; }
+    .number-badge { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--sky); color: var(--blue); font: 900 17px/1 Arial, sans-serif; }
+    .summary-box { margin-bottom: 17px; padding: 18px 20px; border: 1px solid #c7d7e9; border-radius: 12px; background: #f8fbff; color: #2b3c51; font: 16px/1.7 Georgia, "Times New Roman", serif; }
+    .blank { display: inline-block; width: 300px; max-width: 100%; height: 1em; border-bottom: 2px solid #5d7fa8; vertical-align: baseline; }
+    .choices { display: grid; gap: 9px; }
+    .choice { position: relative; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice > span { display: grid; grid-template-columns: 32px 1fr 30px 1fr; align-items: center; min-height: 46px; padding: 10px 13px; border: 1px solid #cfd9e5; border-radius: 11px; background: #fff; color: #334155; font: 15.5px/1.55 Georgia, "Times New Roman", serif; transition: .18s ease; }
+    .choice-num { color: var(--blue); font-family: "Pretendard", "Noto Sans KR", sans-serif; font-weight: 900; }
+    .choice-dots { color: #93a4b8; text-align: center; }
+    .choice:hover > span { border-color: #8aadd8; background: #f7faff; }
+    .choice input:checked + span { border-color: var(--blue); background: var(--sky); color: var(--navy); box-shadow: inset 0 0 0 1px var(--blue); }
+    .single-choice > span { grid-template-columns: 32px minmax(0, 1fr); }
+    .single-choice > span > span:last-child { white-space: nowrap; }
+    .position-choices { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .position-choice span { display: flex; justify-content: center; min-height: 48px; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: 17px; font-weight: 900; }
+    .actions { display: flex; gap: 10px; margin-top: 16px; }
+    .primary, .secondary { border-radius: 11px; padding: 10px 17px; font-weight: 800; cursor: pointer; }
+    .primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
+    .secondary { border: 1px solid #ccd7e4; background: #fff; color: var(--muted); }
+    .feedback { display: none; margin-top: 14px; padding: 13px 16px; border-radius: 11px; font-size: 14px; font-weight: 750; }
+    .feedback.show { display: block; animation: rise .25s ease-out; }
+    .feedback.correct { background: var(--green-bg); color: var(--green); border: 1px solid #a7d9c7; }
+    .feedback.wrong { background: var(--red-bg); color: var(--red); border: 1px solid #efbdc1; }
+    .feedback.notice { background: var(--amber-bg); color: var(--amber); border: 1px solid #ead39a; }
+    @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+    .solution { display: none; border-top: 10px solid var(--canvas); padding: 44px 54px 58px; background: #fff; }
+    .solution.open { display: block; }
+    .section-kicker { margin-bottom: 7px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    h2 { margin: 0 0 22px; color: var(--navy); font-size: 28px; letter-spacing: -.035em; }
+    h3 { margin: 34px 0 15px; color: var(--navy); font-size: 21px; letter-spacing: -.025em; }
+    .answer-banner { display: flex; align-items: center; gap: 15px; padding: 18px 20px; border-radius: 15px; background: linear-gradient(135deg, #17325c, #2d609f); color: #fff; }
+    .answer-round { display: grid; flex: 0 0 auto; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--navy); font-size: 21px; font-weight: 900; }
+    .answer-banner strong { display: block; font-size: 17px; }
+    .answer-banner small { color: #d9e9ff; font-size: 13px; line-height: 1.45; }
+    .core-message { margin-top: 22px; padding: 19px 21px; border-left: 5px solid var(--blue); border-radius: 4px 13px 13px 4px; background: var(--sky); color: #263f62; }
+    .core-message b { display: block; margin-bottom: 5px; color: var(--navy); }
+    .logic-flow { display: grid; grid-template-columns: 1fr 46px 1fr 46px 1fr; align-items: stretch; gap: 8px; margin-top: 19px; }
+    .logic-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .logic-card b { display: block; margin-bottom: 7px; color: var(--blue); font-size: 16px; }
+    .logic-card p { margin: 0; color: #45566c; font-size: 13.5px; line-height: 1.65; }
+    .arrow { display: grid; place-items: center; color: #8ca2bd; font-size: 18px; font-weight: 900; }
+    .clue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .clue-card { padding: 18px 19px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .clue-card b { display: block; margin-bottom: 7px; color: var(--navy); }
+    .clue-card .quote { display: block; margin-bottom: 8px; color: #284b78; font: 700 14px/1.55 Georgia, "Times New Roman", serif; }
+    .clue-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.65; }
+    .analysis-box { margin-top: 13px; padding: 19px 21px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .analysis-box.correct-box { border-color: #a7d9c7; background: #f8fdfa; }
+    .analysis-box p { margin: 0; }
+    .analysis-box p + p { margin-top: 9px; }
+    .tag-correct { color: var(--green); font-weight: 850; }
+    .tag-wrong { color: var(--red); font-weight: 850; }
+    .stats-panel { margin-top: 18px; padding: 18px 20px; border: 1px solid #c8d8ea; border-radius: 14px; background: #f7faff; }
+    .stats-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-bottom: 12px; }
+    .stats-head b { color: var(--navy); }
+    .stats-head small { color: var(--muted); }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .stat-item { padding: 10px 8px; border: 1px solid #d8e3ef; border-radius: 10px; background: #fff; text-align: center; }
+    .stat-item b { display: block; color: var(--blue); font-size: 13px; }
+    .stat-item span { color: #394b61; font-size: 16px; font-weight: 850; }
+    .stat-item.correct-stat { border-color: #83c6b1; background: var(--green-bg); }
+    .stat-item.correct-stat b, .stat-item.correct-stat span { color: var(--green); }
+    .stats-summary { margin: 12px 0 0; color: #53657a; font-size: 13px; line-height: 1.65; }
+
+    .choice-analysis { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; font-size: 14px; }
+    .choice-analysis th, .choice-analysis td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .choice-analysis tr:last-child td { border-bottom: 0; }
+    .choice-analysis th { background: #f1f5fa; color: var(--navy); font-weight: 850; }
+    .choice-analysis td:first-child { color: var(--blue); font-weight: 900; white-space: nowrap; }
+    .choice-source { margin-bottom: 5px; color: #203a60; font: 700 15px/1.5 Georgia, "Times New Roman", serif; }
+    .choice-translation { margin-bottom: 5px; color: #52657c; font-size: 13.5px; line-height: 1.55; }
+    .choice-reason { padding-top: 5px; border-top: 1px dashed #dbe3ed; color: var(--ink); line-height: 1.65; }
+    .sentence-ko, .clue-card p, .grammar-card p, .answer-banner small, .choice-translation, .choice-reason { word-break: keep-all; line-break: strict; }
+
+    .reading-list { display: grid; gap: 12px; }
+    .reading-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .reading-card.given-reading-card { border: 3px solid var(--navy); box-shadow: 0 4px 13px rgba(23, 50, 92, .12); }
+    .given-reading-label { padding: 8px 18px; background: var(--navy); color: #fff; font-size: 12px; font-weight: 850; letter-spacing: .045em; }
+    .sentence-en { padding: 17px 18px 15px; background: #f7f9fc; color: #24354c; font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size: 17.5px; font-weight: 650; line-height: 1.75; }
+    .syntax-focus { padding: 1px 4px; border-radius: 4px; background: #fff0a8; color: #123d69; font-weight: 850; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .sentence-vocab { padding: 10px 18px 11px; border-top: 1px solid #e8edf4; background: #fbfcfe; color: #53657a; font: 15.5px/1.7 Georgia, "Times New Roman", serif; }
+    .sentence-vocab b { color: var(--blue); }
+    .sentence-ko { padding: 12px 18px 14px; color: #42546a; font-size: 14px; line-height: 1.7; }
+    .slash { color: var(--blue); font-weight: 900; }
+
+    .grammar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grammar-card { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .grammar-card b { display: block; margin-bottom: 6px; color: var(--navy); }
+    .grammar-role { margin: -1px 0 9px; color: var(--blue); font-size: 12.5px; font-weight: 750; }
+    .grammar-card code { display: block; margin-bottom: 8px; color: #3f4f63; font: 400 14px/1.55 Georgia, "Times New Roman", serif; white-space: normal; }
+    .grammar-card code .grammar-focus { padding: 1px 3px; border-radius: 4px; background: #fff0a8; color: #123d69; font-weight: 800; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .grammar-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.6; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+    .vocab-card { display: grid; grid-template-columns: 145px 1fr; gap: 13px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fff; font-size: 14px; }
+    .vocab-card b { color: var(--blue); font-family: Georgia, "Times New Roman", serif; }
+    .footer-note { margin: 28px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
+
+    @media (max-width: 760px) {
+      .hero, .content, .solution { padding-left: 24px; padding-right: 24px; }
+      .hero::after { font-size: 82px; top: 4px; right: 18px; }
+      .passage { padding: 25px 21px 21px; font-size: 17px; }
+      .logic-flow, .clue-grid, .grammar-grid, .vocab-grid { grid-template-columns: 1fr; }
+      .position-choices, .stats-grid { grid-template-columns: repeat(5, 1fr); }
+      .arrow { min-height: 24px; transform: rotate(90deg); }
+      .choice > span { grid-template-columns: 28px 1fr 25px 1fr; font-size: 14px; }
+      .single-choice > span { grid-template-columns: 28px minmax(0, 1fr); }
+      .single-choice > span > span:last-child { white-space: normal; }
+      .vocab-card { grid-template-columns: 125px 1fr; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; line-height: 1.52; }
+      .toolbar, .actions, .feedback { display: none !important; }
+      .sheet { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .hero { padding: 14mm 13mm 10mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .content { padding: 9mm 13mm 10mm; }
+      .instruction { margin-bottom: 16px; font-size: 15px; }
+      .passage { padding: 17px 19px; margin-bottom: 15px; font-size: 13.4px; line-height: 1.52; }
+      .passage p + p { margin-top: .36em; }
+      .question-card { padding: 15px 17px; margin-top: 12px; break-inside: avoid; }
+      .question-head { margin-bottom: 10px; font-size: 14px; }
+      .number-badge { width: 34px; height: 34px; }
+      .summary-box { padding: 11px 13px; font-size: 11.8px; }
+      .choice > span { min-height: 33px; padding: 6px 9px; font-size: 11.8px; line-height: 1.35; }
+      .given-sentence { padding: 13px 15px; margin-bottom: 13px; font-size: 12.8px; }
+      .position-marker { min-width: 22px; height: 22px; font-size: 11px; }
+      .stats-panel { padding: 13px 15px; }
+      .solution { display: block !important; page-break-before: always; border-top: 0; padding: 12mm 13mm; }
+      .answer-banner, .logic-card, .core-message, .grammar-focus, .syntax-focus, .given-reading-card, .given-reading-label { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h2 { font-size: 23px; }
+      h3 { margin-top: 23px; font-size: 17px; }
+      .answer-banner { padding: 13px 15px; }
+      .answer-round { width: 41px; height: 41px; }
+      .reading-card, .grammar-card, .analysis-box, .choice-analysis tr, .clue-card { break-inside: avoid; }
+      .sentence-en { padding: 10px 13px 8px; font-size: 12.3px; }
+      .sentence-ko { padding: 8px 13px 10px; font-size: 11.5px; }
+      .grammar-card, .analysis-box { padding: 13px 14px; }
+      .vocab-card { padding: 8px 10px; font-size: 11.5px; }
+      .footer-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="문서 도구">
+    <button class="tool-button" id="solutionButton" type="button" onclick="toggleSolution()">해설 보기</button>
+    <button class="tool-button" type="button" onclick="window.print()">인쇄하기</button>
+  </nav>
+
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">English Ⅱ · '25-3월 학력평가</div>
+      <h1>32번 빈칸 추론</h1>
+      <p class="subtitle">매튜 효과와 ‘숨은 재능’이라는 두 설명을 대조하여 빈칸의 논리를 완성하세요.</p>
+    </header>
+
+    <section class="content" aria-labelledby="set-title">
+      <div class="instruction" id="set-title">
+        <span class="set-badge">32</span>
+        <span>다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.</span>
+      </div>
+
+      <article class="passage">
+        <p>Great scientists are seldom one-hit wonders. Newton is a prime example: beyond the Newtonian mechanics, he developed the theory of gravitation, calculus, laws of motion, and optimization. In fact, well-known scientists are often involved in multiple discoveries, a phenomenon potentially explained by the Matthew effect. Indeed, an initial success may offer a scientist legitimacy, improve peer perception, provide knowledge of how to score and win, enhance social status, and attract resources and quality collaborators, each of these payoffs further increasing her odds of scoring another win. Yet, there is an appealing alternative explanation: Great scientists have multiple hits and consistently succeed in their scientific endeavors simply because they’re exceptionally talented. Therefore, future success again goes to those who have had success earlier, not because of advantages offered by the previous success, but because the earlier success was <span class="blank" aria-label="blank"></span>. The Matthew effect posits that success alone increases the future probability of success, raising the question: Does status dictate outcomes, or does it simply reflect an underlying talent or quality? In other words, is there really a Matthew effect after all?</p>
+        <div class="notes">* posit: 상정하다</div>
+      </article>
+
+      <section class="question-card" aria-labelledby="q32-title">
+        <div class="question-head" id="q32-title">
+          <span class="number-badge">32</span>
+          <span>빈칸에 들어갈 표현을 선택하세요.</span>
+        </div>
+        <div class="choices" role="radiogroup" aria-label="32번 정답 선택지">
+          <label class="choice single-choice"><input type="radio" name="q32" value="1"><span><span class="choice-num">①</span><span>inseparable from consistent efforts</span></span></label>
+          <label class="choice single-choice"><input type="radio" name="q32" value="2"><span><span class="choice-num">②</span><span>attributed to talented collaborators</span></span></label>
+          <label class="choice single-choice"><input type="radio" name="q32" value="3"><span><span class="choice-num">③</span><span>dependent on financial resources</span></span></label>
+          <label class="choice single-choice"><input type="radio" name="q32" value="4"><span><span class="choice-num">④</span><span>driven by societal recognition</span></span></label>
+          <label class="choice single-choice"><input type="radio" name="q32" value="5"><span><span class="choice-num">⑤</span><span>indicative of a hidden talent</span></span></label>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" onclick="checkAnswer()">정답 확인</button>
+          <button class="secondary" type="button" onclick="resetQuestion()">다시 풀기</button>
+        </div>
+        <div class="feedback" id="feedback-q32" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="solution" id="solution" aria-labelledby="solution-title">
+      <div class="section-kicker">ANSWER &amp; LECTURE NOTES</div>
+      <h2 id="solution-title">정답과 핵심 논리</h2>
+
+      <div class="answer-banner">
+        <div class="answer-round">32</div>
+        <div><strong>정답 ⑤ · indicative of a hidden talent</strong><small><span class="phrase-lock">이전 성공이 다음 성공의 원인이 아니라,</span> 그 사람에게 이미 뛰어난 재능이 있음을 보여 주는 지표라는 대안적 설명.</small></div>
+      </div>
+
+      <div class="stats-panel" aria-label="EBSi 선택지별 응답 비율">
+        <div class="stats-head"><b>문항 반응 데이터</b><small>EBSi 채점 이용자 기준 · 정답률 28.3% · 오답률 71.7%</small></div>
+        <div class="stats-grid">
+          <div class="stat-item"><b>①</b><span>20.9%</span></div>
+          <div class="stat-item"><b>②</b><span>23.1%</span></div>
+          <div class="stat-item"><b>③</b><span>12.0%</span></div>
+          <div class="stat-item"><b>④</b><span>15.7%</span></div>
+          <div class="stat-item correct-stat"><b>⑤ 정답</b><span>28.3%</span></div>
+        </div>
+        <p class="stats-summary">정답 ⑤의 선택률이 28.3%에 그쳤고, 오답 ②(23.1%)와 ①(20.9%)에도 응답이 크게 분산되었다. 지문에 등장한 <em>quality collaborators</em>를 그대로 옮긴 ②는 매튜 효과가 제공하는 ‘이점’을 말할 뿐, 빈칸 앞에서 제시한 ‘재능 중심의 대안적 설명’과는 맞지 않는다.</p>
+      </div>
+
+      <div class="core-message">
+        <b>한 문장 핵심 요약</b>
+        위대한 과학자들의 반복된 성공은 첫 성공이 제공한 지위와 자원 때문일 수도 있지만, 첫 성공 자체가 이미 숨겨진 뛰어난 재능을 보여 주었기 때문일 수도 있다.
+      </div>
+
+      <h3>1. 글의 전체 구조: 매튜 효과와 대안적 설명의 대립</h3>
+      <div class="logic-flow" aria-label="글의 논리 전개">
+        <div class="logic-card"><b>관찰된 현상</b><p>위대한 과학자들은 한 번만 성공하는 것이 아니라 여러 발견을 반복해서 만들어 냄.</p></div>
+        <div class="arrow">→</div>
+        <div class="logic-card"><b>매튜 효과</b><p>첫 성공이 정당성·지위·자원·협력자를 제공하여 다음 성공의 가능성을 높임.</p></div>
+        <div class="arrow">↔</div>
+        <div class="logic-card"><b>대안적 설명</b><p>첫 성공은 다음 성공의 원인이 아니라, 원래부터 존재한 뛰어난 재능을 보여 주는 지표임.</p></div>
+      </div>
+
+      <h3>2. 빈칸을 결정하는 핵심 단서</h3>
+      <div class="clue-grid">
+        <article class="clue-card">
+          <b>전환어 Yet</b>
+          <span class="quote">“Yet, there is an appealing alternative explanation”</span>
+          <p><em>Yet</em>은 앞의 매튜 효과 설명과 반대되는 ‘대안’을 시작한다. 따라서 빈칸은 지위·자원 같은 성공의 이점이 아니라 다른 원인을 나타내야 한다.</p>
+        </article>
+        <article class="clue-card">
+          <b>직접 제시된 원인</b>
+          <span class="quote">“simply because they’re exceptionally talented”</span>
+          <p>위대한 과학자들이 계속 성공하는 이유를 ‘그들이 특별히 재능 있기 때문’이라고 명시한다. 빈칸에는 이 재능을 다시 표현한 말이 필요하다.</p>
+        </article>
+        <article class="clue-card">
+          <b>대조 구조</b>
+          <span class="quote">“not because of advantages … but because …”</span>
+          <p>이전 성공이 준 이점 <span class="phrase-lock">때문이 <b>아니라</b>,</span> 이전 성공이 무엇을 보여 주었기 <span class="phrase-lock"><b>때문</b>이라는</span> 대조이다. 따라서 빈칸은 <span class="phrase-lock">‘이전 성공의 의미’를</span> 설명해야 한다.</p>
+        </article>
+        <article class="clue-card">
+          <b>뒤 문장의 재진술</b>
+          <span class="quote">“reflect an underlying talent or quality”</span>
+          <p>뒤의 질문에서 지위가 결과를 만드는지, 아니면 단지 ‘근원적인 재능이나 자질’을 반영하는지를 묻는다. <em>underlying talent</em>가 정답의 <em>hidden talent</em>를 재진술한다.</p>
+        </article>
+      </div>
+      <div class="analysis-box correct-box">
+        <p><b class="tag-correct">정답 도출</b></p>
+        <p><b>exceptionally talented</b> → <b>the earlier success</b> → <b>reflect an underlying talent</b>의 의미 연결을 따라가면, 이전 성공은 숨겨진 재능을 <b>나타내는 것(indicative of a hidden talent)</b>이어야 한다.</p>
+      </div>
+
+      <h3>3. 선택지별 분석</h3>
+      <table class="choice-analysis" aria-label="32번 선택지 분석">
+        <colgroup>
+          <col style="width: 7%;">
+          <col style="width: 35%;">
+          <col style="width: 58%;">
+        </colgroup>
+        <thead><tr><th>번호</th><th>선택지</th><th>판단과 근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>①</td><td><div class="choice-source">inseparable from consistent efforts</div><div class="choice-translation">지속적인 노력과 분리될 수 없는</div></td>
+            <td><span class="tag-wrong">오답.</span> 글은 과학자들의 반복된 성공을 ‘지속적인 노력’으로 설명하지 않는다. 빈칸 바로 앞의 대안적 설명은 <em>effort</em>가 아니라 <em>exceptional talent</em>에 초점을 둔다.</td>
+          </tr>
+          <tr>
+            <td>②</td><td><div class="choice-source">attributed to talented collaborators</div><div class="choice-translation">재능 있는 협력자들의 공으로 여겨지는</div></td>
+            <td><span class="tag-wrong">오답.</span> <em>quality collaborators</em>는 첫 성공이 가져오는 매튜 효과의 이점 중 하나이다. 그러나 빈칸은 그러한 이점 때문이 아니라는 <em>not because</em> 뒤의 대안적 원인을 완성해야 한다.</td>
+          </tr>
+          <tr>
+            <td>③</td><td><div class="choice-source">dependent on financial resources</div><div class="choice-translation">재정 자원에 의존하는</div></td>
+            <td><span class="tag-wrong">오답.</span> 자원은 첫 성공이 다음 성공을 돕는 매튜 효과의 요소이다. 빈칸 앞에서는 바로 그 ‘이전 성공이 제공한 이점’을 원인에서 제외한다.</td>
+          </tr>
+          <tr>
+            <td>④</td><td><div class="choice-source">driven by societal recognition</div><div class="choice-translation">사회적 인정에 의해 촉진되는</div></td>
+            <td><span class="tag-wrong">오답.</span> 사회적 인정과 지위 역시 첫 성공의 보상이다. 이는 앞부분의 매튜 효과 설명에는 맞지만, <em>Yet</em> 이후의 재능 중심 설명에는 맞지 않는다.</td>
+          </tr>
+          <tr>
+            <td>⑤</td><td><div class="choice-source">indicative of a hidden talent</div><div class="choice-translation">숨겨진 재능을 나타내는</div></td>
+            <td><span class="tag-correct">정답.</span> 첫 성공은 다음 성공을 직접 만들어 내는 원인이 아니라, 그 과학자가 이미 뛰어난 재능을 지니고 있음을 보여 주는 지표라는 뜻이다. 뒤의 <em>reflect an underlying talent</em>와 정확히 대응한다.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. 문장별 슬래시 리딩과 직독직해</h3>
+      <div class="reading-list">
+        <article class="reading-card">
+          <div class="sentence-en">Great scientists <span class="slash">/</span> are seldom one-hit wonders.</div>
+          <div class="sentence-vocab"><b>seldom</b> 좀처럼 ~않는 · <b>one-hit wonder</b> 한 번의 성공으로 끝나는 사람</div>
+          <div class="sentence-ko">위대한 과학자들은 / 좀처럼 한 번의 성공으로 끝나는 사람들이 아니다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Newton is a prime example: <span class="slash">/</span> beyond the Newtonian mechanics, <span class="slash">/</span> he developed the theory of gravitation, calculus, laws of motion, and optimization.</div>
+          <div class="sentence-vocab"><b>prime</b> 대표적인 · <b>gravitation</b> 중력 · <b>calculus</b> 미적분학 · <b>optimization</b> 최적화</div>
+          <div class="sentence-ko">뉴턴은 대표적인 사례이다 / 뉴턴 역학을 넘어서 / 그는 발전시켰다, 중력 이론, 미적분학, 운동 법칙, 그리고 최적화를.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">In fact, <span class="slash">/</span> well-known scientists are often involved <span class="slash">/</span> in multiple discoveries, <span class="slash">/</span> a phenomenon <span class="slash">/</span> potentially explained <span class="slash">/</span> by the Matthew effect.</div>
+          <div class="sentence-vocab"><b>be involved in</b> ~에 관여하다 · <b>phenomenon</b> 현상 · <b>potentially</b> 잠재적으로</div>
+          <div class="sentence-ko">사실 / 잘 알려진 과학자들은 종종 관여한다 / 다수의 발견에 / (그것은) 하나의 현상이다 / (그 현상은) 잠재적으로 설명된다 / 매튜 효과에 의해.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Indeed, <span class="slash">/</span> an initial success may <span class="syntax-focus">offer</span> a scientist legitimacy, <span class="slash">/</span> <span class="syntax-focus">improve</span> peer perception, <span class="slash">/</span> <span class="syntax-focus">provide</span> knowledge of how to score and win, <span class="slash">/</span> <span class="syntax-focus">enhance</span> social status, <span class="slash">/</span> and <span class="syntax-focus">attract</span> resources and quality collaborators, <span class="slash">/</span> each of these payoffs <span class="slash">/</span> further increasing her odds <span class="slash">/</span> of scoring another win.</div>
+          <div class="sentence-vocab"><b>legitimacy</b> 정당성 · <b>peer perception</b> 동료의 인식 · <b>payoff</b> 보상, 이점 · <b>odds</b> 가능성</div>
+          <div class="sentence-ko">실제로 / 최초의 성공은 제공할 수 있다, 과학자에게 정당성을 / 향상시킬 수 있다, 동료의 인식을 / 제공할 수 있다, 성공하고 이기는 방법에 관한 지식을 / 높일 수 있다, 사회적 지위를 / 그리고 끌어들일 수 있다, 자원과 훌륭한 협력자들을 / 각각의 이러한 이점들은 / 더욱 높이면서, 그녀의 가능성을 / 또 한 번 성공할.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Yet, <span class="slash">/</span> there is an appealing alternative explanation: <span class="slash">/</span> Great scientists have multiple hits <span class="slash">/</span> and consistently succeed <span class="slash">/</span> in their scientific endeavors <span class="slash">/</span> simply because <span class="slash">/</span> they’re exceptionally talented.</div>
+          <div class="sentence-vocab"><b>appealing</b> 그럴듯한, 매력적인 · <b>alternative</b> 대안적인 · <b>endeavor</b> 노력, 활동 · <b>exceptionally</b> 특별히</div>
+          <div class="sentence-ko">그러나 / 그럴듯한 대안적 설명이 있다 / 위대한 과학자들은 여러 번의 성공을 거둔다 / 그리고 지속적으로 성공한다 / 그들의 과학적 활동에서 / 단순히 ~때문에 / 그들이 특별히 재능이 있다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Therefore, <span class="slash">/</span> future success again goes to those <span class="slash">/</span> who have had success earlier, <span class="slash">/</span> not because of advantages <span class="slash">/</span> offered by the previous success, <span class="slash">/</span> but because <span class="slash">/</span> the earlier success was indicative <span class="slash">/</span> of a hidden talent.</div>
+          <div class="sentence-vocab"><b>go to</b> ~에게 돌아가다 · <b>advantage</b> 이점 · <b>be indicative of</b> ~을 나타내다 · <b>hidden talent</b> 숨겨진 재능</div>
+          <div class="sentence-ko">그러므로 / 미래의 성공은 다시 그러한 사람들에게 돌아간다 / 그들은 예전에 성공을 거둔 적이 있다 / 이점들 때문이 아니라 / (그 이점들은) 이전 성공에 의해 제공된다 / 오히려 ~때문이다 / 이전 성공이 나타내는 것이었다 / 숨겨진 재능을.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">The Matthew effect posits <span class="slash">/</span> that success alone increases the future probability of success, <span class="slash">/</span> raising the question: <span class="slash">/</span> Does status dictate outcomes, <span class="slash">/</span> or does it simply reflect an underlying talent or quality?</div>
+          <div class="sentence-vocab"><b>posit</b> 상정하다 · <b>probability</b> 가능성 · <b>dictate</b> 좌우하다 · <b>underlying</b> 근원적인, 내재된</div>
+          <div class="sentence-ko">매튜 효과는 상정한다 / 성공 자체가 증가시킨다는 것을, 미래 성공의 가능성을 / 그 질문을 제기하면서 / 지위가 좌우하는가, 결과를 / 아니면 그것은 단지 반영하는가, 근원적인 재능이나 자질을.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">In other words, <span class="slash">/</span> is there really a Matthew effect <span class="slash">/</span> after all?</div>
+          <div class="sentence-vocab"><b>in other words</b> 다시 말해 · <b>after all</b> 결국, 과연</div>
+          <div class="sentence-ko">다시 말해 / 정말로 매튜 효과가 존재하는가 / 과연.</div>
+        </article>
+      </div>
+
+      <h3>5. 핵심 구문·문법</h3>
+      <div class="grammar-grid">
+        <article class="grammar-card">
+          <b>not because A, but because B</b>
+          <code>Therefore, future success again goes to those who have had success earlier, <span class="grammar-focus">not because of advantages offered by the previous success, but because the earlier success was indicative of a hidden talent</span>.</code>
+          <p><span class="phrase-lock">‘A 때문이 아니라 B 때문이다’라는</span> 대조 구조이다. <em>advantages</em>와 <em>a hidden talent</em>를 대비하여 매튜 효과가 아닌 재능 중심의 설명을 강조한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>be indicative of</b>
+          <code>Therefore, future success again goes to those who have had success earlier, not because of advantages offered by the previous success, but because <span class="grammar-focus">the earlier success was indicative of a hidden talent</span>.</code>
+          <p>‘~을 나타내다, ~의 징후이다’라는 뜻이다. <em>the earlier success</em>가 숨겨진 재능의 존재를 보여 주는 증거라는 의미이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>관계대명사 who</b>
+          <code>Therefore, future success again goes to those <span class="grammar-focus">who have had success earlier</span>, not because of advantages offered by the previous success, but because the earlier success was indicative of a hidden talent.</code>
+          <p><em>who</em>는 선행사 <em>those</em>를 받아 관계절 안에서 주어 역할을 한다. 주격 관계대명사는 따로 떼지 않고 동사구와 묶어 <em>/ who have had success earlier /</em>로 분석하며, 직독직해에서는 ‘그들은 예전에 성공을 거둔 적이 있다’로 대명사 기능을 복원한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>다섯 동사의 병렬 구조</b>
+          <code>Indeed, an initial success may <span class="grammar-focus">offer</span> a scientist legitimacy, <span class="grammar-focus">improve</span> peer perception, <span class="grammar-focus">provide</span> knowledge of how to score and win, <span class="grammar-focus">enhance</span> social status, and <span class="grammar-focus">attract</span> resources and quality collaborators.</code>
+          <p>조동사 <em>may</em> 뒤에 동사원형 다섯 개가 병렬로 연결된다. 생략된 <em>may</em>를 반복해 넣지 않고 병렬 동사만 같은 색으로 강조하며, 직독직해에서는 ‘제공할 수 있다, 정당성을–향상시킬 수 있다, 인식을–제공할 수 있다, 지식을–높일 수 있다, 지위를–끌어들일 수 있다, 자원과 협력자들을’처럼 동사 뒤에 목적어가 이어지는 영어 어순을 유지한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>독립분사구문 each … increasing</b>
+          <code>Indeed, an initial success may offer a scientist legitimacy, improve peer perception, provide knowledge of how to score and win, enhance social status, and attract resources and quality collaborators, <span class="grammar-focus">each of these payoffs further increasing her odds of scoring another win</span>.</code>
+          <p><em>each of these payoffs</em>가 분사 <em>increasing</em>의 의미상 주어인 독립분사구문이다. 앞에서 열거한 각각의 이점이 다음 성공 가능성을 더 높인다는 뜻이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>동격 명사구와 과거분사 수식</b>
+          <code>In fact, well-known scientists are often involved in multiple discoveries, <span class="grammar-focus">a phenomenon potentially explained by the Matthew effect</span>.</code>
+          <p><em>a phenomenon</em>은 앞 내용을 다시 설명하는 동격 명사구이다. <em>potentially explained</em>는 <em>a phenomenon</em>을 수식하며 <em>which is</em>가 생략된 것으로 볼 수 있다. 따라서 직독직해에서는 ‘(그것은) 하나의 현상이다 / (그 현상은) 잠재적으로 설명된다 / 매튜 효과에 의해’처럼 선행명사를 주어로 복원한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>분사구문 raising the question</b>
+          <code>The Matthew effect posits that success alone increases the future probability of success, <span class="grammar-focus">raising the question</span>: Does status dictate outcomes, or does it simply reflect an underlying talent or quality?</code>
+          <p>앞 절 전체의 결과로 질문이 제기됨을 나타내는 분사구문이다. ‘그 질문을 제기하면서’로 앞의 주장과 뒤의 의문을 연결한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>간접의문문 how to score and win</b>
+          <code>Indeed, an initial success may offer a scientist legitimacy, improve peer perception, provide knowledge of <span class="grammar-focus">how to score and win</span>, enhance social status, and attract resources and quality collaborators.</code>
+          <p><em>how + to부정사</em>는 ‘어떻게 ~할지, ~하는 방법’의 뜻이다. 전치사 <em>of</em>의 목적어로 쓰여 <em>knowledge</em>의 내용을 설명한다.</p>
+        </article>
+      </div>
+
+      <h3>6. 주요 어휘 카드</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><b>legitimacy</b><span>정당성, 정통성</span></div>
+        <div class="vocab-card"><b>indicative of</b><span>~을 나타내는, ~의 징후인</span></div>
+        <div class="vocab-card"><b>underlying</b><span>근원적인, 내재된</span></div>
+        <div class="vocab-card"><b>dictate</b><span>좌우하다, 지시하다</span></div>
+        <div class="vocab-card"><b>endeavor</b><span>노력, 활동</span></div>
+        <div class="vocab-card"><b>payoff</b><span>보상, 이점</span></div>
+        <div class="vocab-card"><b>peer perception</b><span>동료의 인식</span></div>
+        <div class="vocab-card"><b>odds</b><span>가능성, 확률</span></div>
+        <div class="vocab-card"><b>exceptionally</b><span>특별히, 이례적으로</span></div>
+        <div class="vocab-card"><b>collaborator</b><span>협력자, 공동 연구자</span></div>
+        <div class="vocab-card"><b>attributed</b><span>~에 기인한, ~의 결과로 여겨지는</span></div>
+        <div class="vocab-card"><b>consistent</b><span>일관된, 꾸준한</span></div>
+      </div>
+
+      <p class="footer-note">English Ⅱ · 2025학년도 3월 고2 전국연합학력평가 · 문항 통계 출처: EBSi</p>
+    </section>
+  </main>
+
+  <script>
+    const solution = document.getElementById('solution');
+    const solutionButton = document.getElementById('solutionButton');
+
+    function toggleSolution() {
+      const isOpen = solution.classList.toggle('open');
+      solutionButton.textContent = isOpen ? '해설 닫기' : '해설 보기';
+      if (isOpen) solution.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="q32"]:checked');
+      const feedback = document.getElementById('feedback-q32');
+      feedback.className = 'feedback show';
+
+      if (!selected) {
+        feedback.classList.add('notice');
+        feedback.textContent = '먼저 선택지 하나를 골라 주세요.';
+        return;
+      }
+      if (selected.value === '5') {
+        feedback.classList.add('correct');
+        feedback.textContent = '정답입니다. 이전 성공은 다음 성공의 직접 원인이 아니라, 그 과학자에게 이미 숨은 재능이 있음을 나타냅니다.';
+      } else {
+        feedback.classList.add('wrong');
+        feedback.textContent = '다시 확인해 보세요. Yet 이후의 대안적 설명과 not because A, but because B의 대조를 연결해야 합니다.';
+      }
+    }
+
+    function resetQuestion() {
+      document.querySelectorAll('input[name="q32"]').forEach(input => input.checked = false);
+      const feedback = document.getElementById('feedback-q32');
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+    }
+  </script>
+</body>
+</html>

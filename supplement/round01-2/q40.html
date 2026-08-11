@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>EnglishⅡ. '25-3월. Q-40 | 요약문 완성</title>
+  <style>
+    :root {
+      --navy: #17325c;
+      --blue: #2f67b2;
+      --sky: #eaf3ff;
+      --ink: #192434;
+      --muted: #64748b;
+      --line: #d9e2ef;
+      --paper: #fff;
+      --canvas: #eef3f8;
+      --green: #16745b;
+      --green-bg: #eaf8f3;
+      --red: #b13a42;
+      --red-bg: #fff0f1;
+      --amber: #9a650e;
+      --amber-bg: #fff8e8;
+      --shadow: 0 18px 50px rgba(28, 50, 80, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 8% 4%, rgba(90,145,217,.12), transparent 25rem), var(--canvas);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+    button, label { font: inherit; }
+    em { font-family: Georgia, "Times New Roman", serif; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: min(100% - 32px, 1040px);
+      margin: 18px auto 0;
+    }
+    .tool-button {
+      border: 1px solid rgba(23,50,92,.14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      background: rgba(255,255,255,.94);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(28,50,80,.08);
+      backdrop-filter: blur(8px);
+    }
+    .tool-button:hover { background: #fff; transform: translateY(-1px); }
+
+    .sheet {
+      width: min(100% - 32px, 1040px);
+      margin: 14px auto 52px;
+      overflow: hidden;
+      border: 1px solid rgba(23,50,92,.09);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 38px 54px 34px;
+      overflow: hidden;
+      background: linear-gradient(128deg, #142d52 0%, #214a80 70%, #2f67b2 100%);
+      color: #fff;
+    }
+    .hero::after {
+      content: "40";
+      position: absolute;
+      right: 34px;
+      top: -14px;
+      color: rgba(255,255,255,.07);
+      font: 900 128px/1 Arial, sans-serif;
+      letter-spacing: -9px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      color: #cfe3ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: #8ec1ff; }
+    h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(28px,4vw,42px); line-height: 1.2; letter-spacing: -.04em; }
+    .subtitle { position: relative; z-index: 1; margin: 10px 0 0; color: #dceafd; font-size: 15px; }
+
+    .content { padding: 42px 54px 50px; }
+    .instruction { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 24px; font-size: 18px; font-weight: 800; line-height: 1.55; }
+    .set-badge {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      min-width: 52px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #fff;
+      font: 800 16px/1 Arial, sans-serif;
+      box-shadow: 0 7px 16px rgba(23,50,92,.2);
+    }
+    .passage {
+      position: relative;
+      margin-bottom: 28px;
+      padding: 28px 30px 25px;
+      border: 1px solid #bdd1ea;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7faff, #fff);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18.5px;
+      line-height: 1.8;
+    }
+    .passage::before {
+      content: "READING PASSAGE";
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    .passage p { margin: 0; }
+    .passage p + p { margin-top: .525em; text-indent: 1.5em; }
+    .notes { margin-top: 12px; color: #586b82; font: 13px/1.6 "Pretendard", "Noto Sans KR", sans-serif; }
+
+    .question-card { margin-top: 20px; padding: 24px 25px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 6px 17px rgba(35,62,96,.045); }
+    .question-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 16px; color: var(--navy); font-size: 17px; font-weight: 850; line-height: 1.55; }
+    .number-badge { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--sky); color: var(--blue); font: 900 17px/1 Arial, sans-serif; }
+    .summary-box { margin-bottom: 17px; padding: 18px 20px; border: 1px solid #c7d7e9; border-radius: 12px; background: #f8fbff; color: #2b3c51; font: 16px/1.7 Georgia, "Times New Roman", serif; }
+    .blank { display: inline-block; min-width: 70px; padding: 0 7px 2px; border-bottom: 2px solid #5d7fa8; color: var(--navy); text-align: center; font-weight: 800; }
+    .choices { display: grid; gap: 9px; }
+    .choice { position: relative; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice span { display: grid; grid-template-columns: 32px 1fr 30px 1fr; align-items: center; min-height: 46px; padding: 10px 13px; border: 1px solid #cfd9e5; border-radius: 11px; background: #fff; color: #334155; font: 15.5px/1.55 Georgia, "Times New Roman", serif; transition: .18s ease; }
+    .choice-num { color: var(--blue); font-family: "Pretendard", "Noto Sans KR", sans-serif; font-weight: 900; }
+    .choice-dots { color: #93a4b8; text-align: center; }
+    .choice:hover span { border-color: #8aadd8; background: #f7faff; }
+    .choice input:checked + span { border-color: var(--blue); background: var(--sky); color: var(--navy); box-shadow: inset 0 0 0 1px var(--blue); }
+    .actions { display: flex; gap: 10px; margin-top: 16px; }
+    .primary, .secondary { border-radius: 11px; padding: 10px 17px; font-weight: 800; cursor: pointer; }
+    .primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
+    .secondary { border: 1px solid #ccd7e4; background: #fff; color: var(--muted); }
+    .feedback { display: none; margin-top: 14px; padding: 13px 16px; border-radius: 11px; font-size: 14px; font-weight: 750; }
+    .feedback.show { display: block; animation: rise .25s ease-out; }
+    .feedback.correct { background: var(--green-bg); color: var(--green); border: 1px solid #a7d9c7; }
+    .feedback.wrong { background: var(--red-bg); color: var(--red); border: 1px solid #efbdc1; }
+    .feedback.notice { background: var(--amber-bg); color: var(--amber); border: 1px solid #ead39a; }
+    @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+    .solution { display: none; border-top: 10px solid var(--canvas); padding: 44px 54px 58px; background: #fff; }
+    .solution.open { display: block; }
+    .section-kicker { margin-bottom: 7px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    h2 { margin: 0 0 22px; color: var(--navy); font-size: 28px; letter-spacing: -.035em; }
+    h3 { margin: 34px 0 15px; color: var(--navy); font-size: 21px; letter-spacing: -.025em; }
+    .answer-banner { display: flex; align-items: center; gap: 15px; padding: 18px 20px; border-radius: 15px; background: linear-gradient(135deg, #17325c, #2d609f); color: #fff; }
+    .answer-round { display: grid; flex: 0 0 auto; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--navy); font-size: 21px; font-weight: 900; }
+    .answer-banner strong { display: block; font-size: 17px; }
+    .answer-banner small { color: #d9e9ff; font-size: 13px; line-height: 1.45; }
+    .core-message { margin-top: 22px; padding: 19px 21px; border-left: 5px solid var(--blue); border-radius: 4px 13px 13px 4px; background: var(--sky); color: #263f62; }
+    .core-message b { display: block; margin-bottom: 5px; color: var(--navy); }
+    .logic-flow { display: grid; grid-template-columns: 1fr 46px 1fr 46px 1fr; align-items: stretch; gap: 8px; margin-top: 19px; }
+    .logic-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .logic-card b { display: block; margin-bottom: 7px; color: var(--blue); font-size: 16px; }
+    .logic-card p { margin: 0; color: #45566c; font-size: 13.5px; line-height: 1.65; }
+    .arrow { display: grid; place-items: center; color: #8ca2bd; font-size: 18px; font-weight: 900; }
+    .clue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .clue-card { padding: 18px 19px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .clue-card b { display: block; margin-bottom: 7px; color: var(--navy); }
+    .clue-card .quote { display: block; margin-bottom: 8px; color: #284b78; font: 700 14px/1.55 Georgia, "Times New Roman", serif; }
+    .clue-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.65; }
+    .analysis-box { margin-top: 13px; padding: 19px 21px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .analysis-box.correct-box { border-color: #a7d9c7; background: #f8fdfa; }
+    .analysis-box p { margin: 0; }
+    .analysis-box p + p { margin-top: 9px; }
+    .tag-correct { color: var(--green); font-weight: 850; }
+    .tag-wrong { color: var(--red); font-weight: 850; }
+
+    .choice-analysis { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; font-size: 14px; }
+    .choice-analysis th, .choice-analysis td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .choice-analysis tr:last-child td { border-bottom: 0; }
+    .choice-analysis th { background: #f1f5fa; color: var(--navy); font-weight: 850; }
+    .choice-analysis td:first-child { color: var(--blue); font-weight: 900; white-space: nowrap; }
+    .choice-source { margin-bottom: 5px; color: #203a60; font: 700 15px/1.5 Georgia, "Times New Roman", serif; }
+    .choice-translation { margin-bottom: 5px; color: #52657c; font-size: 13.5px; line-height: 1.55; }
+    .choice-reason { padding-top: 5px; border-top: 1px dashed #dbe3ed; color: var(--ink); line-height: 1.65; }
+
+    .reading-list { display: grid; gap: 12px; }
+    .reading-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .sentence-en { padding: 17px 18px 15px; background: #f7f9fc; color: #24354c; font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size: 17.5px; font-weight: 650; line-height: 1.75; }
+    .sentence-vocab { padding: 10px 18px 11px; border-top: 1px solid #e8edf4; background: #fbfcfe; color: #53657a; font: 15.5px/1.7 Georgia, "Times New Roman", serif; }
+    .sentence-vocab b { color: var(--blue); }
+    .sentence-ko { padding: 12px 18px 14px; color: #42546a; font-size: 14px; line-height: 1.7; }
+    .slash { color: var(--blue); font-weight: 900; }
+
+    .grammar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grammar-card { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #f9fbfd; }
+    .grammar-card b { display: block; margin-bottom: 6px; color: var(--navy); }
+    .grammar-card code { display: block; margin-bottom: 8px; color: #3f4f63; font: 400 14px/1.55 Georgia, "Times New Roman", serif; white-space: normal; }
+    .grammar-card code .grammar-focus { padding: 1px 3px; border-radius: 4px; background: #fff0a8; color: #123d69; font-weight: 800; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .grammar-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.6; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+    .vocab-card { display: grid; grid-template-columns: 145px 1fr; gap: 13px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fff; font-size: 14px; }
+    .vocab-card b { color: var(--blue); font-family: Georgia, "Times New Roman", serif; }
+    .footer-note { margin: 28px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
+
+    @media (max-width: 760px) {
+      .hero, .content, .solution { padding-left: 24px; padding-right: 24px; }
+      .hero::after { font-size: 82px; top: 4px; right: 18px; }
+      .passage { padding: 25px 21px 21px; font-size: 17px; }
+      .logic-flow, .clue-grid, .grammar-grid, .vocab-grid { grid-template-columns: 1fr; }
+      .arrow { min-height: 24px; transform: rotate(90deg); }
+      .choice span { grid-template-columns: 28px 1fr 25px 1fr; font-size: 14px; }
+      .vocab-card { grid-template-columns: 125px 1fr; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; line-height: 1.52; }
+      .toolbar, .actions, .feedback { display: none !important; }
+      .sheet { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .hero { padding: 14mm 13mm 10mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .content { padding: 9mm 13mm 10mm; }
+      .instruction { margin-bottom: 16px; font-size: 15px; }
+      .passage { padding: 17px 19px; margin-bottom: 15px; font-size: 13.4px; line-height: 1.52; }
+      .passage p + p { margin-top: .36em; }
+      .question-card { padding: 15px 17px; margin-top: 12px; break-inside: avoid; }
+      .question-head { margin-bottom: 10px; font-size: 14px; }
+      .number-badge { width: 34px; height: 34px; }
+      .summary-box { padding: 11px 13px; font-size: 11.8px; }
+      .choice span { min-height: 33px; padding: 6px 9px; font-size: 11.8px; line-height: 1.35; }
+      .solution { display: block !important; page-break-before: always; border-top: 0; padding: 12mm 13mm; }
+      .answer-banner, .logic-card, .core-message, .grammar-focus { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h2 { font-size: 23px; }
+      h3 { margin-top: 23px; font-size: 17px; }
+      .answer-banner { padding: 13px 15px; }
+      .answer-round { width: 41px; height: 41px; }
+      .reading-card, .grammar-card, .analysis-box, .choice-analysis tr, .clue-card { break-inside: avoid; }
+      .sentence-en { padding: 10px 13px 8px; font-size: 12.3px; }
+      .sentence-ko { padding: 8px 13px 10px; font-size: 11.5px; }
+      .grammar-card, .analysis-box { padding: 13px 14px; }
+      .vocab-card { padding: 8px 10px; font-size: 11.5px; }
+      .footer-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="문서 도구">
+    <button class="tool-button" id="solutionButton" type="button" onclick="toggleSolution()">해설 보기</button>
+    <button class="tool-button" type="button" onclick="window.print()">인쇄하기</button>
+  </nav>
+
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">English Ⅱ · '25-3월 학력평가</div>
+      <h1>40번 요약문 완성</h1>
+      <p class="subtitle">집단 간 권력관계와 언어의 운명을 연결하는 핵심 논리를 확인하세요.</p>
+    </header>
+
+    <section class="content" aria-labelledby="set-title">
+      <div class="instruction" id="set-title">
+        <span class="set-badge">40</span>
+        <span>다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?</span>
+      </div>
+
+      <article class="passage">
+        <p>Quite often the interaction between groups is socially unequal, and this is reflected in the fact that in many cases borrowing of words or constructions goes mostly or entirely in one direction, from the more powerful or prestigious group to the less favored one. The languages of socially subordinated groups may from quite an early period of contact provide terminology for objects or practices with which speakers of the more powerful group were previously unfamiliar, but the effects of contact in that direction may not progress any further than this. In some cases, as with the Dharug language of Sydney, Australia, the source of some of the earliest loans from Indigenous Australian languages into English, the fate of the language system is extinction after the obliteration of many of its speakers. The remainder shifted to varieties of English, the language of the people who had suppressed them.</p>
+        <div class="notes">* prestigious: 권력을 가진 &nbsp;&nbsp; ** subordinate: 종속된 &nbsp;&nbsp; *** obliteration: 소멸</div>
+      </article>
+
+      <section class="question-card" aria-labelledby="q40-title">
+        <div class="question-head" id="q40-title">
+          <span class="number-badge">40</span>
+          <span>요약문의 두 빈칸을 글의 핵심 인과관계에 맞게 완성하세요.</span>
+        </div>
+        <div class="summary-box">Language borrowing from dominant to subordinate groups reflects social <span class="blank">(A)</span>, where the language systems of the latter often <span class="blank">(B)</span> even though they may have provided some terms, as exemplified by Dharug in Australia.</div>
+        <div class="choices" role="radiogroup" aria-label="40번 정답 선택지">
+          <label class="choice"><input type="radio" name="q40" value="1"><span><b class="choice-num">①</b><b>inequality</b><i class="choice-dots">···</i><b>vanish</b></span></label>
+          <label class="choice"><input type="radio" name="q40" value="2"><span><b class="choice-num">②</b><b>imbalance</b><i class="choice-dots">···</i><b>prevail</b></span></label>
+          <label class="choice"><input type="radio" name="q40" value="3"><span><b class="choice-num">③</b><b>integration</b><i class="choice-dots">···</i><b>prosper</b></span></label>
+          <label class="choice"><input type="radio" name="q40" value="4"><span><b class="choice-num">④</b><b>variety</b><i class="choice-dots">···</i><b>decline</b></span></label>
+          <label class="choice"><input type="radio" name="q40" value="5"><span><b class="choice-num">⑤</b><b>coordination</b><i class="choice-dots">···</i><b>disappear</b></span></label>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" onclick="checkAnswer()">정답 확인</button>
+          <button class="secondary" type="button" onclick="resetQuestion()">다시 풀기</button>
+        </div>
+        <div class="feedback" id="feedback-q40" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="solution" id="solution" aria-labelledby="solution-title">
+      <div class="section-kicker">ANSWER &amp; LECTURE NOTES</div>
+      <h2 id="solution-title">정답과 핵심 논리</h2>
+
+      <div class="answer-banner">
+        <div class="answer-round">40</div>
+        <div><strong>정답 ① inequality · vanish</strong><small>일방적인 언어 차용은 사회적 불평등을 반영하며,<br>종속 집단의 언어 체계는 결국 사라질 수 있음.</small></div>
+      </div>
+
+      <div class="core-message">
+        <b>한 문장 핵심 요약</b>
+        지배 집단에서 종속 집단으로 한 방향으로 이루어지는 언어 차용은 집단 간 사회적 불평등을 보여 주며, 종속 집단의 언어는 일부 용어를 제공했더라도 결국 소멸할 수 있다.
+      </div>
+
+      <h3>1. 글의 전체 구조: 불평등한 접촉에서 언어 소멸까지</h3>
+      <div class="logic-flow" aria-label="글의 논리 전개">
+        <div class="logic-card"><b>사회적 권력의 불평등</b><p>집단 간 상호작용이 동등하지 않으며, 더 강력한 집단이 우위에 있음.</p></div>
+        <div class="arrow">→</div>
+        <div class="logic-card"><b>한 방향의 언어 차용</b><p>어휘와 구문이 주로 지배 집단에서 종속 집단으로 이동함.</p></div>
+        <div class="arrow">→</div>
+        <div class="logic-card"><b>종속 언어의 소멸</b><p>Dharug어처럼 일부 용어를 남겨도 언어 체계 자체는 사라질 수 있음.</p></div>
+      </div>
+
+      <h3>2. 요약문 완성 과정</h3>
+      <div class="clue-grid">
+        <article class="clue-card">
+          <b>(A) inequality</b>
+          <span class="quote">“the interaction between groups is socially unequal”</span>
+          <p>요약문의 <em>social (A)</em>는 본문의 <em>socially unequal</em>을 명사형으로 바꾼 자리이다. 따라서 ‘사회적 불평등’을 뜻하는 <em>inequality</em>가 들어간다.</p>
+        </article>
+        <article class="clue-card">
+          <b>(B) vanish</b>
+          <span class="quote">“the fate of the language system is extinction”</span>
+          <p>본문의 <em>extinction</em>은 요약문에서 동사로 바뀌어야 한다. 언어 체계가 ‘사라진다’는 뜻의 <em>vanish</em>가 정확히 대응한다.</p>
+        </article>
+      </div>
+      <div class="analysis-box correct-box">
+        <p><b class="tag-correct">① inequality · vanish</b></p>
+        <p><em>socially unequal → social inequality</em>, <em>extinction → vanish</em>의 바꿔쓰기를 모두 충족한다. 두 빈칸은 각각 글의 출발점인 권력관계와 최종 결과인 언어 소멸을 압축한다.</p>
+      </div>
+
+      <h3>3. 선택지별 분석</h3>
+      <table class="choice-analysis" aria-label="40번 선택지 분석">
+        <thead><tr><th>선지</th><th>판단</th><th>선지 원문 · 분석</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>①</td><td class="tag-correct">정답</td>
+            <td><div class="choice-source">inequality · vanish</div><div class="choice-translation">불평등 · 사라지다</div><div class="choice-reason"><em>socially unequal</em>과 <em>extinction</em>을 각각 정확히 바꿔 쓴다.</div></td>
+          </tr>
+          <tr>
+            <td>②</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">imbalance · prevail</div><div class="choice-translation">불균형 · 우세하다</div><div class="choice-reason"><em>imbalance</em>는 (A)의 흐름과 통하지만, Dharug어는 우세해진 것이 아니라 소멸했으므로 <em>prevail</em>이 반대이다.</div></td>
+          </tr>
+          <tr>
+            <td>③</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">integration · prosper</div><div class="choice-translation">통합 · 번영하다</div><div class="choice-reason">본문은 집단 간 통합이 아니라 불평등을 다루며, 종속 집단의 언어가 번영했다는 내용도 없다.</div></td>
+          </tr>
+          <tr>
+            <td>④</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">variety · decline</div><div class="choice-translation">다양성 · 쇠퇴하다</div><div class="choice-reason"><em>decline</em>은 소멸로 향하는 흐름과 가깝지만, <em>social variety</em>는 ‘사회적으로 불평등하다’는 첫 문장과 대응하지 않는다.</div></td>
+          </tr>
+          <tr>
+            <td>⑤</td><td class="tag-wrong">오답</td>
+            <td><div class="choice-source">coordination · disappear</div><div class="choice-translation">조정·협력 · 사라지다</div><div class="choice-reason"><em>disappear</em>는 (B)에 가능하지만, 집단 관계는 협력적 조정이 아니라 사회적 불평등으로 제시된다.</div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. 문장별 슬래시 리딩과 직독직해</h3>
+      <div class="reading-list">
+        <article class="reading-card">
+          <div class="sentence-en">Quite often <span class="slash">/</span> the interaction between groups <span class="slash">/</span> is socially unequal, <span class="slash">/</span> and this is reflected <span class="slash">/</span> in the fact <span class="slash">/</span> that in many cases borrowing of words or constructions <span class="slash">/</span> goes mostly or entirely <span class="slash">/</span> in one direction, <span class="slash">/</span> from the more powerful or prestigious group <span class="slash">/</span> to the less favored one.</div>
+          <div class="sentence-vocab"><b>interaction</b> 상호작용 · <b>construction</b> 구문, 문법적 구조 · <b>prestigious</b> 권력 있는, 명망 있는 · <b>less favored</b> 덜 우대받는</div>
+          <div class="sentence-ko">매우 흔히 / 집단들 사이의 상호작용은 / 사회적으로 불평등하다 / 그리고 이것은 반영된다 / 그 사실에서 / 많은 경우 단어나 구문의 차용이 / 대부분 또는 전적으로 간다는 / 한 방향으로 / 더 강력하거나 권력 있는 집단으로부터 / 덜 우대받는 집단으로.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">The languages of socially subordinated groups <span class="slash">/</span> may from quite an early period of contact <span class="slash">/</span> provide terminology <span class="slash">/</span> for objects or practices <span class="slash">/</span> with which <span class="slash">/</span> speakers of the more powerful group were previously unfamiliar, <span class="slash">/</span> but the effects of contact in that direction <span class="slash">/</span> may not progress <span class="slash">/</span> any further than this.</div>
+          <div class="sentence-vocab"><b>subordinated</b> 종속된 · <b>terminology</b> 전문용어 · <b>practice</b> 관행 · <b>be unfamiliar with</b> ~에 익숙하지 않다</div>
+          <div class="sentence-ko">사회적으로 종속된 집단들의 언어는 / 접촉의 꽤 이른 시기부터 / 전문용어를 제공할 수도 있다 / 사물이나 관행을 위한 / 그것들에 대해 / 더 강력한 집단의 화자들은 이전에 익숙하지 않았다 / 그러나 그 방향에서의 접촉의 영향은 / 진행하지 않을 수도 있다 / 이것보다 조금도 더 멀리.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">In some cases, <span class="slash">/</span> as with the Dharug language of Sydney, Australia, <span class="slash">/</span> the source <span class="slash">/</span> of some of the earliest loans <span class="slash">/</span> from Indigenous Australian languages into English, <span class="slash">/</span> the fate of the language system <span class="slash">/</span> is extinction <span class="slash">/</span> after the obliteration of many of its speakers.</div>
+          <div class="sentence-vocab"><b>loan</b> 차용어 · <b>Indigenous</b> 원주민의 · <b>extinction</b> 소멸 · <b>obliteration</b> 말살, 완전한 소멸</div>
+          <div class="sentence-ko">몇몇 경우에 / 호주 시드니의 Dharug 언어에서처럼 / (Dharug 언어는) 그 원천(이었다) / 가장 초기 차용어들 중 일부의 / 호주 원주민 언어들로부터 영어로의 / 그 언어 체계의 운명은 / 소멸이다 / 그 언어 화자들 중 많은 이들의 말살 이후에.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">The remainder <span class="slash">/</span> shifted to varieties of English, <span class="slash">/</span> the language of the people <span class="slash">/</span> who had suppressed them.</div>
+          <div class="sentence-vocab"><b>remainder</b> 나머지 사람들 · <b>shift to</b> ~로 옮겨 가다 · <b>variety</b> 언어의 변종 · <b>suppress</b> 억압하다</div>
+          <div class="sentence-ko">나머지 화자들은 / 영어의 여러 변종으로 옮겨 갔다 / (영어는) 그 사람들의 언어(였다) / 그들은 그 나머지 화자들을 억압했다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Language borrowing from dominant to subordinate groups <span class="slash">/</span> reflects social inequality, <span class="slash">/</span> where the language systems of the latter <span class="slash">/</span> often vanish <span class="slash">/</span> even though they may have provided some terms, <span class="slash">/</span> as exemplified by Dharug in Australia.</div>
+          <div class="sentence-vocab"><b>dominant</b> 지배적인 · <b>the latter</b> 후자 · <b>vanish</b> 사라지다 · <b>exemplify</b> 예시하다</div>
+          <div class="sentence-ko">지배 집단으로부터 종속 집단으로의 언어 차용은 / 사회적 불평등을 반영한다 / 그리고 그러한 상황에서 후자의 언어 체계는 / 흔히 사라진다 / 비록 그것들이 몇몇 용어들을 제공했을 수도 있지만 / 호주의 Dharug어에 의해 예시되는 것처럼.</div>
+        </article>
+      </div>
+
+      <h3>5. 핵심 구문·문법</h3>
+      <div class="grammar-grid">
+        <article class="grammar-card">
+          <b>수동태 be reflected in</b>
+          <code>Quite often the interaction between groups is socially unequal, and <span class="grammar-focus">this is reflected in the fact that in many cases borrowing of words or constructions goes mostly or entirely in one direction</span>, from the more powerful or prestigious group to the less favored one.</code>
+          <p><em>be reflected in</em>은 ‘~에 반영되다’라는 뜻이다. <em>that</em>절은 앞의 <em>the fact</em>가 어떤 사실인지를 구체적으로 설명한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>from A to B의 방향</b>
+          <code>Quite often the interaction between groups is socially unequal, and this is reflected in the fact that in many cases borrowing of words or constructions goes mostly or entirely in one direction, <span class="grammar-focus">from the more powerful or prestigious group to the less favored one</span>.</code>
+          <p>차용의 방향이 ‘더 강력한 집단으로부터 덜 우대받는 집단으로’ 향한다. 두 집단의 권력 차이를 보여 주는 핵심 표현이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>전치사 + 관계대명사 with which</b>
+          <code>The languages of socially subordinated groups may from quite an early period of contact provide terminology for objects or practices <span class="grammar-focus">with which speakers of the more powerful group were previously unfamiliar</span>, but the effects of contact in that direction may not progress any further than this.</code>
+          <p><em>which</em>는 <em>objects or practices</em>를 가리키며, 원래 구조는 <em>speakers were unfamiliar with them</em>이다. 직독직해에서는 ‘그것들에 대해’로 관계를 되살린다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>not any further than</b>
+          <code>The languages of socially subordinated groups may from quite an early period of contact provide terminology for objects or practices with which speakers of the more powerful group were previously unfamiliar, but the effects of contact in that direction <span class="grammar-focus">may not progress any further than this</span>.</code>
+          <p>‘이것보다 조금도 더 나아가지 않을 수 있다’는 뜻이다. 종속 언어가 일부 용어를 제공하는 것 이상으로 영향력을 넓히지 못함을 나타낸다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>동격 명사구</b>
+          <code>In some cases, as with the Dharug language of Sydney, Australia, <span class="grammar-focus">the source of some of the earliest loans from Indigenous Australian languages into English</span>, the fate of the language system is extinction after the obliteration of many of its speakers.</code>
+          <p>강조된 명사구는 앞의 <em>the Dharug language</em>를 다시 설명하는 동격 표현이다. Dharug어가 초기 차용어의 원천이었다는 정보를 덧붙인다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>관계대명사 who와 대명사 복원</b>
+          <code>The remainder shifted to varieties of English, the language of the people <span class="grammar-focus">who had suppressed them</span>.</code>
+          <p><em>who</em>는 <em>the people</em>을 받는다. 직독직해에서는 ‘그들은’으로 살리고, <em>them</em>은 억압받은 나머지 화자들을 가리킨다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>양보절 even though</b>
+          <code>Language borrowing from dominant to subordinate groups reflects social inequality, where the language systems of the latter often vanish <span class="grammar-focus">even though they may have provided some terms</span>, as exemplified by Dharug in Australia.</code>
+          <p>종속 언어가 일부 용어를 제공했다는 사실과 그 언어 체계가 사라진다는 결과를 대비시키는 양보절이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>as + 과거분사</b>
+          <code>Language borrowing from dominant to subordinate groups reflects social inequality, where the language systems of the latter often vanish even though they may have provided some terms, <span class="grammar-focus">as exemplified by Dharug in Australia</span>.</code>
+          <p>‘호주의 Dharug어에 의해 예시되는 것처럼’이라는 뜻으로, 앞의 일반적 내용을 구체적 사례와 연결한다.</p>
+        </article>
+      </div>
+
+      <h3>6. 주요 어휘 카드</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><b>obliteration</b><span>말살, 완전한 소멸</span></div>
+        <div class="vocab-card"><b>subordinate</b><span>종속된; 하위의</span></div>
+        <div class="vocab-card"><b>prestigious</b><span>권력 있는; 명망 있는</span></div>
+        <div class="vocab-card"><b>terminology</b><span>전문용어</span></div>
+        <div class="vocab-card"><b>construction</b><span>구문, 문법적 구조</span></div>
+        <div class="vocab-card"><b>extinction</b><span>소멸, 멸종</span></div>
+        <div class="vocab-card"><b>suppress</b><span>억압하다, 진압하다</span></div>
+        <div class="vocab-card"><b>remainder</b><span>나머지, 남은 사람들</span></div>
+        <div class="vocab-card"><b>borrowing</b><span>차용; 빌려옴</span></div>
+        <div class="vocab-card"><b>prevail</b><span>우세하다, 널리 퍼지다</span></div>
+        <div class="vocab-card"><b>prosper</b><span>번영하다, 번창하다</span></div>
+        <div class="vocab-card"><b>vanish</b><span>사라지다</span></div>
+      </div>
+
+      <p class="footer-note">English Ⅱ · 2025학년도 3월 고2 전국연합학력평가</p>
+    </section>
+  </main>
+
+  <script>
+    const solution = document.getElementById('solution');
+    const solutionButton = document.getElementById('solutionButton');
+
+    function toggleSolution() {
+      const isOpen = solution.classList.toggle('open');
+      solutionButton.textContent = isOpen ? '해설 닫기' : '해설 보기';
+      if (isOpen) solution.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="q40"]:checked');
+      const feedback = document.getElementById('feedback-q40');
+      feedback.className = 'feedback show';
+
+      if (!selected) {
+        feedback.classList.add('notice');
+        feedback.textContent = '먼저 선택지 하나를 골라 주세요.';
+        return;
+      }
+      if (selected.value === '1') {
+        feedback.classList.add('correct');
+        feedback.textContent = '정답입니다. socially unequal은 inequality로, extinction은 vanish로 바꿔 쓸 수 있습니다.';
+      } else {
+        feedback.classList.add('wrong');
+        feedback.textContent = '다시 확인해 보세요. socially unequal과 extinction을 각각 명사와 동사로 바꿔 쓴 조합을 찾으세요.';
+      }
+    }
+
+    function resetQuestion() {
+      document.querySelectorAll('input[name="q40"]').forEach(input => input.checked = false);
+      const feedback = document.getElementById('feedback-q40');
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+    }
+  </script>
+</body>
+</html>

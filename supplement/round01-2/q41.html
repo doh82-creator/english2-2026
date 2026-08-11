@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>DH Eng. 41-42 | 제목·어휘</title>
+  <style>
+    :root {
+      --navy: #17325c;
+      --blue: #2f67b2;
+      --sky: #eaf3ff;
+      --ink: #192434;
+      --muted: #64748b;
+      --line: #d9e2ef;
+      --paper: #ffffff;
+      --canvas: #eef3f8;
+      --green: #16745b;
+      --green-bg: #eaf8f3;
+      --red: #b13a42;
+      --red-bg: #fff0f1;
+      --amber: #9a650e;
+      --amber-bg: #fff8e8;
+      --shadow: 0 18px 50px rgba(28, 50, 80, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(90, 145, 217, .12), transparent 25rem),
+        var(--canvas);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+    button, label { font: inherit; }
+    em { font-family: Georgia, "Times New Roman", serif; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: min(100% - 32px, 1040px);
+      margin: 18px auto 0;
+    }
+    .tool-button {
+      border: 1px solid rgba(23, 50, 92, .14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      background: rgba(255, 255, 255, .94);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(28, 50, 80, .08);
+      backdrop-filter: blur(8px);
+    }
+    .tool-button:hover { background: #fff; transform: translateY(-1px); }
+
+    .sheet {
+      width: min(100% - 32px, 1040px);
+      margin: 14px auto 52px;
+      overflow: hidden;
+      border: 1px solid rgba(23, 50, 92, .09);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 38px 54px 34px;
+      overflow: hidden;
+      background: linear-gradient(128deg, #142d52 0%, #214a80 70%, #2f67b2 100%);
+      color: #fff;
+    }
+    .hero::after {
+      content: "41·42";
+      position: absolute;
+      right: 34px;
+      top: -14px;
+      color: rgba(255,255,255,.07);
+      font: 900 128px/1 Arial, sans-serif;
+      letter-spacing: -9px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      color: #cfe3ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: #8ec1ff; }
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+    .subtitle {
+      position: relative;
+      z-index: 1;
+      margin: 10px 0 0;
+      color: #dceafd;
+      font-size: 15px;
+    }
+
+    .content { padding: 42px 54px 50px; }
+    .instruction {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .set-badge {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      min-width: 78px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #fff;
+      font: 800 16px/1 Arial, sans-serif;
+      box-shadow: 0 7px 16px rgba(23, 50, 92, .2);
+    }
+    .passage {
+      position: relative;
+      margin-bottom: 28px;
+      padding: 28px 30px 25px;
+      border: 1px solid #bdd1ea;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7faff, #fff);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18.5px;
+      line-height: 1.8;
+    }
+    .passage::before {
+      content: "READING PASSAGE";
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    .passage p { margin: 0; }
+    .passage p + p {
+      margin-top: .525em;
+      text-indent: 1.5em;
+    }
+    .target-word {
+      padding: 1px 3px;
+      border-bottom: 2px solid #6f91bd;
+      background: rgba(234, 243, 255, .72);
+      font-weight: 700;
+    }
+    .notes { margin-top: 12px; color: #586b82; font: 13px/1.6 "Pretendard", "Noto Sans KR", sans-serif; }
+
+    .question-card {
+      margin-top: 20px;
+      padding: 24px 25px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 6px 17px rgba(35, 62, 96, .045);
+    }
+    .question-head {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 850;
+      line-height: 1.55;
+    }
+    .number-badge {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--sky);
+      color: var(--blue);
+      font: 900 17px/1 Arial, sans-serif;
+    }
+    .choices { display: grid; gap: 9px; }
+    .choice { position: relative; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice span {
+      display: flex;
+      align-items: flex-start;
+      min-height: 46px;
+      padding: 10px 13px;
+      border: 1px solid #cfd9e5;
+      border-radius: 11px;
+      background: #fff;
+      color: #334155;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15.5px;
+      line-height: 1.55;
+      transition: .18s ease;
+    }
+    .compact-choices { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .compact-choices .choice span { justify-content: center; font-family: inherit; font-weight: 800; }
+    .choice:hover span { border-color: #8aadd8; background: #f7faff; }
+    .choice input:checked + span {
+      border-color: var(--blue);
+      background: var(--sky);
+      color: var(--navy);
+      box-shadow: inset 0 0 0 1px var(--blue);
+    }
+    .actions { display: flex; gap: 10px; margin-top: 16px; }
+    .primary, .secondary {
+      border-radius: 11px;
+      padding: 10px 17px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
+    .secondary { border: 1px solid #ccd7e4; background: #fff; color: var(--muted); }
+    .feedback {
+      display: none;
+      margin-top: 14px;
+      padding: 13px 16px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 750;
+    }
+    .feedback.show { display: block; animation: rise .25s ease-out; }
+    .feedback.correct { background: var(--green-bg); color: var(--green); border: 1px solid #a7d9c7; }
+    .feedback.wrong { background: var(--red-bg); color: var(--red); border: 1px solid #efbdc1; }
+    .feedback.notice { background: var(--amber-bg); color: var(--amber); border: 1px solid #ead39a; }
+    @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+    .solution {
+      display: none;
+      border-top: 10px solid var(--canvas);
+      padding: 44px 54px 58px;
+      background: #fff;
+    }
+    .solution.open { display: block; }
+    .section-kicker {
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    h2 { margin: 0 0 22px; color: var(--navy); font-size: 28px; letter-spacing: -.035em; }
+    h3 {
+      margin: 34px 0 15px;
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -.025em;
+    }
+    .answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .answer-banner {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 20px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #17325c, #2d609f);
+      color: #fff;
+    }
+    .answer-round {
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 900;
+    }
+    .answer-banner strong { display: block; font-size: 17px; }
+    .answer-banner small { color: #d9e9ff; font-size: 13px; line-height: 1.45; }
+
+    .core-message {
+      margin-top: 22px;
+      padding: 19px 21px;
+      border-left: 5px solid var(--blue);
+      border-radius: 4px 13px 13px 4px;
+      background: var(--sky);
+      color: #263f62;
+    }
+    .core-message b { display: block; margin-bottom: 5px; color: var(--navy); }
+    .contrast-flow {
+      display: grid;
+      grid-template-columns: 1fr 66px 1fr;
+      align-items: stretch;
+      gap: 10px;
+      margin-top: 19px;
+    }
+    .logic-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f9fbfd;
+    }
+    .logic-card b { display: block; margin-bottom: 7px; color: var(--blue); font-size: 17px; }
+    .logic-card p { margin: 0; color: #45566c; font-size: 14px; line-height: 1.65; }
+    .versus { display: grid; place-items: center; color: #8ca2bd; font-size: 13px; font-weight: 900; }
+
+    .analysis-box {
+      margin-top: 13px;
+      padding: 19px 21px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .analysis-box.correct-box { border-color: #a7d9c7; background: #f8fdfa; }
+    .analysis-box.warning-box { border-color: #ead39a; background: #fffdf7; }
+    .analysis-box p { margin: 0; }
+    .analysis-box p + p { margin-top: 9px; }
+    .repair {
+      display: inline-block;
+      margin: 4px 0;
+      padding: 3px 9px;
+      border-radius: 7px;
+      background: var(--red-bg);
+      color: var(--red);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 800;
+    }
+    .choice-analysis {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-size: 14px;
+    }
+    .choice-analysis th, .choice-analysis td {
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+    .choice-analysis tr:last-child td { border-bottom: 0; }
+    .choice-analysis th { background: #f1f5fa; color: var(--navy); font-weight: 850; }
+    .choice-analysis td:first-child { color: var(--blue); font-weight: 900; white-space: nowrap; }
+    .choice-source {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 5px;
+      color: #203a60;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .choice-translation {
+      margin-bottom: 5px;
+      color: #52657c;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .choice-reason {
+      padding-top: 5px;
+      border-top: 1px dashed #dbe3ed;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .tag-correct { color: var(--green); font-weight: 850; }
+    .tag-wrong { color: var(--red); font-weight: 850; }
+
+    .reading-list { display: grid; gap: 12px; }
+    .reading-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .sentence-en {
+      padding: 17px 18px 15px;
+      background: #f7f9fc;
+      color: #24354c;
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-size: 17.5px;
+      font-weight: 650;
+      line-height: 1.75;
+    }
+    .sentence-vocab {
+      padding: 10px 18px 11px;
+      border-top: 1px solid #e8edf4;
+      background: #fbfcfe;
+      color: #53657a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
+    .sentence-vocab b { color: var(--blue); }
+    .sentence-ko { padding: 12px 18px 14px; color: #42546a; font-size: 14px; line-height: 1.7; }
+    .slash { color: var(--blue); font-weight: 900; }
+
+    .grammar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grammar-card {
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f9fbfd;
+    }
+    .grammar-card b { display: block; margin-bottom: 6px; color: var(--navy); }
+    .grammar-card code {
+      display: block;
+      margin-bottom: 8px;
+      color: #3f4f63;
+      font: 400 14px/1.55 Georgia, "Times New Roman", serif;
+      white-space: normal;
+    }
+    .grammar-card code .grammar-focus {
+      padding: 1px 3px;
+      border-radius: 4px;
+      background: #fff0a8;
+      color: #123d69;
+      font-weight: 800;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .grammar-card p { margin: 0; color: #53657a; font-size: 13.5px; line-height: 1.6; }
+
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+    .vocab-card {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 13px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      font-size: 14px;
+    }
+    .vocab-card b { color: var(--blue); font-family: Georgia, "Times New Roman", serif; }
+    .footer-note { margin: 28px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
+
+    @media (max-width: 760px) {
+      .hero, .content, .solution { padding-left: 24px; padding-right: 24px; }
+      .hero::after { font-size: 82px; top: 4px; right: 18px; }
+      .passage { padding: 25px 21px 21px; font-size: 17px; }
+      .answer-grid, .grammar-grid, .vocab-grid { grid-template-columns: 1fr; }
+      .contrast-flow { grid-template-columns: 1fr; }
+      .versus { min-height: 24px; }
+      .compact-choices { grid-template-columns: 1fr 1fr; }
+      .compact-choices .choice:last-child { grid-column: 1 / -1; }
+      .vocab-card { grid-template-columns: 125px 1fr; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; line-height: 1.52; }
+      .toolbar, .actions, .feedback { display: none !important; }
+      .sheet { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .hero { padding: 14mm 13mm 10mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .content { padding: 9mm 13mm 10mm; }
+      .instruction { margin-bottom: 16px; font-size: 15px; }
+      .passage { padding: 17px 19px; margin-bottom: 15px; font-size: 13.4px; line-height: 1.52; }
+      .passage p + p { margin-top: .36em; }
+      .question-card { padding: 15px 17px; margin-top: 12px; break-inside: avoid; }
+      .question-head { margin-bottom: 10px; font-size: 14px; }
+      .number-badge { width: 34px; height: 34px; }
+      .choice span { min-height: 33px; padding: 6px 9px; font-size: 11.8px; line-height: 1.35; }
+      .solution { display: block !important; page-break-before: always; border-top: 0; padding: 12mm 13mm; }
+      .answer-banner, .logic-card, .core-message, .grammar-focus { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h2 { font-size: 23px; }
+      h3 { margin-top: 23px; font-size: 17px; }
+      .answer-banner { padding: 13px 15px; }
+      .answer-round { width: 41px; height: 41px; }
+      .reading-card, .grammar-card, .analysis-box, .choice-analysis tr { break-inside: avoid; }
+      .sentence-en { padding: 10px 13px 8px; font-size: 12.3px; }
+      .sentence-ko { padding: 8px 13px 10px; font-size: 11.5px; }
+      .grammar-card, .analysis-box { padding: 13px 14px; }
+      .vocab-card { padding: 8px 10px; font-size: 11.5px; }
+      .footer-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="문서 도구">
+    <button class="tool-button" id="solutionButton" type="button" onclick="toggleSolution()">해설 보기</button>
+    <button class="tool-button" type="button" onclick="window.print()">인쇄하기</button>
+  </nav>
+
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">English Ⅱ · '25-3월 학력평가</div>
+      <h1>41–42번 장문 독해</h1>
+      <p class="subtitle">제목은 글 전체의 대비를, 어휘는 문장 사이의 논리를 확인하세요.</p>
+    </header>
+
+    <section class="content" aria-labelledby="set-title">
+      <div class="instruction" id="set-title">
+        <span class="set-badge">41–42</span>
+        <span>다음 글을 읽고, 물음에 답하시오.</span>
+      </div>
+
+      <article class="passage">
+        <p>In 1900, at the close of the first decade in which electric systems had become a practical alternative for manufacturers, less than 5 percent of the power used in factories came from electricity. But the technological advances of suppliers made electric systems and electric motors ever more affordable and reliable, and the suppliers’ intensive marketing programs also <span class="target-word">(a) sped</span> the adoption of the new technology. Further accelerating the shift was the rapid <span class="target-word">(b) expansion</span> in the number of skilled electrical engineers, who provided the expertise needed to install and run the new systems. In short order, electric power had gone from exotic to commonplace.</p>
+        <p>But one thing didn’t change. Factories continued to build their own power-supply systems on their own premises. <span class="target-word">(c) Few</span> manufacturers considered buying electricity from the small central stations. Designed to supply lighting to local homes and shops, the central stations had neither the size nor the skill to serve the needs of big factories. And the factory owners, having always supplied their own power, were <span class="target-word">(d) willing</span> to assign such a critical function to an outsider. They knew that a glitch in power supply would bring their operations to a <span class="target-word">(e) halt</span> — and that a lot of glitches might well mean bankruptcy. As the new century began, a survey found that there were already 50,000 private electric plants in operation, far surpassing the 3,600 central stations.</p>
+        <div class="notes">* premises: (공장) 부지 &nbsp;&nbsp; ** glitch: (작은) 결함</div>
+      </article>
+
+      <section class="question-card" aria-labelledby="q41-title">
+        <div class="question-head" id="q41-title">
+          <span class="number-badge">41</span>
+          <span>윗글의 제목으로 가장 적절한 것은?</span>
+        </div>
+        <div class="choices" role="radiogroup" aria-label="41번 정답 선택지">
+          <label class="choice"><input type="radio" name="q41" value="1"><span>① How to Avoid Minor Errors in Factory Operation</span></label>
+          <label class="choice"><input type="radio" name="q41" value="2"><span>② Power Use in Factories: What Changed and What Didn’t</span></label>
+          <label class="choice"><input type="radio" name="q41" value="3"><span>③ Technical Advances in Power Supply by Central Stations</span></label>
+          <label class="choice"><input type="radio" name="q41" value="4"><span>④ Threats from the Increased Use of Electricity in Factories</span></label>
+          <label class="choice"><input type="radio" name="q41" value="5"><span>⑤ From Private to Central Power Supply: A Revolutionary Change</span></label>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" onclick="checkAnswer('q41', '2')">정답 확인</button>
+          <button class="secondary" type="button" onclick="resetQuestion('q41')">다시 풀기</button>
+        </div>
+        <div class="feedback" id="feedback-q41" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="question-card" aria-labelledby="q42-title">
+        <div class="question-head" id="q42-title">
+          <span class="number-badge">42</span>
+          <span>밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?</span>
+        </div>
+        <div class="choices compact-choices" role="radiogroup" aria-label="42번 정답 선택지">
+          <label class="choice"><input type="radio" name="q42" value="1"><span>① (a)</span></label>
+          <label class="choice"><input type="radio" name="q42" value="2"><span>② (b)</span></label>
+          <label class="choice"><input type="radio" name="q42" value="3"><span>③ (c)</span></label>
+          <label class="choice"><input type="radio" name="q42" value="4"><span>④ (d)</span></label>
+          <label class="choice"><input type="radio" name="q42" value="5"><span>⑤ (e)</span></label>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" onclick="checkAnswer('q42', '4')">정답 확인</button>
+          <button class="secondary" type="button" onclick="resetQuestion('q42')">다시 풀기</button>
+        </div>
+        <div class="feedback" id="feedback-q42" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="solution" id="solution" aria-labelledby="solution-title">
+      <div class="section-kicker">ANSWER &amp; LECTURE NOTES</div>
+      <h2 id="solution-title">정답과 핵심 논리</h2>
+
+      <div class="answer-grid">
+        <div class="answer-banner">
+          <div class="answer-round">41</div>
+          <div><strong>정답 ②</strong><small>전기 사용의 확산은 변화했지만<br>공장 자체 발전 방식은 유지됨.</small></div>
+        </div>
+        <div class="answer-banner">
+          <div class="answer-round">42</div>
+          <div><strong>정답 ④ (d)</strong><small><em>willing</em> → <em>unwilling</em><br>외부에 맡기기를 꺼렸다는 흐름.</small></div>
+        </div>
+      </div>
+
+      <div class="core-message">
+        <b>한 문장 핵심 요약</b>
+        20세기 초 공장에서는 전기의 사용이 빠르게 보편화되었지만, 전력 공급을 외부 중앙 발전소에 맡기지 않고 자체 발전소를 운영하는 방식은 그대로 유지되었다.
+      </div>
+
+      <h3>1. 글의 전체 구조: 변화와 지속의 대비</h3>
+      <div class="contrast-flow" aria-label="두 문단의 대비 구조">
+        <div class="logic-card">
+          <b>1문단 · What changed</b>
+          <p>기술 발전, 가격 하락, 신뢰성 향상, 마케팅, 전문 기술자 증가로 전력이 <em>exotic</em>한 기술에서 <em>commonplace</em>한 기술로 바뀜.</p>
+        </div>
+        <div class="versus">BUT</div>
+        <div class="logic-card">
+          <b>2문단 · What didn’t change</b>
+          <p>공장들은 중앙 발전소에서 전기를 사지 않고 여전히 자체 전력 설비를 운영함. 정전 위험 때문에 핵심 기능을 외부에 맡기지 않음.</p>
+        </div>
+      </div>
+
+      <h3>2. 41번 제목 문제 해설</h3>
+      <div class="analysis-box correct-box">
+        <p><b class="tag-correct">② Power Use in Factories: What Changed and What Didn’t</b></p>
+        <p>1문단의 핵심은 전기의 빠른 보편화라는 <b>변화</b>이고, 2문단의 핵심은 공장이 자체적으로 전력을 생산하는 방식의 <b>지속</b>이다. 두 문단을 모두 포괄하고 글의 핵심 대비를 그대로 드러내므로 ②가 가장 적절하다.</p>
+      </div>
+      <table class="choice-analysis" aria-label="41번 오답 분석">
+        <thead><tr><th>선지</th><th>판단</th><th>선지 원문 · 분석</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>①</td><td class="tag-wrong">오답</td>
+            <td>
+              <div class="choice-source"><span>How to Avoid Minor Errors in Factory Operation</span></div>
+              <div class="choice-translation">공장 운영에서 사소한 오류를 피하는 방법</div>
+              <div class="choice-reason"><em>glitch</em>는 외부 공급을 꺼린 이유를 설명하는 세부 소재일 뿐, 공장 운영 오류를 피하는 방법을 설명한 글이 아니다.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>②</td><td class="tag-correct">정답</td>
+            <td>
+              <div class="choice-source"><span>Power Use in Factories: What Changed and What Didn’t</span></div>
+              <div class="choice-translation">공장에서의 전력 사용: 무엇이 변했고 무엇이 변하지 않았는가</div>
+              <div class="choice-reason">전기 기술의 보편화와 자체 발전 방식의 지속이라는 두 문단의 대조를 모두 포함한다.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>③</td><td class="tag-wrong">오답</td>
+            <td>
+              <div class="choice-source"><span>Technical Advances in Power Supply by Central Stations</span></div>
+              <div class="choice-translation">중앙 발전소의 전력 공급 기술 발전</div>
+              <div class="choice-reason">중앙 발전소는 규모와 기술이 부족했다고 서술된다. 중앙 발전소의 기술 발전이 글의 중심이 아니다.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>④</td><td class="tag-wrong">오답</td>
+            <td>
+              <div class="choice-source"><span>Threats from the Increased Use of Electricity in Factories</span></div>
+              <div class="choice-translation">공장의 전기 사용 증가로 인한 위협</div>
+              <div class="choice-reason">전기 사용 증가의 위협이 아니라, 전력 공급 중단 위험 때문에 외부 공급을 꺼린 이유를 설명한다.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>⑤</td><td class="tag-wrong">오답</td>
+            <td>
+              <div class="choice-source"><span>From Private to Central Power Supply: A Revolutionary Change</span></div>
+              <div class="choice-translation">자체 전력 공급에서 중앙 전력 공급으로: 혁명적 변화</div>
+              <div class="choice-reason">실제 흐름과 반대이다. 중앙 공급으로 전환된 것이 아니라 사설 발전소가 중앙 발전소보다 훨씬 많았다.</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3. 42번 문맥상 어휘 해설</h3>
+      <div class="analysis-box warning-box">
+        <p><b class="tag-wrong">(d) willing은 문맥에 맞지 않는다.</b></p>
+        <p>공장주들은 늘 자체적으로 전력을 공급해 왔고, 외부 공급에 작은 결함만 생겨도 생산이 중단되거나 파산할 수 있다고 생각했다. 따라서 핵심 기능을 외부인에게 맡길 <b>의향이 있었다</b>가 아니라 <b>의향이 없었다</b>가 되어야 한다.</p>
+        <p><span class="repair">were willing → were unwilling / were reluctant</span></p>
+      </div>
+      <table class="choice-analysis" aria-label="42번 어휘 분석">
+        <thead><tr><th>표현</th><th>문맥상 의미</th><th>판단 근거</th></tr></thead>
+        <tbody>
+          <tr><td>(a) sped</td><td>채택을 가속했다</td><td>적극적인 마케팅이 신기술의 도입 속도를 높였으므로 적절함.</td></tr>
+          <tr><td>(b) expansion</td><td>전문 기술자 수의 증가</td><td>설치와 운영에 필요한 전문 지식을 제공할 인력이 빠르게 늘었으므로 적절함.</td></tr>
+          <tr><td>(c) Few</td><td>고려한 제조업자가 거의 없음</td><td>중앙 발전소는 대형 공장을 지원할 규모와 기술이 부족했으므로 적절함.</td></tr>
+          <tr><td>(d) willing</td><td>기꺼이 맡기려는</td><td class="tag-wrong">뒤의 정전·파산 위험과 모순됨. <em>unwilling</em>이 적절함.</td></tr>
+          <tr><td>(e) halt</td><td>운영 중단</td><td>전력 공급에 문제가 생기면 공장 가동이 멈추므로 적절함.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4. 문장별 슬래시 리딩과 직독직해</h3>
+      <div class="reading-list">
+        <article class="reading-card">
+          <div class="sentence-en">In 1900, <span class="slash">/</span> at the close of the first decade <span class="slash">/</span> in which <span class="slash">/</span> electric systems had become <span class="slash">/</span> a practical alternative for manufacturers, <span class="slash">/</span> less than 5 percent of the power used in factories <span class="slash">/</span> came from electricity.</div>
+          <div class="sentence-vocab"><b>at the close of</b> ~이 끝날 무렵에 · <b>practical alternative</b> 실용적인 대안 · <b>manufacturer</b> 제조업자</div>
+          <div class="sentence-ko">1900년에 / 첫 10년의 끝 무렵에 / 그 10년 동안 / 전기 시스템은 되어 있었다 / 제조업자들에게 실용적인 대안이 / 공장에서 사용된 전력의 5퍼센트 미만이 / 전기로부터 나왔다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">But the technological advances of suppliers <span class="slash">/</span> made electric systems and electric motors <span class="slash">/</span> ever more affordable and reliable, <span class="slash">/</span> and the suppliers’ intensive marketing programs <span class="slash">/</span> also sped the adoption of the new technology.</div>
+          <div class="sentence-vocab"><b>technological advance</b> 기술적 발전 · <b>affordable</b> 가격이 알맞은 · <b>reliable</b> 신뢰할 수 있는 · <b>adoption</b> 채택, 도입</div>
+          <div class="sentence-ko">그러나 공급업자들의 기술적 발전은 / 전기 시스템과 전기 모터를 만들었다 / 점점 더 가격이 알맞고 신뢰할 수 있게 / 그리고 공급업자들의 집중적인 마케팅 프로그램은 / 또한 그 신기술의 채택을 가속했다.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Further accelerating the shift <span class="slash">/</span> was the rapid expansion <span class="slash">/</span> in the number of skilled electrical engineers, <span class="slash">/</span> who provided the expertise <span class="slash">/</span> needed <span class="slash">/</span> to install and run the new systems.</div>
+          <div class="sentence-vocab"><b>accelerate</b> 가속하다 · <b>expansion</b> 증가, 확대 · <b>skilled</b> 숙련된 · <b>expertise</b> 전문 지식, 전문 기술</div>
+          <div class="sentence-ko">그 전환을 더욱 가속한 것은 / 빠른 증가였다 / 숙련된 전기 기술자들의 수에 있어서 / 그들은 전문 지식을 제공했다 / 그것은 필요했다 / 새로운 시스템들을 설치하고 운영하기 위해.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">In short order, <span class="slash">/</span> electric power had gone <span class="slash">/</span> from exotic to commonplace.</div>
+          <div class="sentence-vocab"><b>in short order</b> 아주 짧은 시간 안에 · <b>exotic</b> 생소한, 이국적인 · <b>commonplace</b> 흔한, 일상적인</div>
+          <div class="sentence-ko">아주 짧은 시간 안에 / 전력은 가버렸다 / 생소한 것으로부터 흔한 것으로.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">But one thing didn’t change. <span class="slash">/</span> Factories continued <span class="slash">/</span> to build their own power-supply systems <span class="slash">/</span> on their own premises.</div>
+          <div class="sentence-vocab"><b>power-supply system</b> 전력 공급 시스템 · <b>premises</b> 부지, 건물과 그 주변</div>
+          <div class="sentence-ko">그러나 한 가지는 변하지 않았다. / 공장들은 계속했다 / 자신들의 전력 공급 시스템들을 건설하는 것을 / 자신들의 부지에.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Few manufacturers considered <span class="slash">/</span> buying electricity <span class="slash">/</span> from the small central stations.</div>
+          <div class="sentence-vocab"><b>central station</b> 중앙 발전소 · <b>consider -ing</b> ~하는 것을 고려하다</div>
+          <div class="sentence-ko">제조업자들은 거의 고려하지 않았다 / 전기를 구매하는 것을 / 소규모 중앙 발전소들로부터.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">Designed <span class="slash">/</span> to supply lighting <span class="slash">/</span> to local homes and shops, <span class="slash">/</span> the central stations had <span class="slash">/</span> neither the size nor the skill <span class="slash">/</span> to serve the needs of big factories.</div>
+          <div class="sentence-vocab"><b>supply A to B</b> B에게 A를 공급하다 · <b>neither A nor B</b> A도 B도 아닌 · <b>serve the needs of</b> ~의 수요를 충족하다</div>
+          <div class="sentence-ko">(중앙 발전소들은) 설계되었다 / 조명을 공급하기 위해 / 지역 가정들과 상점들에 / 중앙 발전소들은 가지고 있지 않았다 / 규모와 기술을 / 대형 공장들의 수요를 충족할 수 있는.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">And the factory owners, <span class="slash">/</span> having always supplied their own power, <span class="slash">/</span> were willing <span class="slash">/</span> to assign such a critical function to an outsider.</div>
+          <div class="sentence-vocab"><b>assign A to B</b> A를 B에게 맡기다 · <b>critical function</b> 매우 중요한 기능 · <b>outsider</b> 외부인</div>
+          <div class="sentence-ko">그리고 공장주들은 / 늘 자신들의 전력을 공급해 왔고 / 기꺼이 하려 했다[문맥상: 하려 하지 않았다] / 그처럼 중요한 기능을 외부인에게 맡기기를.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">They knew <span class="slash">/</span> that a glitch in power supply would bring their operations to a halt <span class="slash">/</span> — and that a lot of glitches might well mean bankruptcy.</div>
+          <div class="sentence-vocab"><b>glitch</b> 작은 결함, 오작동 · <b>bring A to a halt</b> A를 중단시키다 · <b>bankruptcy</b> 파산</div>
+          <div class="sentence-ko">그들은 알고 있었다 / 전력 공급에서의 작은 결함 하나가 그들의 운영을 중단 상태로 가져올 것이라는 것을 / 그리고 많은 결함들이 충분히 파산을 의미할 수도 있다는 것을.</div>
+        </article>
+        <article class="reading-card">
+          <div class="sentence-en">As the new century began, <span class="slash">/</span> a survey found <span class="slash">/</span> that there were already 50,000 private electric plants in operation, <span class="slash">/</span> far surpassing <span class="slash">/</span> the 3,600 central stations.</div>
+          <div class="sentence-vocab"><b>survey</b> 조사 · <b>in operation</b> 가동 중인 · <b>surpass</b> 능가하다</div>
+          <div class="sentence-ko">새로운 세기가 시작되었을 때 / 한 조사는 발견했다 / 이미 5만 개의 민간 발전소들이 가동 중이었다는 것을 / 그것들은 훨씬 능가했다 / 3,600개의 중앙 발전소들을.</div>
+        </article>
+      </div>
+
+      <h3>5. 핵심 구문·문법</h3>
+      <div class="grammar-grid">
+        <article class="grammar-card">
+          <b>관계부사 in which</b>
+          <code>In 1900, at the close of the first decade <span class="grammar-focus">in which electric systems had become a practical alternative for manufacturers</span>, less than 5 percent of the power used in factories came from electricity.</code>
+          <p><em>in which</em>는 ‘그 10년 동안’의 의미로 앞의 <em>the first decade</em>를 수식한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>make + 목적어 + 목적격보어</b>
+          <code>But the technological advances of suppliers <span class="grammar-focus">made electric systems and electric motors ever more affordable and reliable</span>, and the suppliers’ intensive marketing programs also sped the adoption of the new technology.</code>
+          <p>전기 시스템과 모터를 ‘점점 더 저렴하고 신뢰할 수 있는 상태로’ 만들었다는 5형식 구조이다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>도치된 주어</b>
+          <code><span class="grammar-focus">Further accelerating the shift was the rapid expansion in the number of skilled electrical engineers</span>, who provided the expertise needed to install and run the new systems.</code>
+          <p>주어는 <em>the rapid expansion</em>이다. 강조를 위해 보어 역할의 분사구가 문장 앞으로 이동했다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>계속적 용법의 관계대명사</b>
+          <code>Further accelerating the shift was the rapid expansion in the number of skilled electrical engineers, <span class="grammar-focus">who provided the expertise needed to install and run the new systems</span>.</code>
+          <p><em>who</em>는 기술자들을 받아 ‘그들은 필요한 전문 지식을 제공했다’라고 덧붙여 설명한다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>과거분사구문</b>
+          <code><span class="grammar-focus">Designed to supply lighting to local homes and shops</span>, the central stations had neither the size nor the skill to serve the needs of big factories.</code>
+          <p>문장의 주어인 중앙 발전소가 조명 공급용으로 설계되었다는 수동의 상태를 제시한다. 직독직해에서는 ‘~이기 때문에’와 같은 원인 표현을 덧붙이지 않는다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>neither A nor B</b>
+          <code>Designed to supply lighting to local homes and shops, the central stations had <span class="grammar-focus">neither the size nor the skill</span> to serve the needs of big factories.</code>
+          <p>‘규모도 기술도 어느 것도 아닌’이라는 병렬 구조이다. 두 명사구를 같은 형식으로 묶는다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>완료분사구문</b>
+          <code>And the factory owners, <span class="grammar-focus">having always supplied their own power</span>, were willing to assign such a critical function to an outsider.</code>
+          <p>공장주들이 앞선 시점부터 자신들의 전력을 공급해 온 경험을 나타낸다. 직독직해에서는 원인으로 의역하지 않고 ‘늘 자신들의 전력을 공급해 왔고’로 읽는다.</p>
+        </article>
+        <article class="grammar-card">
+          <b>bring A to a halt</b>
+          <code>They knew that a glitch in power supply would <span class="grammar-focus">bring their operations to a halt</span> — and that a lot of glitches might well mean bankruptcy.</code>
+          <p>‘A를 중단시키다’라는 표현이다. <em>would</em>는 예상되는 결과, <em>might well</em>은 충분한 가능성을 나타낸다.</p>
+        </article>
+      </div>
+
+      <h3>6. 주요 어휘 카드</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><b>premises</b><span>부지, 건물과 그 주변</span></div>
+        <div class="vocab-card"><b>expertise</b><span>전문 지식, 전문 기술</span></div>
+        <div class="vocab-card"><b>bankruptcy</b><span>파산</span></div>
+        <div class="vocab-card"><b>surpass</b><span>능가하다, 뛰어넘다</span></div>
+        <div class="vocab-card"><b>adoption</b><span>채택, 도입</span></div>
+        <div class="vocab-card"><b>affordable</b><span>가격이 알맞은, 감당할 수 있는</span></div>
+        <div class="vocab-card"><b>assign</b><span>맡기다, 배정하다</span></div>
+        <div class="vocab-card"><b>in operation</b><span>가동 중인, 운영 중인</span></div>
+        <div class="vocab-card"><b>halt</b><span>중단, 정지</span></div>
+        <div class="vocab-card"><b>alternative</b><span>대안, 대체 수단</span></div>
+        <div class="vocab-card"><b>reliable</b><span>신뢰할 수 있는</span></div>
+        <div class="vocab-card"><b>commonplace</b><span>흔한, 일상적인</span></div>
+      </div>
+
+      <p class="footer-note">English Ⅱ · 2025학년도 3월 고2 전국연합학력평가</p>
+    </section>
+  </main>
+
+  <script>
+    const solution = document.getElementById('solution');
+    const solutionButton = document.getElementById('solutionButton');
+
+    const messages = {
+      q41: {
+        correct: '정답입니다. 1문단의 변화와 2문단의 지속을 함께 포괄하는 제목은 ②입니다.',
+        wrong: '다시 확인해 보세요. 1문단에서 변한 것과 2문단에서 변하지 않은 것을 모두 담은 선지를 찾으세요.'
+      },
+      q42: {
+        correct: '정답입니다. 외부 공급의 결함이 가동 중단과 파산을 일으킬 수 있으므로 (d)는 unwilling이 되어야 합니다.',
+        wrong: '다시 확인해 보세요. 각 낱말이 앞뒤 문장의 원인과 결과에 맞는지 확인하고, 특히 공장주의 외부 위탁 태도를 살펴보세요.'
+      }
+    };
+
+    function showSolution() {
+      solution.classList.add('open');
+      solutionButton.textContent = '해설 닫기';
+      solution.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function toggleSolution() {
+      const isOpen = solution.classList.toggle('open');
+      solutionButton.textContent = isOpen ? '해설 닫기' : '해설 보기';
+      if (isOpen) solution.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function checkAnswer(name, correctValue) {
+      const selected = document.querySelector(`input[name="${name}"]:checked`);
+      const feedback = document.getElementById(`feedback-${name}`);
+      feedback.className = 'feedback show';
+
+      if (!selected) {
+        feedback.classList.add('notice');
+        feedback.textContent = '먼저 선택지 하나를 골라 주세요.';
+        return;
+      }
+
+      if (selected.value === correctValue) {
+        feedback.classList.add('correct');
+        feedback.textContent = messages[name].correct;
+      } else {
+        feedback.classList.add('wrong');
+        feedback.textContent = messages[name].wrong;
+      }
+    }
+
+    function resetQuestion(name) {
+      document.querySelectorAll(`input[name="${name}"]`).forEach(input => input.checked = false);
+      const feedback = document.getElementById(`feedback-${name}`);
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+    }
+  </script>
+</body>
+</html>
