@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영어Ⅱ 수업자료</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+  :root{
+    --navy:#005DAA;
+    --blue:#007DC3;
+    --sky:#13B5EA;
+    --ink:#1B2733;
+    --ink-soft:#5C6B7A;
+    --paper:#F4F7FA;
+    --card:#FFFFFF;
+    --line:#DCE3EC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard', -apple-system, sans-serif;
+  }
+  .shell{
+    max-width:1040px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:0;
+    min-height:100vh;
+  }
+
+  /* sidebar */
+  nav.side{
+    padding:40px 20px;
+    border-right:1px solid var(--line);
+  }
+  nav.side a.home{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.06em;
+    color:var(--navy);
+    text-decoration:none;
+    margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    width:100%;
+  }
+  nav.side a.home:hover{color:var(--blue);}
+  nav.side a.home svg{
+    width:15px; height:15px;
+    flex:0 0 auto;
+  }
+  nav.side ul{list-style:none; margin:0; padding:0;}
+  nav.side li{margin-bottom:4px;}
+  nav.side a.item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:8px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    font-weight:500;
+    transition:background .15s ease, color .15s ease;
+  }
+  nav.side a.item .diamond{
+    width:8px; height:8px;
+    border:1.5px solid var(--line);
+    transform:rotate(45deg);
+    flex:0 0 auto;
+    transition:all .15s ease;
+  }
+  nav.side a.item:hover{
+    background:#EEF4FA;
+    color:var(--navy);
+  }
+  nav.side a.item.active{
+    background:#E6F1FA;
+    color:var(--navy);
+    font-weight:700;
+  }
+  nav.side a.item.active .diamond{
+    background:var(--navy);
+    border-color:var(--navy);
+  }
+
+  /* main */
+  main{padding:40px 36px 80px;}
+  .head{margin-bottom:28px;}
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--blue);
+    letter-spacing:.06em;
+    margin:0 0 6px;
+  }
+  h1{
+    font-size:24px;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 6px;
+  }
+  .desc{font-size:13.5px; color:var(--blue); margin:0;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px,1fr));
+    gap:10px;
+  }
+  a.bubble{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:12px 13px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:13.5px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  a.bubble:hover, a.bubble:focus-visible{
+    border-color:var(--blue);
+    background:#EEF6FC;
+    outline:none;
+  }
+  .num{
+    flex:0 0 auto;
+    width:28px; height:28px;
+    border-radius:50%;
+    border:1.5px solid var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    color:var(--navy);
+    transition:all .15s ease;
+  }
+  a.bubble:hover .num, a.bubble:focus-visible .num{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#fff;
+  }
+  .label{display:flex; flex-direction:column; gap:1px;}
+  .label .tag{font-size:11px; color:var(--blue);}
+  .label .name{font-weight:700; color:var(--navy);}
+
+  .round-row{
+    display:grid;
+    grid-template-columns:64px 1fr 1fr;
+    align-items:center;
+    gap:10px;
+    padding:8px 4px;
+    border-bottom:1px dashed var(--line);
+  }
+  .round-row:last-child{border-bottom:none;}
+  .round-tag{
+    font-size:12px;
+    font-weight:700;
+    color:var(--navy);
+    background:#E6F1FA;
+    border-radius:6px;
+    padding:5px 0;
+    text-align:center;
+  }
+
+  @media (max-width:720px){
+    .shell{grid-template-columns:1fr;}
+    nav.side{
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:20px 16px;
+    }
+    nav.side ul{
+      display:flex;
+      gap:6px;
+      overflow-x:auto;
+    }
+    nav.side li{margin-bottom:0;}
+    nav.side a.item{white-space:nowrap;}
+    main{padding:28px 18px 60px;}
+    .round-row{grid-template-columns:52px 1fr 1fr; font-size:12.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="side">
+    <a class="home" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+      HOME
+    </a>
+    <ul id="nav-list"></ul>
+  </nav>
+
+  <main>
+    <div class="head">
+      <p class="eyebrow" id="head-eyebrow"></p>
+      <h1 id="head-title"></h1>
+      <p class="desc" id="head-desc"></p>
+    </div>
+    <div id="content"></div>
+  </main>
+
+</div>
+
+<script>
+  const EXAM_NAMES = [
+    '25-3월 학력평가', '24-3월 학력평가', '23-3월 학력평가',
+    '25-6월 학력평가', '24-6월 학력평가', '23-6월 학력평가',
+    '25-9월 학력평가', '24-9월 학력평가', '23-9월 학력평가',
+    '24-10월 학력평가', '23-11월 학력평가', '22-11월 학력평가'
+  ];
+
+  const CATS = {
+    supplement: {
+      label:'부교재',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'자이스토리 · 모의고사 12회 · 24차시',
+      folder:'supplement',
+      type:'rounds',
+      rounds:12
+    },
+    textbook: {
+      label:'교과서',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'NE 능률 · Grammar · 5차시',
+      folder:'textbook', type:'lessons', count:5, unitLabel:'문법'
+    },
+    performance: {
+      label:'수행평가',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'영자신문 비평문 쓰기 · 5차시',
+      folder:'performance', type:'lessons', count:5, unitLabel:'수행평가'
+    },
+    block: {
+      label:'블록활동',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'원서 읽기 · 6차시',
+      folder:'block', type:'lessons', count:6, unitLabel:'블록활동'
+    },
+    vocab: {
+      label:'단어시험',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'단어시험 자료 · 총 24회',
+      folder:'vocab', type:'lessons', count:24, unitLabel:'단어시험', roundWord:true
+    }
+  };
+  const order = ['supplement','textbook','performance','block','vocab'];
+
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat') && CATS[params.get('cat')] ? params.get('cat') : 'supplement';
+  const data = CATS[cat];
+
+  document.getElementById('head-eyebrow').textContent = data.eyebrow;
+  document.getElementById('head-title').textContent = data.label;
+  document.getElementById('head-desc').textContent = data.desc;
+  document.title = data.label + ' · 영어Ⅱ 수업자료';
+
+  const navList = document.getElementById('nav-list');
+  navList.innerHTML = order.map(function(key){
+    const c = CATS[key];
+    const activeClass = key === cat ? ' active' : '';
+    return '<li><a class="item' + activeClass + '" href="category.html?cat=' + key + '">'
+      + '<span class="diamond"></span>' + c.label + '</a></li>';
+  }).join('');
+
+  const content = document.getElementById('content');
+
+  if(data.type === 'rounds'){
+    let html = '';
+    for(let r = 1; r <= data.rounds; r++){
+      const rr = String(r).padStart(2,'0');
+      const examName = EXAM_NAMES[r - 1];
+      const lesson1 = 2 * r - 1;
+      const lesson2 = 2 * r;
+      html += '<div class="round-row">'
+        + '<div class="round-tag">' + r + '회</div>'
+        + '<a class="bubble" href="' + data.folder + '/round' + rr + '-1.html"><span class="num">' + lesson1 + '</span><span class="label"><span class="tag">' + examName + '</span><span class="name">18~32번</span></span></a>'
+        + '<a class="bubble" href="' + data.folder + '/round' + rr + '-2.html"><span class="num">' + lesson2 + '</span><span class="label"><span class="tag">' + examName + '</span><span class="name">33~45번</span></span></a>'
+        + '</div>';
+    }
+    content.innerHTML = html;
+  } else {
+    let html = '<div class="grid">';
+    for(let i = 1; i <= data.count; i++){
+      const ii = String(i).padStart(2,'0');
+      const tag = data.roundWord ? (i + '회') : (i + '차시');
+      html += '<a class="bubble" href="' + data.folder + '/lesson' + ii + '.html">'
+        + '<span class="num">' + ii + '</span>'
+        + '<span class="label"><span class="tag">' + tag + '</span><span class="name">' + data.unitLabel + ' ' + i + '</span></span>'
+        + '</a>';
+    }
+    html += '</div>';
+    content.innerHTML = html;
+  }
+</script>
+</body>
+</html>
