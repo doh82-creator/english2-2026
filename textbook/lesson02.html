@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Ⅱ Lesson 2 Grammar | Cleft Sentences &amp; Counterfactual Conditionals</title>
+  <style>
+    :root {
+      --navy: #005daa;
+      --blue: #007dc3;
+      --sky-strong: #13b5ea;
+      --sky: #e8f7fd;
+      --pale: #f2f6fb;
+      --pale-2: #f8fbfe;
+      --line: #cbdcea;
+      --muted: #2978ad;
+      --gold: #f2c230;
+      --gold-bg: #fff8d9;
+      --white: #ffffff;
+      --shadow: 0 8px 24px rgba(0, 93, 170, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background: var(--pale);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    button { font: inherit; }
+    strong, b { color: var(--navy); }
+    mark {
+      padding: .08em .28em;
+      border-radius: .22em;
+      color: var(--navy);
+      background: #fff3b0;
+      font-weight: 900;
+    }
+    code {
+      color: var(--navy);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 20px;
+      color: var(--white);
+      background: rgba(0, 93, 170, .96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 14px rgba(0, 93, 170, .2);
+    }
+    .toolbar-brand { color: var(--white); font-size: 14px; font-weight: 900; letter-spacing: .03em; }
+    .toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toolbar button {
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: var(--white);
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+    }
+    .toolbar button:hover { background: rgba(255,255,255,.2); }
+    .toolbar button.primary { color: var(--navy); background: var(--white); }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 28px auto;
+      padding: 46px 54px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .cover {
+      overflow: hidden;
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 83% 18%, rgba(255,255,255,.17) 0 70px, transparent 71px),
+        radial-gradient(circle at 88% 24%, rgba(255,255,255,.08) 0 135px, transparent 136px),
+        linear-gradient(135deg, #005daa 0%, #007dc3 62%, #13b5ea 100%);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 430px;
+      height: 430px;
+      border: 2px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .cover h1 {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+      margin: 24px 0 12px;
+      color: var(--white);
+      font-size: clamp(38px, 5vw, 67px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .cover h1 .sky-title { color: var(--sky-strong); }
+    .cover .subtitle {
+      position: relative;
+      z-index: 2;
+      max-width: 840px;
+      margin: 0;
+      color: rgba(255,255,255,.91);
+      font-size: clamp(19px, 2.3vw, 29px);
+      font-weight: 700;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      color: var(--navy);
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    h2 .num {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 20px;
+    }
+    h2 .num.sub-num, h2 .num.combined-num {
+      width: auto;
+      min-width: 54px;
+      padding: 0 10px;
+    }
+    h3 { margin: 30px 0 14px; color: var(--blue); font-size: 21px; letter-spacing: -.015em; }
+    h4 { margin: 20px 0 8px; color: var(--navy); font-size: 17px; }
+    p { margin: 9px 0; }
+    ul, ol { margin: 10px 0; padding-left: 1.45em; }
+    li + li { margin-top: 5px; }
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .lead { margin: -12px 0 24px; color: var(--muted); font-size: 17px; }
+    .mini-note { color: var(--muted); font-size: 13px; }
+
+    .two-col, .three-col, .process { display: grid; gap: 16px; }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three-col, .process { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .card.soft { background: var(--pale); }
+    .card.blue { border-color: #bfe0f2; background: var(--sky); }
+    .card.sky { border-color: #a9ddf1; background: #e6f5fb; }
+    .card-title { margin-bottom: 7px; color: var(--navy); font-weight: 900; }
+
+    .sentence {
+      margin: 14px 0;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--navy);
+      background: var(--pale-2);
+    }
+    .sentence .en {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      line-height: 1.58;
+    }
+    .sentence .ko { margin-top: 9px; color: var(--muted); font-size: 15px; }
+    .formula {
+      margin: 16px 0;
+      padding: 17px 20px;
+      border-left: 5px solid var(--gold);
+      border-radius: 0 11px 11px 0;
+      color: var(--navy);
+      background: var(--gold-bg);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .formula small { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .rule {
+      margin: 24px 0;
+      padding: 24px;
+      border: 2px solid var(--sky-strong);
+      border-radius: 14px;
+      color: var(--navy);
+      background: linear-gradient(135deg, #f8fbff, #eaf7fc);
+    }
+    .rule strong.big { display: block; color: var(--navy); font-size: 22px; }
+    .rule p { margin: 7px 0 0; }
+
+    table { width: 100%; margin: 14px 0 22px; border-collapse: collapse; color: var(--navy); font-size: 15px; }
+    th, td { padding: 12px 13px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--white); background: var(--navy); font-weight: 900; }
+    tbody tr:nth-child(even) { background: #f5fafd; }
+    .structure { font-weight: 900; }
+
+    .process { counter-reset: step; }
+    .process-item {
+      position: relative;
+      padding: 18px 17px 17px 52px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .process-item::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 17px;
+      left: 16px;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .process-item b { display: block; margin-bottom: 3px; }
+
+    .problem-set {
+      margin: 20px 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .problem-title { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--navy); font-size: 18px; font-weight: 900; }
+    .problem-title .badge { padding: 3px 9px; border-radius: 999px; color: var(--white); background: var(--blue); font-size: 12px; }
+    .q { margin: 15px 0; padding: 0 0 15px; border-bottom: 1px dashed var(--line); color: var(--navy); }
+    .q:last-child { padding-bottom: 0; border-bottom: 0; }
+    .q-num { color: var(--blue); font-weight: 900; }
+    .options { margin: 7px 0 0 23px; color: var(--blue); }
+    .blank { display: inline-block; min-width: 130px; height: 1.3em; border-bottom: 1.7px solid var(--blue); vertical-align: -.05em; }
+    .underlined { border-bottom: 2px solid var(--blue); padding-bottom: 1px; }
+
+    .answer-panel {
+      display: none;
+      margin-top: 10px;
+      padding: 13px 15px;
+      border-left: 4px solid var(--sky-strong);
+      border-radius: 0 9px 9px 0;
+      color: var(--navy);
+      background: #e6f5fb;
+      font-size: 14px;
+    }
+    body.show-answers .answer-panel { display: block; }
+    .answer-inline { display: none; padding: 1px 5px; border-radius: 4px; color: var(--navy); background: #dff4fc; font-weight: 900; }
+    body.show-answers .answer-inline { display: inline; }
+
+    .source-box {
+      padding: 25px 28px;
+      border: 2px solid var(--sky-strong);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f8fbff, #eaf7fc);
+    }
+    .source-box p { text-indent: 1em; }
+    .source-box p:first-child { text-indent: 0; }
+    .source-box .en { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.75; }
+    .source-box .ko { margin-top: 14px; color: var(--muted); font-size: 14px; }
+
+    .callout { display: flex; gap: 13px; margin: 18px 0; padding: 17px 19px; border-radius: 11px; color: var(--navy); background: var(--pale); }
+    .callout .icon { flex: 0 0 auto; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: var(--white); background: var(--blue); font-weight: 900; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 29px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 1px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--white); background: var(--sky-strong); font-size: 12px; font-weight: 900; }
+    .footer { margin-top: 35px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--blue); font-size: 12px; text-align: right; }
+
+    @media (max-width: 780px) {
+      .page { width: calc(100% - 18px); margin: 12px auto; padding: 28px 22px; border-radius: 12px; }
+      .cover { min-height: 640px; }
+      .two-col, .three-col, .process { grid-template-columns: 1fr; }
+      .toolbar { align-items: flex-start; }
+      th, td { padding: 9px 8px; font-size: 13px; }
+    }
+    @media print {
+      @page { size: A4; margin: 13mm 12mm 14mm; }
+      body { background: var(--white); font-size: 10.5pt; line-height: 1.55; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none !important; }
+      .page { width: 100%; margin: 0; padding: 0; border-radius: 0; box-shadow: none; }
+      .page + .page { page-break-before: always; }
+      .cover { min-height: 257mm; padding: 18mm 14mm; }
+      .cover h1 { font-size: 40pt; }
+      h2 { font-size: 21pt; }
+      h3 { font-size: 15pt; }
+      .sentence .en { font-size: 14pt; }
+      .card, .sentence, .problem-set, table, .rule, .callout, .source-box { break-inside: avoid; }
+      .answer-panel { display: block !important; break-inside: avoid; }
+      .answer-inline { display: inline !important; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar-brand">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 Grammar Lecture</div>
+    <div class="toolbar-actions">
+      <button id="answerBtn" type="button" onclick="toggleAnswers()">정답·해설 표시</button>
+      <button type="button" onclick="scrollToTop()">맨 위로</button>
+      <button class="primary" type="button" onclick="window.print()">인쇄 / PDF 저장</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="page cover" id="top">
+      <div class="eyebrow">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Grammar in Context</div>
+      <h1><span class="sky-title">It-Cleft Sentences</span> &amp;<br><span class="sky-title">Counterfactual Conditionals</span></h1>
+      <p class="subtitle">It 강조구문과 가정법 과거완료</p>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Textbook Grammar Point 1</div>
+      <h2><span class="num">1</span>It 강조구문: <mark>It is/was ... that ...</mark></h2>
+      <p class="lead">문장에서 특별히 강조하고 싶은 성분을 <code>It is/was</code>와 <code>that</code> 사이에 놓는다.</p>
+
+      <h3>1. 교과서 핵심 문장</h3>
+      <div class="source-box">
+        <div class="en">
+          “<strong>It is by working together that</strong> we can create a sustainable future!”
+          <p>Join us at the annual Environmental Conference! <strong>It is our generation that</strong> needs to start making changes for the future. During the conference, you will hear inspiring stories about the tireless efforts of individuals and communities trying to save the planet. Don’t miss out on the opportunity to learn, connect, and be empowered. <strong>It is everybody’s active participation that</strong> will transform the environment for the better!</p>
+        </div>
+        <div class="ko">“바로 함께 협력함으로써 우리는 지속 가능한 미래를 만들 수 있습니다!” 매년 열리는 환경 회의에 참여하세요. 미래를 위한 변화를 시작해야 하는 것은 바로 우리 세대입니다. 회의에서는 지구를 구하기 위해 노력하는 개인과 공동체의 끊임없는 노력에 관한 고무적인 이야기를 듣게 될 것입니다. 배우고, 교류하고, 역량을 키울 기회를 놓치지 마세요. 환경을 더 나은 방향으로 바꿀 것은 바로 모두의 적극적인 참여입니다!</div>
+      </div>
+
+      <h3>2. 기본 구조와 만드는 방법</h3>
+      <div class="formula">
+        It is/was + 강조할 말 + that + 나머지 부분
+        <small>강조구문을 풀면 강조할 말이 원래 자리로 돌아가며, 문장은 기본형이 된다.</small>
+      </div>
+      <div class="process">
+        <div class="process-item"><b>기본 문장 확인</b>문장의 주어·동사와 나머지 성분을 먼저 찾는다.</div>
+        <div class="process-item"><b>강조 성분 선택</b>주어·목적어·부사(구) 중 강조할 부분을 고른다.</div>
+        <div class="process-item"><b>틀에 넣기</b><code>It is/was</code>와 <code>that</code> 사이에 강조 성분을 넣는다.</div>
+      </div>
+
+      <h3>3. 교과서 문장으로 구조 확인하기</h3>
+      <table>
+        <thead><tr><th>강조구문</th><th>강조 성분</th><th>기본 문장</th></tr></thead>
+        <tbody>
+          <tr><td>It is <mark>by working together</mark> that we can create a sustainable future.</td><td>방법을 나타내는 부사구</td><td>We can create a sustainable future <strong>by working together</strong>.</td></tr>
+          <tr><td>It is <mark>our generation</mark> that needs to start making changes.</td><td>주어</td><td><strong>Our generation</strong> needs to start making changes.</td></tr>
+          <tr><td>It is <mark>everybody’s active participation</mark> that will transform the environment.</td><td>주어</td><td><strong>Everybody’s active participation</strong> will transform the environment.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="rule">
+        <strong class="big">판별의 핵심</strong>
+        <p><code>It is/was ... that ...</code>을 제거한 뒤, 강조된 말을 원래 자리로 되돌렸을 때 완전한 문장이 만들어지면 강조구문이다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Textbook Grammar Point 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Textbook Practice 1</div>
+      <h2>교과서 예제 풀이: It 강조구문</h2>
+      <p class="lead">밑줄 친 말을 <code>It was</code>와 <code>that</code> 사이에 옮기고, 나머지 문장을 그대로 이어 쓴다.</p>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 밑줄 친 말을 강조하도록 문장을 바꾸세요.</div>
+        <div class="q">
+          <span class="q-num">1.</span> My friend Sue recommended <span class="underlined">the movie <em>Elemental</em></span> to me.<br>
+          → It <span class="blank" style="min-width:480px"></span>.
+          <div class="answer-panel"><strong>정답: It was the movie <em>Elemental</em> that my friend Sue recommended to me.</strong><br>목적어 <code>the movie Elemental</code>을 강조한다. 기본 문장에서 그 목적어를 빼고 나머지 부분을 <code>that</code> 뒤에 둔다.</div>
+        </div>
+        <div class="q">
+          <span class="q-num">2.</span> The man crashed into a taxi <span class="underlined">on Fifth Street</span> yesterday.<br>
+          → It <span class="blank" style="min-width:480px"></span>.
+          <div class="answer-panel"><strong>정답: It was on Fifth Street that the man crashed into a taxi yesterday.</strong><br>장소를 나타내는 부사구 <code>on Fifth Street</code>를 강조한다. 과거 사건이므로 <code>It was</code>를 쓴다.</div>
+        </div>
+      </div>
+
+      <h3>풀이할 때 확인할 점</h3>
+      <div class="three-col">
+        <div class="card blue"><div class="card-title">시제 일치</div><p>현재 사실이면 <code>It is</code>, 과거 사실이면 <code>It was</code>가 자연스럽다.</p></div>
+        <div class="card sky"><div class="card-title">성분의 완전한 이동</div><p>전치사구는 전치사를 포함하여 통째로 옮긴다: <code>on Fifth Street</code>.</p></div>
+        <div class="card soft"><div class="card-title">나머지 구조 유지</div><p><code>that</code> 뒤의 시제와 어순을 임의로 바꾸지 않는다.</p></div>
+      </div>
+
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Textbook Practice 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 1</div>
+      <h2><span class="num sub-num">1-1</span>무엇을 강조할 수 있는가?</h2>
+      <p class="lead">같은 기본 문장도 말하는 사람의 초점에 따라 서로 다른 성분을 강조할 수 있다.</p>
+
+      <div class="sentence">
+        <div class="en">Mina sent the report to the committee yesterday.</div>
+        <div class="ko">미나는 어제 그 보고서를 위원회에 보냈다.</div>
+      </div>
+      <table>
+        <thead><tr><th>강조 대상</th><th>강조구문</th><th>질문에 대한 초점</th></tr></thead>
+        <tbody>
+          <tr><td>주어</td><td>It was <mark>Mina</mark> that sent the report to the committee yesterday.</td><td>누가 보냈는가?</td></tr>
+          <tr><td>목적어</td><td>It was <mark>the report</mark> that Mina sent to the committee yesterday.</td><td>무엇을 보냈는가?</td></tr>
+          <tr><td>전치사구</td><td>It was <mark>to the committee</mark> that Mina sent the report yesterday.</td><td>누구에게 보냈는가?</td></tr>
+          <tr><td>시간 부사</td><td>It was <mark>yesterday</mark> that Mina sent the report to the committee.</td><td>언제 보냈는가?</td></tr>
+        </tbody>
+      </table>
+
+      <h3>that 대신 쓸 수 있는 말</h3>
+      <div class="two-col">
+        <div class="card blue"><div class="card-title">사람 강조</div><p><code>It was Mina who sent the report.</code></p><p class="mini-note">사람을 강조할 때 <code>who</code>를 쓸 수 있다. 시험에서는 범용적인 <code>that</code>이 가장 안전하다.</p></div>
+        <div class="card sky"><div class="card-title">시간·장소 강조</div><p><code>It was yesterday that ...</code><br><code>It was at school that ...</code></p><p class="mini-note">강조구문에서는 시간·장소를 강조해도 보통 <code>when/where</code>가 아니라 <code>that</code>을 쓴다.</p></div>
+      </div>
+
+      <h3>일반적인 강조가 어려운 성분</h3>
+      <div class="formula">
+        동사 자체나 형용사만을 <code>It is/was ... that ...</code> 사이에 넣는 것은 일반적이지 않다.
+        <small>강조구문은 주로 명사(구)와 부사(구)를 강조한다.</small>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Grammar Extension 1-1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Integrated Practice 1</div>
+      <h2><span class="num sub-num">1-2</span>It 강조구문 종합 예제</h2>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">A</span> 강조구문을 기본 문장으로 바꾸세요.</div>
+        <div class="q"><span class="q-num">1.</span> It was the school garden that the students redesigned last spring.<br>→ <span class="blank" style="min-width:520px"></span>.<div class="answer-panel"><strong>The students redesigned the school garden last spring.</strong> — 강조된 목적어를 <code>redesigned</code> 뒤의 원래 자리로 되돌린다.</div></div>
+        <div class="q"><span class="q-num">2.</span> It is through repeated practice that learners develop confidence.<br>→ <span class="blank" style="min-width:520px"></span>.<div class="answer-panel"><strong>Learners develop confidence through repeated practice.</strong> — 방법을 나타내는 전치사구가 강조되어 있다.</div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">B</span> 괄호 안의 말을 강조하여 다시 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> The research team discovered the error during the final review. <span class="mini-note">(during the final review)</span><br>→ <span class="blank" style="min-width:540px"></span>.<div class="answer-panel"><strong>It was during the final review that the research team discovered the error.</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> Community support makes the program successful. <span class="mini-note">(Community support)</span><br>→ <span class="blank" style="min-width:540px"></span>.<div class="answer-panel"><strong>It is community support that makes the program successful.</strong> — 현재의 일반적 사실이므로 <code>It is</code>를 쓴다.</div></div>
+        <div class="q"><span class="q-num">3.</span> Jiwon borrowed this book from the library. <span class="mini-note">(this book)</span><br>→ <span class="blank" style="min-width:540px"></span>.<div class="answer-panel"><strong>It was this book that Jiwon borrowed from the library.</strong></div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">C</span> 어법상 알맞은 것을 고르세요.</div>
+        <div class="q"><span class="q-num">1.</span> It was at the community center ( that / where ) we first discussed the plan.<div class="answer-panel"><strong>that</strong> — <code>at the community center</code>가 이미 강조 성분으로 제시되었으며, 뒤에는 완전한 강조구문의 나머지가 온다.</div></div>
+        <div class="q"><span class="q-num">2.</span> It is young people ( which / who ) are leading the campaign.<div class="answer-panel"><strong>who</strong> — 사람이 강조된 경우 <code>who</code>가 가능하다. <code>that</code>도 가능하지만 선택지에는 없다.</div></div>
+        <div class="q"><span class="q-num">3.</span> It was not the result but the process that ( was / were ) important.<div class="answer-panel"><strong>was</strong> — <code>that</code> 뒤 동사는 실제 주어인 단수 명사 <code>the process</code>에 일치한다.</div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Integrated Practice 1-2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Textbook Grammar Point 2</div>
+      <h2><span class="num">2</span>가정법 과거완료: <mark>If it had not been for ...</mark></h2>
+      <p class="lead">과거에 실제로 존재했던 도움·조건이 없었다고 반대로 가정하고, 달라졌을 과거의 결과를 말한다.</p>
+
+      <h3>1. 교과서 핵심 문장</h3>
+      <div class="source-box">
+        <div class="en">First, I’d like to express my deepest appreciation to my family, who have shown me endless love and encouragement. <strong>If it had not been for their support, I wouldn’t have had the courage to chase my dreams.</strong> I also want to thank my friends for being there for me when things got tough. <strong>If it had not been for their advice, I would have given up before I succeeded.</strong> I’m honored to accept this award and can’t wait to share it with my family and friends! Thank you!</div>
+        <div class="ko">먼저, 제게 끝없는 사랑과 격려를 보여 준 가족에게 깊은 감사를 전하고 싶습니다. 가족의 도움이 없었더라면, 저는 꿈을 좇을 용기를 갖지 못했을 것입니다. 힘든 시기에 제 곁에 있어 준 친구들에게도 감사하고 싶습니다. 친구들의 조언이 없었더라면, 저는 성공하기 전에 포기했을 것입니다. 이 상을 받게 되어 영광이며, 가족과 친구들과 이 기쁨을 나누고 싶습니다. 감사합니다!</div>
+      </div>
+
+      <h3>2. 형태와 의미</h3>
+      <div class="formula">
+        If it had not been for + 명사, 주어 + would/could/might (not) have + p.p.
+        <small>‘~이 없었더라면, …했을 텐데 / …하지 못했을 텐데’</small>
+      </div>
+      <table>
+        <thead><tr><th>부분</th><th>형태</th><th>역할</th></tr></thead>
+        <tbody>
+          <tr><td>조건절</td><td><code>If it had not been for their support</code></td><td>과거에 실제로 있었던 도움을 ‘없었다’고 반대로 가정</td></tr>
+          <tr><td>결과절</td><td><code>I wouldn’t have had the courage</code></td><td>그 반대 조건에서 생겼을 과거의 결과</td></tr>
+          <tr><td>실제 사실</td><td><code>Their support helped me have courage.</code></td><td>실제로는 도움이 있었고, 그 덕분에 용기를 가짐</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3. 교과서 문장의 실제 사실</h3>
+      <div class="two-col">
+        <div class="card blue"><div class="card-title">가정</div><p>If it had not been for their advice, I would have given up.</p><p class="mini-note">그들의 조언이 없었더라면, 나는 포기했을 것이다.</p></div>
+        <div class="card sky"><div class="card-title">실제 사실</div><p>Their advice was available, so I did not give up.</p><p class="mini-note">실제로는 조언이 있었고, 그래서 나는 포기하지 않았다.</p></div>
+      </div>
+      <div class="rule">
+        <strong class="big">가정법은 실제 사실의 반대를 나타낸다</strong>
+        <p>조건절과 결과절의 형태만 외우지 말고, 그 문장이 전제하는 <strong>실제 과거 사실</strong>을 함께 복원해야 정확히 이해할 수 있다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Textbook Grammar Point 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Textbook Practice 2</div>
+      <h2>교과서 예제 풀이: 가정법 과거완료</h2>
+      <p class="lead">과거 사실의 반대 결과이므로 <code>would/could have + p.p.</code>를 사용한다.</p>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 주어진 말을 사용하여 문장을 완성하세요.</div>
+        <div class="q">
+          <span class="q-num">1.</span> If it had not been for their seat belts, they would <span class="blank" style="min-width:280px"></span>. <span class="mini-note">(be seriously injured)</span>
+          <div class="answer-panel"><strong>정답: have been seriously injured</strong><br><code>would + have + p.p.</code>가 필요하다. <code>be</code>의 과거분사는 <code>been</code>이므로 <code>would have been injured</code>가 된다. 실제로는 안전띠가 있어서 심하게 다치지 않았다.</div>
+        </div>
+        <div class="q">
+          <span class="q-num">2.</span> If it had not been for the doctors, the patient could <span class="blank" style="min-width:280px"></span>. <span class="mini-note">(lose his life)</span>
+          <div class="answer-panel"><strong>정답: have lost his life</strong><br><code>could + have + lost</code>의 형태이다. 실제로는 의사들이 있었기 때문에 환자가 목숨을 잃지 않았다.</div>
+        </div>
+      </div>
+
+      <h3>풀이 순서</h3>
+      <div class="process">
+        <div class="process-item"><b>과거 반대 가정 확인</b><code>If it had not been for</code>가 실제 과거와 반대되는 조건임을 확인한다.</div>
+        <div class="process-item"><b>조동사 유지</b>문장에 주어진 <code>would/could/might</code>를 그대로 사용한다.</div>
+        <div class="process-item"><b>have + p.p. 완성</b>괄호 속 동사를 <code>have + p.p.</code> 형태로 바꾼다.</div>
+      </div>
+
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Textbook Practice 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 2</div>
+      <h2><span class="num sub-num">2-1</span>현재와 과거의 반대 가정 비교</h2>
+      <p class="lead">가정하는 시간과 결과가 놓인 시간을 먼저 확인하면 동사 형태를 정확히 선택할 수 있다.</p>
+
+      <table>
+        <thead><tr><th>구분</th><th>조건절</th><th>결과절</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td>현재 사실의 반대</td><td><span class="structure">If + 주어 + 과거동사</span><br><span class="structure">If it were not for + 명사</span></td><td><span class="structure">would/could/might + 동사원형</span></td><td>‘지금 ~이 없다면’처럼 현재 사실과 반대되는 상황</td></tr>
+          <tr><td>과거 사실의 반대</td><td><span class="structure">If + 주어 + had + p.p.</span><br><span class="structure">If it had not been for + 명사</span></td><td><span class="structure">would/could/might have + p.p.</span></td><td>‘그때 ~이 없었더라면’처럼 과거 사실과 반대되는 상황</td></tr>
+        </tbody>
+      </table>
+
+      <h3>‘~이 없다면’과 ‘~이 없었더라면’</h3>
+      <div class="two-col">
+        <div class="sentence"><div class="en"><mark>If it were not for</mark> public transportation, many people would have difficulty commuting.</div><div class="ko">대중교통이 없다면, 많은 사람이 통근하는 데 어려움을 겪을 것이다. — 실제로는 현재 대중교통이 있다.</div></div>
+        <div class="sentence"><div class="en"><mark>If it had not been for</mark> the early warning, many residents would have been in danger.</div><div class="ko">조기 경보가 없었더라면, 많은 주민이 위험에 처했을 것이다. — 실제로는 당시 조기 경보가 있었다.</div></div>
+      </div>
+
+      <h3>일반적인 현재·과거 반대 가정</h3>
+      <div class="formula">
+        If I had more time now, I would join the project.<br>
+        If I had had more time then, I would have joined the project.
+        <small><code>had had</code>에서 앞의 <code>had</code>는 과거완료를 만들고, 뒤의 <code>had</code>는 본동사 <code>have</code>의 과거분사이다.</small>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Grammar Extension 2-1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 2</div>
+      <h2><span class="num sub-num">2-2</span>같은 뜻의 표현과 도치</h2>
+      <p class="lead">현재의 ‘없다면’과 과거의 ‘없었더라면’은 서로 다른 형태를 사용하며, 각각 <code>were</code>와 <code>had</code>를 앞으로 보내 도치할 수 있다.</p>
+
+      <table>
+        <thead><tr><th>시간</th><th>표현</th><th>예문</th><th>특징</th></tr></thead>
+        <tbody>
+          <tr><td>현재</td><td><span class="structure">If it were not for</span></td><td>If it were not for your help, I could not continue.</td><td>‘~이 없다면’의 기본형</td></tr>
+          <tr><td>현재</td><td><span class="structure">Were it not for</span></td><td>Were it not for your help, I could not continue.</td><td><code>if</code> 생략 후 <code>were</code> 도치</td></tr>
+          <tr><td>과거</td><td><span class="structure">If it had not been for</span></td><td>If it had not been for your help, I would have failed.</td><td>‘~이 없었더라면’의 기본형</td></tr>
+          <tr><td>과거</td><td><span class="structure">Had it not been for</span></td><td>Had it not been for your help, I would have failed.</td><td><code>if</code> 생략 후 <code>had</code> 도치</td></tr>
+          <tr><td>현재·과거</td><td><span class="structure">But for + 명사</span></td><td>But for your help, I could not continue.<br>But for your help, I would have failed.</td><td>‘~이 없다면 / 없었더라면’<br>결과절의 형태로 현재·과거를 판별</td></tr>
+          <tr><td>현재·과거</td><td><span class="structure">Without + 명사</span></td><td>Without your help, I could not continue.<br>Without your help, I would have failed.</td><td>‘~이 없다면 / 없었더라면’<br>결과절의 형태로 현재·과거를 판별</td></tr>
+        </tbody>
+      </table>
+
+      <h3>도치 과정</h3>
+      <div class="two-col">
+        <div class="card blue"><div class="card-title">현재 사실의 반대</div><p><code>If it were not for your help</code><br>→ <code>Were it not for your help</code></p><p class="mini-note"><code>if</code>를 생략하고 <code>were</code>를 문장 앞으로 보낸다.</p></div>
+        <div class="card sky"><div class="card-title">과거 사실의 반대</div><p><code>If it had not been for your help</code><br>→ <code>Had it not been for your help</code></p><p class="mini-note"><code>if</code>를 생략하고 <code>had</code>를 문장 앞으로 보낸다.</p></div>
+      </div>
+
+      <div class="rule">
+        <strong class="big">시제는 결과절이 보여 준다</strong>
+        <p><code>But for</code>와 <code>Without</code> 자체에는 시제가 없다. 뒤의 <code>would + 동사원형</code>인지, <code>would have + p.p.</code>인지 확인하여 현재 또는 과거의 반대 가정을 판별한다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Grammar Extension 2-2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Integrated Practice 2</div>
+      <h2><span class="num sub-num">2-3</span>가정법 과거완료 종합 예제</h2>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">A</span> 어법상 알맞은 것을 고르세요.</div>
+        <div class="q"><span class="q-num">1.</span> If it had not been for the early warning, many residents ( would be / would have been ) in danger.<div class="answer-panel"><strong>would have been</strong> — 이미 지나간 과거 상황의 반대 결과이다.</div></div>
+        <div class="q"><span class="q-num">2.</span> But for the teacher’s detailed feedback, I could not ( revise / have revised ) the essay successfully.<div class="answer-panel"><strong>have revised</strong> — 실제로는 피드백 덕분에 과거에 글을 성공적으로 수정했다.</div></div>
+        <div class="q"><span class="q-num">3.</span> Had it not been for the backup file, we ( might lose / might have lost ) all the data.<div class="answer-panel"><strong>might have lost</strong> — <code>Had it not been for</code>는 <code>If it had not been for</code>의 도치형이다.</div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">B</span> 같은 뜻이 되도록 바꾸세요.</div>
+        <div class="q"><span class="q-num">1.</span> If it had not been for the volunteers, the event would have been canceled.<br>→ <strong>But for</strong> <span class="blank" style="min-width:430px"></span>.<div class="answer-panel"><strong>the volunteers, the event would have been canceled</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> If it had not been for the map, we could not have found the village.<br>→ <strong>Had</strong> <span class="blank" style="min-width:460px"></span>.<div class="answer-panel"><strong>it not been for the map, we could not have found the village</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> Without her encouragement, I would have abandoned the plan.<br>→ <strong>If</strong> <span class="blank" style="min-width:460px"></span>.<div class="answer-panel"><strong>it had not been for her encouragement, I would have abandoned the plan</strong></div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">C</span> 실제 사실을 한 문장으로 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> If it had not been for the rescue team, the hikers might not have survived.<br>실제 사실: <span class="blank" style="min-width:470px"></span>.<div class="answer-panel"><strong>The rescue team helped the hikers survive.</strong> / <strong>The rescue team was there, so the hikers survived.</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> Had it not been for the scholarship, she could not have continued her studies.<br>실제 사실: <span class="blank" style="min-width:470px"></span>.<div class="answer-panel"><strong>She received the scholarship, so she was able to continue her studies.</strong></div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Integrated Practice 2-3</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar at a Glance</div>
+      <h2><span class="num combined-num">1·2</span>두 문법 한눈에 정리</h2>
+
+      <table>
+        <thead><tr><th>문법</th><th>핵심 구조</th><th>핵심 의미</th><th>판별·풀이 기준</th></tr></thead>
+        <tbody>
+          <tr><td><strong>It 강조구문</strong></td><td><span class="structure">It is/was + 강조 성분 + that + 나머지</span></td><td>‘바로 ~가/를/에서/때에’</td><td>강조 성분을 원래 자리로 되돌리면 완전한 기본 문장이 되는가?</td></tr>
+          <tr><td><strong>가정법 과거완료</strong></td><td><span class="structure">If + had p.p., would have p.p.</span></td><td>과거 사실과 반대되는 조건과 결과</td><td>가정한 상황의 반대인 실제 과거 사실은 무엇인가?</td></tr>
+          <tr><td><strong>현재의 도움 부재 가정</strong></td><td><span class="structure">If it were not for + 명사</span></td><td>‘~이 없다면’</td><td><code>Were it not for</code>로 도치 가능</td></tr>
+          <tr><td><strong>과거의 도움 부재 가정</strong></td><td><span class="structure">If it had not been for + 명사</span></td><td>‘~이 없었더라면’</td><td><code>But for</code>, <code>Without</code>, <code>Had it not been for</code>로 전환 가능</td></tr>
+        </tbody>
+      </table>
+
+      <h3>대표 예문</h3>
+      <div class="two-col">
+        <div class="sentence"><div class="en">It is <mark>everybody’s active participation</mark> that will transform the environment.</div><div class="ko">환경을 바꿀 것은 바로 모두의 적극적인 참여이다.</div></div>
+        <div class="sentence"><div class="en">If it had not been for <mark>their advice</mark>, I would have given up.</div><div class="ko">그들의 조언이 없었더라면, 나는 포기했을 것이다.</div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Grammar at a Glance</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Exit Ticket</div>
+      <h2><span class="num combined-num">1·2</span>수업 마무리 종합 형성평가</h2>
+      <p class="lead">강조 대상과 가정의 시간, 실제 사실을 문장 구조와 함께 판단한다.</p>
+
+      <div class="problem-set">
+        <div class="q"><span class="q-num">1.</span> 다음 문장에서 강조된 성분의 종류를 쓰시오.<br>It was <mark>through careful observation</mark> that the scientist noticed the change.<div class="answer-panel"><strong>방법을 나타내는 전치사구(부사구)</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> 다음 기본 문장의 <strong>the local residents</strong>를 강조하여 다시 쓰시오.<br>The local residents protected the wetland.<br>→ <span class="blank" style="min-width:520px"></span>.<div class="answer-panel"><strong>It was the local residents that protected the wetland.</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> 다음 문장을 <code>Were</code>로 시작하는 도치구문으로 바꾸시오.<br>If it were not for public transportation, commuting would be much harder.<br>→ <span class="blank" style="min-width:530px"></span>.<div class="answer-panel"><strong>Were it not for public transportation, commuting would be much harder.</strong></div></div>
+        <div class="q"><span class="q-num">4.</span> If it had not been for your quick response, the damage <span class="blank" style="min-width:220px"></span> much worse. <span class="mini-note">(be)</span><div class="answer-panel"><strong>would have been</strong></div></div>
+        <div class="q"><span class="q-num">5.</span> 다음 문장을 <code>Had</code>로 시작하는 도치구문으로 바꾸시오.<br>If it had not been for the rain, the fire would have spread farther.<br>→ <span class="blank" style="min-width:530px"></span>.<div class="answer-panel"><strong>Had it not been for the rain, the fire would have spread farther.</strong></div></div>
+        <div class="q"><span class="q-num">6.</span> 다음 문장이 나타내는 실제 사실을 쓰시오.<br>Without the scientist’s persistence, the discovery might not have been made.<div class="answer-panel"><strong>예시 답:</strong> The scientist was persistent, so the discovery was made. / The scientist’s persistence made the discovery possible.</div></div>
+        <div class="q"><span class="q-num">7.</span> 다음 중 어법상 옳은 문장을 고르시오.<div class="options">① It was at the library where I met her.<br>② If it had not been for the guide, we would get lost.<br>③ It is cooperation that makes meaningful change possible.<br>④ Had it not been the medicine, he could not have recovered.</div><div class="answer-panel"><strong>정답: ③</strong><br>① 강조구문이므로 <code>where → that</code>, ② 과거 반대 결과이므로 <code>would have gotten/got lost</code>, ④ <code>Had it not been for the medicine</code>이 되어야 한다.</div></div>
+      </div>
+
+      <h3>오늘의 최종 체크</h3>
+      <ul class="checklist">
+        <li><code>It is/was + 강조 성분 + that ...</code>의 구조를 기본 문장으로 되돌릴 수 있다.</li>
+        <li>주어·목적어·시간·장소·방법을 강조하는 문장을 만들 수 있다.</li>
+        <li><code>If it were not for</code>와 <code>Were it not for</code>로 현재의 ‘~이 없다면’을 표현할 수 있다.</li>
+        <li><code>If it had not been for + 명사</code>의 의미와 실제 사실을 설명할 수 있다.</li>
+        <li>가정법 과거완료의 조건절과 결과절을 정확한 형태로 완성할 수 있다.</li>
+        <li><code>But for</code>, <code>Without</code>, <code>Had it not been for</code>를 서로 바꾸어 쓸 수 있다.</li>
+      </ul>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 2 · Exit Ticket</div>
+    </section>
+  </main>
+
+  <script>
+    function toggleAnswers() {
+      const shown = document.body.classList.toggle('show-answers');
+      document.getElementById('answerBtn').textContent = shown ? '정답·해설 숨기기' : '정답·해설 표시';
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
