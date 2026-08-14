@@ -241,7 +241,8 @@
       label:'수행평가',
       eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'영자신문 비평문 쓰기 · 5차시',
-      folder:'performance', type:'lessons', count:5, unitLabel:'수행평가'
+      folder:'performance', type:'lessons', count:5, unitLabel:'수행평가',
+      links:{ 1:'https://classroom.google.com/c/ODU1NjQzMjk5OTQz/a/ODc0NTU5Nzg4OTMy/details' }
     },
     block: {
       label:'블록활동',
@@ -296,7 +297,10 @@
     for(let i = 1; i <= data.count; i++){
       const ii = String(i).padStart(2,'0');
       const tag = data.roundWord ? (i + '회') : (i + '차시');
-      html += '<a class="bubble" href="' + data.folder + '/lesson' + ii + '.html">'
+      const override = data.links && data.links[i];
+      const href = override ? override : (data.folder + '/lesson' + ii + '.html');
+      const extraAttrs = override ? ' target="_blank" rel="noopener"' : '';
+      html += '<a class="bubble" href="' + href + '"' + extraAttrs + '>'
         + '<span class="num">' + ii + '</span>'
         + '<span class="label"><span class="tag">' + tag + '</span><span class="name">' + data.unitLabel + ' ' + i + '</span></span>'
         + '</a>';
