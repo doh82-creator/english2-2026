@@ -261,9 +261,17 @@
       eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'단어시험 자료 · 총 24회',
       folder:'vocab', type:'lessons', count:24, unitLabel:'단어시험', roundWord:true
+    },
+    plan: {
+      label:'진도계획',
+      eyebrow:'2026 · 2학기 · CNSA 12기',
+      desc:'분반별 진도계획 · 1~14분반',
+      folder:'plan', type:'lessons', count:14,
+      tagFn: function(i){ return '진도계획'; },
+      nameFn: function(i){ return i + '분반'; }
     }
   };
-  const order = ['supplement','textbook','performance','block','vocab'];
+  const order = ['supplement','textbook','performance','block','vocab','plan'];
 
   const params = new URLSearchParams(window.location.search);
   const cat = params.get('cat') && CATS[params.get('cat')] ? params.get('cat') : 'supplement';
@@ -302,13 +310,14 @@
     let html = '<div class="grid">';
     for(let i = 1; i <= data.count; i++){
       const ii = String(i).padStart(2,'0');
-      const tag = data.roundWord ? (i + '회') : (i + '차시');
+      const tag = data.tagFn ? data.tagFn(i) : (data.roundWord ? (i + '회') : (i + '차시'));
+      const name = data.nameFn ? data.nameFn(i) : (data.unitLabel + ' ' + i);
       const override = data.links && data.links[i];
       const href = override ? override : (data.folder + '/lesson' + ii + '.html');
       const extraAttrs = override ? ' target="_blank" rel="noopener"' : '';
       html += '<a class="bubble" href="' + href + '"' + extraAttrs + '>'
         + '<span class="num">' + ii + '</span>'
-        + '<span class="label"><span class="tag">' + tag + '</span><span class="name">' + data.unitLabel + ' ' + i + '</span></span>'
+        + '<span class="label"><span class="tag">' + tag + '</span><span class="name">' + name + '</span></span>'
         + '</a>';
     }
     html += '</div>';
