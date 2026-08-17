@@ -1613,7 +1613,7 @@
       <div class="footer"><span>ⓒ Saebyeol Yu. Saebyeol's PowerPoint · CNSA English<span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span></span><span>23</span></div>
     </section>
 
-    <section class="slide webshot-slide" data-title="영어<span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span>(6) 수업 진도계획표">
+    <section class="slide webshot-slide" data-title="영어Ⅱ(6) 수업 진도계획표">
       <div class="slide-inner">
         <p class="eyebrow">This week</p>
         <h2>이번 주 수업 준비</h2>
@@ -1652,11 +1652,11 @@
         current = clamp(index);
         counter.textContent = (current + 1) + ' / ' + slides.length;
         progress.style.width = (((current + 1) / slides.length) * 100) + '%';
-        document.title = slides[current].dataset.title + ' · 영어<span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> OT';
+        document.title = slides[current].dataset.title + ' · 영어Ⅱ OT';
       };
       const go = (index) => {
         current = clamp(index);
-        slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        deck.scrollTo({ top: slides[current].offsetTop, behavior: 'smooth' });
         update(current);
       };
       document.getElementById('prev').addEventListener('click', () => go(current - 1));
