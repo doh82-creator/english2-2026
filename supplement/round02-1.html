@@ -111,9 +111,9 @@
 <script>
   // 문항이 추가되면 이 목록에 한 줄만 추가하면 됩니다.
   const QUESTIONS = [
-    { num:22, file:'q22.html', topic:'글의 요지' },
-    { num:23, file:'q23.html', topic:'글의 주제' },
-    { num:30, file:'q30.html', topic:'문맥상 낱말의 쓰임' }
+    { num:22, file:'q22.html', topic:'글의 요지', rate:'39.0%' },
+    { num:23, file:'q23.html', topic:'글의 주제', rate:'36.1%' },
+    { num:30, file:'q30.html', topic:'문맥상 낱말의 쓰임', rate:'26.7%' }
   ];
 
   const list = document.getElementById('q-list');
@@ -121,7 +121,7 @@
   list.innerHTML = sorted.map(function(q){
     return '<a class="q" href="round02-1/' + q.file + '">'
       + '<span class="num">' + q.num + '</span>'
-      + '<span class="label"><span class="tag">문항 ' + q.num + '번</span><span class="name">' + q.topic + '</span></span>'
+      + '<span class="label"><span class="tag">문항 ' + q.num + '번' + (q.rate ? ' (' + q.rate + ')' : '') + '</span><span class="name">' + q.topic + '</span></span>'
       + '</a>';
   }).join('');
 </script>
