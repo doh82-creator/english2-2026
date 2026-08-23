@@ -93,6 +93,19 @@
     border-color:var(--blue);
     color:#fff;
   }
+  a.q.gray .num{
+    border-color:#9AA5B1;
+    color:#9AA5B1;
+  }
+  a.q.gray:hover .num, a.q.gray:focus-visible .num{
+    background:#9AA5B1;
+    border-color:#9AA5B1;
+    color:#fff;
+  }
+  a.q.gray .tag,
+  a.q.gray .name{
+    color:#9AA5B1;
+  }
   .label{display:flex; flex-direction:column; gap:1px; min-width:0;}
   .label .tag{font-size:11px; color:var(--blue);}
   .label .name{font-weight:700; color:var(--navy); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
@@ -113,15 +126,15 @@
   const QUESTIONS = [
     { num:33, file:'q33.html', topic:'빈칸 추론' },
     { num:39, file:'q39.html', topic:'문장 삽입' },
-    { num:40, file:'q40.html', topic:'요약문 완성' },
-    { num:41, file:'q41.html', topic:'제목·어휘 (41-42번 세트)' },
+    { num:40, file:'q40.html', topic:'요약문 완성', gray:true },
+    { num:41, file:'q41.html', topic:'제목·어휘 (41-42번 세트)', gray:true },
     { num:42, file:'q42.html', topic:'문맥상 낱말의 쓰임' }
   ];
 
   const list = document.getElementById('q-list');
   const sorted = QUESTIONS.slice().sort(function(a, b){ return a.num - b.num; });
   list.innerHTML = sorted.map(function(q){
-    return '<a class="q" href="round01-2/' + q.file + '">'
+    return '<a class="q' + (q.gray ? ' gray' : '') + '" href="round01-2/' + q.file + '">'
       + '<span class="num">' + q.num + '</span>'
       + '<span class="label"><span class="tag">문항 ' + q.num + '번</span><span class="name">' + q.topic + '</span></span>'
       + '</a>';
