@@ -114,6 +114,20 @@
     border-color:var(--blue);
     color:#fff;
   }
+  .num.activity{
+    border-color:#0E9F6E;
+    color:#0E9F6E;
+  }
+  a.q.activity:hover .num, a.q.activity:focus-visible .num{
+    background:#0E9F6E;
+    border-color:#0E9F6E;
+    color:#fff;
+  }
+  a.q.activity:hover, a.q.activity:focus-visible{
+    border-color:#0E9F6E;
+    background:#EAFBF3;
+  }
+  a.q.activity .tag{color:#0E9F6E;}
   .label{display:flex; flex-direction:column; gap:1px; min-width:0;}
   .label .tag{font-size:11px; color:var(--blue);}
   .label .name{font-weight:700; color:var(--navy); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
@@ -135,15 +149,19 @@
   const QUESTIONS = [
     { num:29, file:'q29.html', topic:'어법', rate:'47.9%' },
     { num:30, file:'q30.html', topic:'문맥 어휘', rate:'48.2%' },
-    { num:31, file:'q31.html', topic:'빈칸 추론', rate:'49.6%' }
+    { num:31, file:'q31.html', topic:'빈칸 추론', rate:'49.6%' },
+    { num:30, url:'https://script.google.com/a/macros/cnsa.hs.kr/s/AKfycbyJpPM0tS3ck0M47gWg9-KXKDw1hwUJ2kTfFfGJKjC6VpYQF-dDO7MMkMqInZWZK_a6Zg/exec?activity=summary-adaptation-v1&v=30', topic:'모둠활동 5-1', tagText:'30번 · 한 문장으로 요약하기', activity:true, sort:1000 }
   ];
 
   const list = document.getElementById('q-list');
-  const sorted = QUESTIONS.slice().sort(function(a, b){ return a.num - b.num; });
+  const sorted = QUESTIONS.slice().sort(function(a, b){ return (a.sort ?? a.num) - (b.sort ?? b.num); });
   list.innerHTML = sorted.map(function(q){
-    return '<a class="q" href="round05-1/' + q.file + '">'
-      + '<span class="num">' + q.num + '</span>'
-      + '<span class="label"><span class="tag">문항 ' + q.num + '번' + (q.rate ? ' (' + q.rate + ')' : '') + '</span><span class="name">' + q.topic + '</span></span>'
+    const href = q.url ? q.url : ('round05-1/' + q.file);
+    const target = q.url ? ' target="_blank" rel="noopener"' : '';
+    const tagContent = q.tagText ? q.tagText : ('문항 ' + q.num + '번' + (q.rate ? ' (' + q.rate + ')' : ''));
+    return '<a class="q' + (q.activity ? ' activity' : '') + '" href="' + href + '"' + target + '>'
+      + '<span class="num' + (q.activity ? ' activity' : '') + '">' + q.num + '</span>'
+      + '<span class="label"><span class="tag">' + tagContent + '</span><span class="name">' + q.topic + '</span></span>'
       + '</a>';
   }).join('');
 </script>
