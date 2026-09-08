@@ -114,6 +114,21 @@
     border-color:var(--blue);
     color:#fff;
   }
+  .num.activity{
+    border-color:#0E9F6E;
+    color:#0E9F6E;
+  }
+  a.q.activity:hover .num, a.q.activity:focus-visible .num{
+    background:#0E9F6E;
+    border-color:#0E9F6E;
+    color:#fff;
+  }
+  a.q.activity:hover, a.q.activity:focus-visible{
+    border-color:#0E9F6E;
+    background:#EAFBF3;
+  }
+  a.q.activity .tag{color:#0E9F6E;}
+  a.q.activity .name{color:#0E9F6E;}
   .label{display:flex; flex-direction:column; gap:1px; min-width:0;}
   .label .tag{font-size:11px; color:var(--blue);}
   .label .name{font-weight:700; color:var(--navy); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
@@ -135,15 +150,19 @@
   const QUESTIONS = [
     { num:22, file:'q22.html', topic:'글의 요지', rate:'39.0%' },
     { num:23, file:'q23.html', topic:'글의 주제', rate:'36.1%' },
-    { num:30, file:'q30.html', topic:'문맥상 낱말의 쓰임', rate:'26.7%' }
+    { num:30, file:'q30.html', topic:'문맥상 낱말의 쓰임', rate:'26.7%' },
+    { num:22, url:'https://script.google.com/a/macros/cnsa.hs.kr/s/AKfycbyJpPM0tS3ck0M47gWg9-KXKDw1hwUJ2kTfFfGJKjC6VpYQF-dDO7MMkMqInZWZK_a6Zg/exec?activity=summary-technology-v1', topic:'모둠활동 2-2', tagText:'22번 · 한 문장으로 요약하기', activity:true, sort:1000 }
   ];
 
   const list = document.getElementById('q-list');
-  const sorted = QUESTIONS.slice().sort(function(a, b){ return a.num - b.num; });
+  const sorted = QUESTIONS.slice().sort(function(a, b){ return (a.sort ?? a.num) - (b.sort ?? b.num); });
   list.innerHTML = sorted.map(function(q){
-    return '<a class="q" href="round02-1/' + q.file + '">'
-      + '<span class="num">' + q.num + '</span>'
-      + '<span class="label"><span class="tag">문항 ' + q.num + '번' + (q.rate ? ' (' + q.rate + ')' : '') + '</span><span class="name">' + q.topic + '</span></span>'
+    const href = q.url ? q.url : ('round02-1/' + q.file);
+    const target = q.url ? ' target="_blank" rel="noopener"' : '';
+    const tagContent = q.tagText ? q.tagText : ('문항 ' + q.num + '번' + (q.rate ? ' (' + q.rate + ')' : ''));
+    return '<a class="q' + (q.activity ? ' activity' : '') + '" href="' + href + '"' + target + '>'
+      + '<span class="num' + (q.activity ? ' activity' : '') + '">' + q.num + '</span>'
+      + '<span class="label"><span class="tag">' + tagContent + '</span><span class="name">' + q.topic + '</span></span>'
       + '</a>';
   }).join('');
 </script>
