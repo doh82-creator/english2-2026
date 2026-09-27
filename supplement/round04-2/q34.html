@@ -12,6 +12,16 @@
 .hl-blue,.hl-green{padding:1px 2px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hl-blue{background:#d3e5ff}.hl-green{background:#d9f3e4}.ul-red{text-decoration:underline;text-decoration-color:#d62f3a;text-decoration-thickness:2px;text-underline-offset:4px}.passage-review{margin-top:24px}</style>
 <style>
 .response-panel{margin-top:14px;padding:17px 18px;border:1px solid #c8d8ea;border-radius:14px;background:#f7faff}.response-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:11px}.response-head b{color:var(--navy)}.response-head small{color:var(--muted)}.response-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.response-item{padding:10px 7px;border:1px solid #d8e3ef;border-radius:10px;background:#fff;text-align:center}.response-item b{display:block;color:var(--blue);font-size:13px}.response-item span{display:block;color:var(--ink);font-size:17px;font-weight:850}.response-item.correct{border-color:#83c6b1;background:var(--green-bg)}.response-item.correct b,.response-item.correct span{color:var(--green)}.response-item.trap{border-color:#e0bc6b;background:var(--amber-bg)}.response-item.trap b,.response-item.trap span{color:var(--amber)}@media(max-width:760px){.response-head{display:block}.response-head small{display:block;margin-top:3px}.response-grid{grid-template-columns:repeat(5,1fr)}.response-item{padding:8px 3px}.response-item b{font-size:11px}.response-item span{font-size:15px}}
+.hl-purple{padding:1px 2px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#ecdcff}
+.flow{display:flex;flex-direction:row;align-items:stretch}
+.flow-card{flex:1;min-width:0;padding:16px 20px;border:2px solid;border-radius:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.flow-label{display:inline-block;margin-bottom:6px;padding:2px 10px;border-radius:999px;color:#fff;font-size:12px;font-weight:800}
+.flow-card p{margin:0;color:#33475f;font-size:15px}.flow-card p.head{color:var(--navy);font-weight:800;font-size:16px;margin-bottom:4px}
+.flow-arrow{align-self:center;color:var(--blue);font-size:18px;padding:0 6px}
+.flow-card.c0{background:#d3e5ff;border-color:#2f67b2}.flow-card.c0 .flow-label{background:#2f67b2}
+.flow-card.c1{background:#d9f3e4;border-color:#16745b}.flow-card.c1 .flow-label{background:#16745b}
+.flow-card.c2{background:#ecdcff;border-color:#6b3fb0}.flow-card.c2 .flow-label{background:#6b3fb0}
+@media(max-width:760px){.flow{flex-direction:column}.flow-arrow{padding:6px 0}.flow-arrow::before{content:"▼"}.flow-arrow span{display:none}}
 </style>
 </head>
 <body>
@@ -122,13 +132,23 @@
 </section>
 <article class="passage passage-review">
 <p>
-<span class="hl-blue">Sensory organs are the only channels of communication between the brain and the outside world.</span> <span class="hl-blue">Simply put, the brain is not designed to sense on its own.</span> <span class="hl-green">For instance, an exposed brain would neither sense light shining on it nor feel something touching it.</span> <span class="hl-green">In fact, patients are often kept awake during brain surgery, which can help a surgeon isolate specific regions of the brain.</span> <span class="hl-green">The ancient Greek philosopher Aristotle recognized this characteristic of the brain over 2,000 years ago when he said, “<span class="ul-red">Nothing is in the mind that does not pass through the senses.</span>”</span> <span class="hl-green">This concept can be seen clearly when volunteers are blind-folded and placed in the warm water of a sensory deprivation tank.</span> <span class="hl-green">
+<span class="hl-blue">Sensory organs are the only channels of communication between the brain and the outside world.</span> <span class="hl-blue">Simply put, the brain is not designed to sense on its own.</span> <span class="hl-green">For instance, an exposed brain would neither sense light shining on it nor feel something touching it.</span> <span class="hl-green">In fact, patients are often kept awake during brain surgery, which can help a surgeon isolate specific regions of the brain.</span> <span class="hl-green">The ancient Greek philosopher Aristotle recognized this characteristic of the brain over 2,000 years ago when he said, “<span class="ul-red">Nothing is in the mind that does not pass through the senses.</span>”</span> <span class="hl-purple">This concept can be seen clearly when volunteers are blind-folded and placed in the warm water of a sensory deprivation tank.</span> <span class="hl-purple">
 <span class="ul-red">They soon experience visual, auditory, and tactile (touch) hallucinations, as well as incoherent thought patterns.</span>
 </span> <span class="hl-blue">From these experiments and others, it is apparent that <span class="blank">&nbsp;</span> to carry out functions that give us personality and intellect.</span>
 </p>
 <p class="passage-note">* hallucination: 환각</p>
 </article>
-<h3>1. 선택지별 판단</h3>
+<h3>1. 문맥의 핵심 흐름</h3>
+<div class="flow">
+<div class="flow-card c0"><span class="flow-label">도입: 주제 제시</span><p class="head">감각기관 = 뇌와 외부 세계의 유일한 통로</p><p>뇌는 스스로 감지하도록 설계되지 않음</p></div>
+<div class="flow-arrow"><span>▶</span></div>
+<div class="flow-card c1"><span class="flow-label">근거 ①: 뇌의 특성</span><p class="head">뇌 자체는 아무것도 못 느낌</p><p>노출된 뇌·수술 중 각성 / Aristotle: “감각을 거치지 않은 것은 마음에 없다”</p></div>
+<div class="flow-arrow"><span>▶</span></div>
+<div class="flow-card c2"><span class="flow-label">근거 ②: 감각 박탈 실험</span><p class="head">감각 차단 → 환각 + 비일관적 사고</p><p>입력이 끊기면 정상적 정신 기능 붕괴</p></div>
+<div class="flow-arrow"><span>▶</span></div>
+<div class="flow-card c0"><span class="flow-label">결론: 주제 재진술</span><p class="head">성격·지성 기능 수행에는 감각의 지속적 입력 필요</p><p>빈칸 = ① constant input from our senses</p></div>
+</div>
+<h3>2. 선택지별 판단</h3>
 <table class="analysis">
 <thead>
 <tr>
@@ -181,7 +201,7 @@
 </tr>
 </tbody>
 </table>
-<h3>2. 문장별 슬래시 리딩과 직독직해</h3>
+<h3>3. 문장별 슬래시 리딩과 직독직해</h3>
 <div class="reading-list">
 <article class="reading-card important-reading">
 <div class="sentence-en">Sensory organs are the only channels of communication <span class="slash">/</span> between the brain and the outside world.</div>
@@ -232,7 +252,7 @@
 <div class="sentence-ko">이러한 실험들과 다른 실험들로부터 <span class="slash">/</span> 우리가 감각으로부터 지속적인 입력을 필요로 한다는 것이 분명하다 <span class="slash">/</span> 기능을 수행하기 위해 <span class="slash">/</span> 우리에게 성격과 지성을 주는.</div>
 </article>
 </div>
-<h3>3. 핵심 구문·문법</h3>
+<h3>4. 핵심 구문·문법</h3>
 <div class="grammar-grid">
 <article class="card">
 <b>neither A nor B</b>
@@ -247,7 +267,7 @@
 <p>수동태에서 환자들이 깨어 있는 상태로 유지됨을 뜻한다.</p>
 </article>
 </div>
-<h3>4. 주요 어휘 카드</h3>
+<h3>5. 주요 어휘 카드</h3>
 <div class="vocab-grid">
 <div class="vocab">
 <b>sensory organ</b>
