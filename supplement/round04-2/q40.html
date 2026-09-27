@@ -12,6 +12,16 @@
 .hl-blue,.hl-green,.hl-orange,.hl-purple{padding:1px 2px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hl-blue{background:#d3e5ff}.hl-green{background:#d9f3e4}.hl-orange{background:#ffe2c2}.passage-review{margin-top:24px}.flow{display:flex;flex-direction:column;align-items:stretch}.flow-card{padding:16px 20px;border:1px solid var(--line);border-radius:14px;background:#f9fbfd}.flow-card.main{border:2px solid #8db4e2;background:#eef5ff}.flow-card.sub{margin-left:36px}.flow-label{display:inline-block;margin-bottom:6px;padding:2px 10px;border-radius:999px;background:var(--navy);color:#fff;font-size:12px;font-weight:800}.flow-card.sub .flow-label{background:#e3ebf5;color:var(--navy)}.flow-card p{margin:0;color:#33475f;font-size:15px}.flow-card p.head{color:var(--navy);font-weight:800;font-size:16px}.flow-arrow{align-self:center;color:var(--blue);font-size:22px;line-height:1;padding:6px 0}@media(max-width:760px){.flow-card.sub{margin-left:16px}}.flow-4{flex-direction:row;align-items:stretch}.flow-4 .flow-card{flex:1;min-width:0;border:2px solid #8db4e2;background:#eef5ff}.flow-4 .flow-arrow{align-self:center;padding:0 6px;font-size:18px}.flow-4 .flow-arrow{transform:rotate(-90deg)}@media(max-width:760px){.flow-4{flex-direction:column}.flow-4 .flow-arrow{transform:none;padding:6px 0}}.hl-purple{background:#ecdcff}.flow-4 .flow-card.c0{background:#d3e5ff;border-color:#2f67b2}.flow-4 .flow-card.c0 .flow-label{background:#2f67b2}.flow-4 .flow-card.c1{background:#d9f3e4;border-color:#16745b}.flow-4 .flow-card.c1 .flow-label{background:#16745b}.flow-4 .flow-card.c2{background:#ecdcff;border-color:#6b3fb0}.flow-4 .flow-card.c2 .flow-label{background:#6b3fb0}.flow-4 .flow-card.c3{background:#ffe2c2;border-color:#b8620c}.flow-4 .flow-card.c3 .flow-label{background:#b8620c}.summary-review{margin:24px 0 0}</style>
 <style>
 .response-panel{margin-top:14px;padding:17px 18px;border:1px solid #c8d8ea;border-radius:14px;background:#f7faff}.response-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:11px}.response-head b{color:var(--navy)}.response-head small{color:var(--muted)}.response-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.response-item{padding:10px 7px;border:1px solid #d8e3ef;border-radius:10px;background:#fff;text-align:center}.response-item b{display:block;color:var(--blue);font-size:13px}.response-item span{display:block;color:var(--ink);font-size:17px;font-weight:850}.response-item.correct{border-color:#83c6b1;background:var(--green-bg)}.response-item.correct b,.response-item.correct span{color:var(--green)}.response-item.trap{border-color:#e0bc6b;background:var(--amber-bg)}.response-item.trap b,.response-item.trap span{color:var(--amber)}@media(max-width:760px){.response-head{display:block}.response-head small{display:block;margin-top:3px}.response-grid{grid-template-columns:repeat(5,1fr)}.response-item{padding:8px 3px}.response-item b{font-size:11px}.response-item span{font-size:15px}}
+.sentence-en.obj-line{line-height:2.5}
+.obj{text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;-webkit-box-decoration-break:clone}
+.obj1{text-decoration-color:#2f67b2}.obj2{text-decoration-color:#d62f3a}
+.hl-q-blue,.hl-q-yellow{padding:1px 3px;border-radius:3px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hl-q-blue{background:#bcd7ff}.hl-q-yellow{background:#ffe88b}
+.bracket{display:inline-block;margin:0 2px;color:#475569;font-size:1.45em;font-weight:400;line-height:1;vertical-align:-0.1em;text-decoration:none}
+.bracketed,.bracketed .bracket{color:#8a94a6}
+.hl-pink{padding:1px 3px;border-radius:3px;background:#ffd6e7;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.obj-anchor{position:relative;display:inline-block;width:0;height:0;vertical-align:baseline}
+.obj-tag{position:absolute;left:0;top:10px;font-family:"Pretendard","Noto Sans KR",sans-serif;font-size:12px;font-weight:800;line-height:1;white-space:nowrap;text-decoration:none}
+.obj1 .obj-tag{color:#2f67b2}.obj2 .obj-tag{color:#d62f3a}
 </style>
 </head>
 <body>
@@ -212,7 +222,7 @@
 <h3>3. 문장별 슬래시 리딩과 직독직해</h3>
 <div class="reading-list">
 <article class="reading-card important-reading">
-<div class="sentence-en">The study of emotions and decision making <span class="slash">/</span> is now of considerable importance.</div>
+<div class="sentence-en">The study of emotions and decision making <span class="slash">/</span> is now <span class="hl-pink">of considerable importance</span>.</div>
 <div class="sentence-vocab">
 <b>considerable</b> 상당한 · <b>be of importance</b> 중요하다</div>
 <div class="sentence-ko">감정과 의사결정에 관한 연구는 <span class="slash">/</span> 이제 상당히 중요하다.</div>
@@ -224,7 +234,7 @@
 <div class="sentence-ko">이것은 적용을 포함한다 <span class="slash">/</span> 다양한 도구들의 <span class="slash">/</span> 신경과학이 제공하는.</div>
 </article>
 <article class="reading-card">
-<div class="sentence-en">One important stream of the literature <span class="slash">/</span> examines people with brain damage <span class="slash">/</span> and how damage to particular parts of the brain <span class="slash">/</span> known to be responsible for particular cognitive functions <span class="slash">/</span> impacts on decision making.</div>
+<div class="sentence-en obj-line">One important stream of the literature <span class="slash">/</span> examines <span class="obj obj1"><span class="obj-anchor"><span class="obj-tag">목적어 1</span></span>people with brain damage</span> <span class="slash">/</span> and <span class="obj obj2"><span class="obj-anchor"><span class="obj-tag">목적어 2</span></span><span class="hl-q-blue">how</span> <span class="hl-q-yellow">damage</span> <span class="bracketed"><span style="white-space:nowrap"><span class="bracket">[</span>to</span> particular parts of the brain <span class="slash">/</span> known to be responsible for particular cognitive <span style="white-space:nowrap">functions<span class="bracket">]</span></span></span> <span class="slash">/</span> <span class="hl-q-yellow">impacts</span> on decision making</span>.</div>
 <div class="sentence-vocab">
 <b>stream</b> 흐름 · <b>cognitive</b> 인지의 · <b>impact on</b> ~에 영향을 주다</div>
 <div class="sentence-ko">문헌의 한 중요한 흐름은 <span class="slash">/</span> 뇌 손상이 있는 사람들을 조사한다 <span class="slash">/</span> 그리고 뇌의 특정 부분에 대한 손상이 어떻게 영향을 주는지를 <span class="slash">/</span> 특정 인지 기능을 담당한다고 알려진 <span class="slash">/</span> 의사결정에.</div>
@@ -273,12 +283,6 @@
 <span class="quote">examines ... <mark>how damage ... impacts</mark>
 </span>
 <p>how절이 examines의 두 번째 목적어 역할을 한다.</p>
-</article>
-<article class="card">
-<b>with + O + -ing</b>
-<span class="quote">the emotional part ... <mark>working</mark>
-</span>
-<p>working은 전치사 of 뒤 동명사구에서 emotional part를 의미상 주어로 둔다.</p>
 </article>
 <article class="card">
 <b>관계부사 where</b>
