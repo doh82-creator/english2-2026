@@ -32,6 +32,9 @@
     .choice-analysis{table-layout:fixed}.choice-analysis td{overflow-wrap:break-word}.choice-analysis td:nth-child(2){font-size:15.5px;line-height:1.6}.choice-analysis td:nth-child(3){font-size:13px;line-height:1.6}.choice-analysis .choice-source{font-size:18px;line-height:1.45;margin-bottom:6px}.choice-analysis .choice-translation{font-size:14px}.choice-analysis .option-rate{text-align:center;font-size:12px;font-weight:800;color:var(--navy)}
     @media(max-width:760px){.reading-blank,.stem-blank{min-width:110px}.choice-stem{font-size:16px}.choice-analysis th,.choice-analysis td{padding:8px 5px}.choice-analysis td:nth-child(2){font-size:13px}.choice-analysis td:nth-child(3){font-size:12px}.choice-analysis .choice-source{font-size:15px}.choice-analysis .option-rate{font-size:11px}}
     @media print{.summary-reveal .summary-text{visibility:visible}.summary-cover{display:none}.reading-card,.summary-card{break-inside:avoid}}
+
+    .lesson-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}.flow-step{position:relative;min-width:0;min-height:190px;padding:24px 18px 19px;border:2px solid;border-radius:17px;text-align:left}.flow-step:not(:last-child)::after{content:"";position:absolute;top:50%;right:-27px;transform:translateY(-50%);width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:15px solid #2f67b2}.flow-step .flow-tag{display:inline-block;margin-bottom:14px;padding:5px 12px;border-radius:999px;background:var(--flow-accent);color:#fff;font-size:12px;font-weight:900;line-height:1.4}.flow-step strong{display:block;color:#17325c;font-size:17px;line-height:1.55;word-break:keep-all}.flow-step p{margin:7px 0 0;color:#324c6e;font-size:14px;line-height:1.65;word-break:keep-all}.flow-blue{--flow-accent:#2f67b2;border-color:#2f67b2;background:#d3e5ff}.flow-green{--flow-accent:#087b61;border-color:#087b61;background:#d9f3e4}.flow-purple{--flow-accent:#7043b2;border-color:#7043b2;background:#e9dcff}.flow-orange{--flow-accent:#b8620c;border-color:#b8620c;background:#ffe2c2}.lesson-flow+.core-message{margin-top:28px;padding:22px 24px;border-radius:15px;background:#e8f2ff}.lesson-flow+.core-message b{margin-bottom:6px}
+    @media(max-width:760px){.lesson-flow{grid-template-columns:1fr;gap:28px}.flow-step{min-height:0;padding:19px 20px}.flow-step:not(:last-child)::after{top:auto;right:auto;bottom:-25px;left:50%;transform:translateX(-50%);border-top:15px solid #2f67b2;border-right:10px solid transparent;border-bottom:0;border-left:10px solid transparent}}
   </style>
 </head>
 <body>
@@ -83,14 +86,14 @@
         <article class="reading-card lecture-emphasis stage-orange titled-reading"><div class="reading-title">부연 설명</div><div class="sentence-en">As the saying goes, <span class="slash">/</span> “Not everything that counts <span class="slash">/</span> can be counted, <span class="slash">/</span> and not everything that can be counted <span class="slash">/</span> counts.”</div><div class="sentence-vocab"><b>as the saying goes</b> 속담에서 말하듯이 · <b>count</b> 중요하다; 수를 세다 · <b>not everything</b> 모든 것이 ~인 것은 아니다</div><div class="sentence-ko">흔히 말하듯이 / 중요한 모든 것이 / 셀 수 있는 것은 아니다 / 그리고 셀 수 있는 모든 것이 / 중요한 것은 아니다.</div></article>
       </div>
       <h3>2. 문맥의 핵심 흐름</h3>
-      <div class="logic-flow">
-        <div class="logic-step"><b>필요</b><span>진척을 평가할 수치화된 대리 지표</span></div>
-        <div class="logic-step"><b>편향</b><span>측정하기 쉬운 것에 집중</span></div>
-        <div class="logic-step"><b>문제</b><span>정말 중요한 목표에서 멀어짐</span></div>
-        <div class="logic-step"><b>결론</b><span>측정 가능한 것이 의미 있는 것을 대체</span></div>
+      <div class="lesson-flow" aria-label="문맥의 네 단계">
+        <article class="flow-step flow-blue"><span class="flow-tag">도입: 측정 기준</span><strong>기술자는 정량화된 지표를 찾음</strong><p>진척 평가에 필요한 대리 지표(<em>proxies</em>)</p></article>
+        <article class="flow-step flow-green"><span class="flow-tag">편향: 쉬운 측정</span><strong>수치화하기 쉬운 것에 집중</strong><p>측정의 편리함 → 단순한 지표 선호</p></article>
+        <article class="flow-step flow-purple"><span class="flow-tag">문제</span><strong>중요한 목표에서 멀어짐</strong><p>실제 진전 없이도 진전하고 있다고 착각</p></article>
+        <article class="flow-step flow-orange"><span class="flow-tag">시사점</span><strong>측정 가능 ≠ 의미 있음</strong><p>측정 가능한 것이 의미 있는 것을 대체</p></article>
       </div>
-      <div class="analysis-box"><p><b class="tag-correct">정답 도출</b></p><p>측정 가능한 대리 지표 선호 → 중요한 목표에서 멀어짐 → 실제 진전 없이 진전하고 있다는 착각 → <b>측정 가능한 것을 의미 있는 것 대신 사용함</b>. 따라서 정답은 ④이다.</p></div>
       <div class="core-message"><b>한 문장 핵심 요약</b>대리 지표가 측정하기 쉽다는 이유만으로 그것을 추구하면, 실제로 중요한 목표를 이루지 못하면서도 진전하고 있다고 착각할 수 있다.</div>
+      <div class="analysis-box"><p><b class="tag-correct">정답 도출</b></p><p>측정 가능한 대리 지표 선호 → 중요한 목표에서 멀어짐 → 실제 진전 없이 진전하고 있다는 착각 → <b>측정 가능한 것을 의미 있는 것 대신 사용함</b>. 따라서 정답은 ④이다.</p></div>
       <div class="summary-card"><div class="summary-title">Summary in a Sentence</div><p class="summary-prompt">글의 내용을 한 문장으로 요약하시오.<br><strong>조건</strong> but을 사용하여 두 독립절로 구성된 중문으로 작성</p><button class="summary-reveal" type="button" aria-label="영어 요약문 보기" aria-pressed="false" onclick="toggleSummary(this)"><span class="summary-text">Technologists rely on measurable proxies, but simple metrics can distract them from meaningful goals.</span><span class="summary-cover" aria-hidden="true">터치하여 요약문 보기</span></button></div>
       <h3>3. 선택지별 판단</h3>
       <div class="choice-stem"><span class="choice-stem-label">BLANK SENTENCE</span><strong>The problem of proxies results in technologists frequently <span class="stem-blank" aria-label="빈칸"></span>.</strong></div>
