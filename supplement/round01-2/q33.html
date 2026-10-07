@@ -163,6 +163,9 @@
     .choice input:checked + span { border-color: var(--blue); background: var(--sky); color: var(--navy); box-shadow: inset 0 0 0 1px var(--blue); }
     .single-choice > span { grid-template-columns: 32px minmax(0, 1fr); }
     .single-choice > span > span:last-child { white-space: nowrap; }
+    .reading-choice-card { margin-top: 15px; }
+    .reading-choice-card .choice { cursor: default; }
+    .reading-choice-card .choice:hover > span { border-color: #cfd9e5; background: #fff; }
     .position-choices { grid-template-columns: repeat(5, 1fr); gap: 10px; }
     .position-choice span { display: flex; justify-content: center; min-height: 48px; font-family: "Pretendard", "Noto Sans KR", sans-serif; font-size: 17px; font-weight: 900; }
     .actions { display: flex; gap: 10px; margin-top: 16px; }
@@ -468,6 +471,16 @@
           <div class="sentence-ko">함께 따라가는 것과는 거리가 멀고 / 말의 서투른 동반자로서 / 손짓은 나타낸다, 우리 사고의 가장 앞선 부분을.</div>
         </article>
       </div>
+
+      <section class="reading-choice-card" aria-label="선택지 다시 보기">
+        <div class="choices">
+          <div class="choice single-choice"><span><span class="choice-num">①</span><span><span class="pink-highlight">interrupts</span> the rhythm of our narrative</span></span></div>
+          <div class="choice single-choice"><span><span class="choice-num">②</span><span><span class="pink-highlight">represents</span> the leading edge of our thought</span></span></div>
+          <div class="choice single-choice"><span><span class="choice-num">③</span><span><span class="pink-highlight">illustrates</span> the afterthoughts of our speaking</span></span></div>
+          <div class="choice single-choice"><span><span class="choice-num">④</span><span><span class="pink-highlight">conceals</span> the deep-seated intention of our speech</span></span></div>
+          <div class="choice single-choice"><span><span class="choice-num">⑤</span><span><span class="pink-highlight">operates</span> independently of our cognitive functions</span></span></div>
+        </div>
+      </section>
 
       <h3>5. 핵심 구문·문법</h3>
       <div class="grammar-grid">
