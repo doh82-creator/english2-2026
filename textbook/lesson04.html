@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Ⅱ Lesson 4 Grammar | Mandative Should &amp; With-Constructions</title>
+  <style>
+    :root {
+      --navy: #005daa;
+      --blue: #007dc3;
+      --sky-strong: #13b5ea;
+      --sky: #e8f7fd;
+      --pale: #f2f6fb;
+      --pale-2: #f8fbfe;
+      --line: #cbdcea;
+      --muted: #2978ad;
+      --gold: #f2c230;
+      --gold-bg: #fff8d9;
+      --answer-pink: #d81b60;
+      --white: #ffffff;
+      --shadow: 0 8px 24px rgba(0, 93, 170, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background: var(--pale);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    button { font: inherit; }
+    strong, b { color: var(--navy); }
+    code {
+      color: var(--navy);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-weight: 800;
+    }
+    mark {
+      padding: .08em .28em;
+      border-radius: .22em;
+      color: var(--navy);
+      background: #fff3b0;
+      font-weight: 900;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 20px;
+      color: var(--white);
+      background: rgba(0, 93, 170, .96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 14px rgba(0, 93, 170, .2);
+    }
+    .toolbar-brand { color: var(--white); font-size: 14px; font-weight: 900; letter-spacing: .03em; }
+    .toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toolbar button {
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: var(--white);
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+    }
+    .toolbar button:hover { background: rgba(255,255,255,.2); }
+    .toolbar button.primary { color: var(--navy); background: var(--white); }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 28px auto;
+      padding: 46px 54px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .cover {
+      overflow: hidden;
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 83% 18%, rgba(255,255,255,.17) 0 70px, transparent 71px),
+        radial-gradient(circle at 88% 24%, rgba(255,255,255,.08) 0 135px, transparent 136px),
+        linear-gradient(135deg, #005daa 0%, #007dc3 62%, #13b5ea 100%);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 430px;
+      height: 430px;
+      border: 2px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+    .cover h1 {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 34px 0 8px;
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .cover .ko-title {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .section-label { color: var(--blue); font-size: 13px; font-weight: 900; letter-spacing: .12em; }
+    h2 { margin: 5px 0 8px; color: var(--navy); font-size: 30px; line-height: 1.35; }
+    h3 { margin: 28px 0 12px; color: var(--blue); font-size: 20px; }
+    .lead { margin: 0 0 22px; color: var(--muted); font-size: 16px; }
+    .num {
+      display: inline-grid;
+      place-items: center;
+      min-width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      padding: 0 9px;
+      border-radius: 9px;
+      color: var(--white);
+      background: var(--blue);
+      font-size: 20px;
+    }
+
+    .source-box {
+      padding: 25px 28px;
+      border: 2px solid var(--sky-strong);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f8fbff, #eaf7fc);
+    }
+    .source-box .en {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.78;
+    }
+    .source-box .focus { color: var(--blue); font-weight: 900; }
+
+    table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--navy);
+    }
+    th, td { padding: 13px 15px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+    th:last-child, td:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--white); background: var(--blue); font-weight: 900; }
+    tbody tr:nth-child(odd) { background: #f5fbfe; }
+
+    .rule {
+      margin: 20px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--gold);
+      border-radius: 0 11px 11px 0;
+      color: var(--navy);
+      background: var(--gold-bg);
+    }
+    .rule .big { display: block; margin-bottom: 6px; font-size: 17px; }
+    .formula {
+      margin: 18px 0;
+      padding: 18px 20px;
+      border-radius: 11px;
+      color: var(--navy);
+      background: var(--sky);
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .formula small { display: block; margin-top: 7px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    .two-col, .three-col { display: grid; gap: 14px; margin: 16px 0; }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--pale-2);
+    }
+    .card b { display: block; margin-bottom: 6px; }
+
+    .problem-set {
+      margin: 20px 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .problem-title { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--navy); font-size: 18px; font-weight: 900; }
+    .problem-title .badge { padding: 3px 9px; border-radius: 999px; color: var(--white); background: var(--blue); font-size: 12px; }
+    .q { margin: 15px 0; padding: 0 0 15px; border-bottom: 1px dashed var(--line); color: var(--navy); }
+    .q:last-child { padding-bottom: 0; border-bottom: 0; }
+    .q-num { color: var(--blue); font-weight: 900; }
+    .blank { display: inline-block; min-width: 150px; height: 1.3em; border-bottom: 1.7px solid var(--blue); vertical-align: -.05em; }
+    .mini-note { color: var(--muted); font-size: 13px; }
+
+    .answer-panel {
+      display: none;
+      margin-top: 10px;
+      padding: 13px 15px;
+      border-left: 4px solid var(--sky-strong);
+      border-radius: 0 9px 9px 0;
+      color: var(--navy);
+      background: #e6f5fb;
+      font-size: 14px;
+    }
+    .answer-panel > strong { color: var(--answer-pink); font-weight: 900; }
+    body.show-answers .answer-panel { display: block; }
+
+    .footer { margin-top: 34px; color: var(--muted); font-size: 12px; text-align: right; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { margin: 8px 0; padding: 10px 13px; border-radius: 8px; background: var(--pale); }
+
+    @media (max-width: 760px) {
+      .toolbar { align-items: flex-start; flex-direction: column; }
+      .page { width: min(100% - 18px, 1120px); margin: 12px auto; padding: 28px 22px; border-radius: 13px; }
+      .cover { min-height: 480px; }
+      .two-col, .three-col { grid-template-columns: 1fr; }
+      th, td { padding: 10px 9px; font-size: 13px; }
+      h2 { font-size: 24px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 13mm; }
+      body { color: #000; background: #fff; }
+      .toolbar { display: none !important; }
+      .page { width: 100%; margin: 0; padding: 12mm 10mm; border-radius: 0; box-shadow: none; break-after: page; }
+      .cover { min-height: 255mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      h2 { font-size: 21pt; }
+      h3 { font-size: 15pt; }
+      .card, .problem-set, table, .rule, .source-box { break-inside: avoid; }
+      .answer-panel { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar-brand">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 4 Grammar Lecture</div>
+    <div class="toolbar-actions">
+      <button id="answerBtn" type="button" onclick="toggleAnswers()">정답·해설 표시</button>
+      <button type="button" onclick="scrollToTop()">맨 위로</button>
+      <button class="primary" type="button" onclick="window.print()">인쇄 / PDF 저장</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="page cover" id="top">
+      <span class="eyebrow">ENGLISH Ⅱ · LESSON 4 · GRAMMAR IN CONTEXT</span>
+      <h1>Mandative Should &amp;<br>With-Constructions</h1>
+      <div class="ko-title">당위의 should와 with 구문의 동시 상황</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">GRAMMAR POINT 1</div>
+      <h2><span class="num">1</span>당위의 should</h2>
+      <p class="lead">요구·제안·권고의 의미를 나타내는 주절 뒤에서는 <code>that + 주어 + (should) + 동사원형</code>을 쓴다.</p>
+
+      <h3>1. 문맥 속 핵심 예문</h3>
+      <div class="source-box">
+        <p class="en">Do you experience pain in your neck? Do your neck muscles feel stiff? I have two suggestions to help you ease your discomfort.<br>
+        First, <span class="focus">I suggest that you sit up straight.</span> Whether you’re working at a desk or looking at your phone, ensure that your neck is properly lined up with your spine. Second, do regular stretching to manage your neck pain. This will help reduce tension in the neck and shoulder muscles.<br>
+        <span class="focus">I recommend that anyone with chronic pain seek professional help from a doctor.</span> Remember, taking care of your health is essential for living a long and happy life.</p>
+      </div>
+
+      <h3>2. 기본 형태</h3>
+      <table>
+        <thead><tr><th>부분</th><th>형태</th><th>확인 기준</th></tr></thead>
+        <tbody>
+          <tr><td>주절</td><td>suggest / demand / require / insist / recommend / request</td><td>요구·제안 등의 의미인가</td></tr>
+          <tr><td>that절</td><td>주어 + (should) + 동사원형</td><td>해야 할 일을 말하는가</td></tr>
+          <tr><td>수동태</td><td>주어 + (should) be + p.p.</td><td>주어가 동작을 당하는가</td></tr>
+          <tr><td>부정</td><td>주어 + should not / not + 동사원형</td><td>하지 말아야 할 일인가</td></tr>
+        </tbody>
+      </table>
+
+      <div class="rule">
+        <strong class="big">반드시 기억할 원리</strong>
+        당위의 that절에서 <code>should</code>를 생략해도 <mark>동사원형</mark>은 유지된다. 주절이 과거이거나 that절의 주어가 3인칭 단수여도 같은 원리이다.<br>
+        <strong>She recommended that he be careful.</strong> <span class="mini-note">(is / was 아님)</span>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Grammar Point 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">PRACTICE 1</div>
+      <h2>당위 구문의 형태 바로잡기</h2>
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 맞으면 ○, 틀리면 고쳐 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> The guard requested that I showed my ID card.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>The guard requested that I show my ID card.</strong><br><code>requested</code>가 요구의 의미이므로 that절에 동사원형 <code>show</code>를 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> Ryan demanded that Amy apologizes for her behavior.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>Ryan demanded that Amy apologize for her behavior.</strong><br>주어가 3인칭 단수여도 당위의 that절에서는 동사원형 <code>apologize</code>를 쓴다.</div></div>
+        <div class="q"><span class="q-num">3.</span> They insisted that everyone to attend the meeting next week.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>They insisted that everyone attend the meeting next week.</strong><br><code>to attend</code>가 아니라 동사원형 <code>attend</code>를 쓴다.</div></div>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Practice 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">GRAMMAR EXTENSION 1</div>
+      <h2><span class="num">1-1</span>당위와 사실의 구별</h2>
+      <p class="lead">같은 동사라도 ‘요구·제안’인지 ‘사실의 주장·시사’인지에 따라 that절의 형태가 달라진다.</p>
+      <table>
+        <thead><tr><th>문장</th><th>의미</th><th>that절 형태</th></tr></thead>
+        <tbody>
+          <tr><td>He insisted that he was innocent.</td><td>자신이 결백하다는 사실을 주장</td><td>시제에 맞춘 <strong>was</strong></td></tr>
+          <tr><td>He insisted that she be present.</td><td>그녀가 참석해야 한다고 요구</td><td>동사원형 <strong>be</strong></td></tr>
+          <tr><td>The evidence suggests that he is innocent.</td><td>증거가 결백함을 시사</td><td>시제와 수에 맞춘 <strong>is</strong></td></tr>
+          <tr><td>She suggested that he take a break.</td><td>그가 쉬도록 제안</td><td>동사원형 <strong>take</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>형용사와 명사로 확장하기</h3>
+      <div class="two-col">
+        <div class="card"><b>형용사</b>It is <mark>essential</mark> that every student (should) be on time.<br><span class="mini-note">모든 학생이 제시간에 오는 것이 필수적이다.</span></div>
+        <div class="card"><b>명사</b>Her <mark>recommendation</mark> is that he (should) revise the report.<br><span class="mini-note">그녀의 권고는 그가 보고서를 수정해야 한다는 것이다.</span></div>
+      </div>
+
+      <h3>수동과 부정</h3>
+      <div class="formula">
+        They demanded that the file (should) <mark>be deleted</mark>.<br>
+        They recommended that he (should) <mark>not disclose</mark> the password.
+        <small>수동이면 <code>be + p.p.</code>, 부정이면 <code>not + 동사원형</code>을 유지한다.</small>
+      </div>
+      <div class="rule">참고: 실제 영어에서는 영국 영어 등의 용법에 따라 직설법도 쓰인다. 이 자료에서는 제시된 당위 구문의 <code>(should) + 동사원형</code>을 연습한다.</div>
+      <div class="footer">English Ⅱ · Lesson 4 · Grammar Extension 1-1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">CONTEXT CHECK</div>
+      <h2><span class="num">1-2</span>문맥에 맞는 형태 고르기</h2>
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 문장의 의미를 먼저 확인하세요.</div>
+        <div class="q"><span class="q-num">1.</span> He insisted that he ( finish / finished ) the work yesterday, but I did not believe him.<br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>finished</strong> — 어제 일을 끝냈다는 ‘사실’을 주장하므로 과거시제 <code>finished</code>를 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> It is important that each applicant ( be / is ) informed.<br><span class="mini-note">당위의 동사원형 구문으로 완성하세요.</span><br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>be</strong> — 지원자에게 알려져야 한다는 당위이며, 수동형 <code>be informed</code>가 필요하다.</div></div>
+        <div class="q"><span class="q-num">3.</span> The data suggests that the number of visitors ( is / be ) increasing.<br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>is</strong> — 자료가 현재의 사실을 ‘시사’하므로 주어 <code>the number</code>에 맞춰 <code>is</code>를 쓴다.</div></div>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Context Check</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">INTEGRATED PRACTICE 1</div>
+      <h2>당위 구문 종합 연습</h2>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">A</span> 어법상 알맞은 것을 고르세요.</div>
+        <div class="q"><span class="q-num">1.</span> The manager demanded that the equipment ( check / be checked ) before use.<div class="answer-panel"><strong>be checked</strong> — 장비가 점검을 받으므로 수동형을 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> The doctor recommended that he ( not skip / does not skip ) meals.<br><span class="mini-note">당위의 동사원형 구문으로 완성하세요.</span><div class="answer-panel"><strong>not skip</strong> — 당위의 부정은 <code>not + 동사원형</code>이다.</div></div>
+        <div class="q"><span class="q-num">3.</span> She insisted that she ( was / be ) at home last night.<br><span class="mini-note">그녀는 어젯밤 집에 있었다고 주장했다.</span><div class="answer-panel"><strong>was</strong> — 과거의 사실을 주장하는 문맥이므로 과거형을 쓴다.</div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">B</span> 제시된 당위 구문의 규칙에 맞게 고쳐 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> The teacher suggested that every student brings a dictionary.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>The teacher suggested that every student bring a dictionary.</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> They required that the report submitted by noon.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>They required that the report be submitted by noon.</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> It is necessary that he is careful. <span class="mini-note">(should를 생략한 동사원형 구문)</span><br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>It is necessary that he be careful.</strong></div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">C</span> 우리말과 같은 뜻이 되도록 완성하세요.</div>
+        <div class="q"><span class="q-num">1.</span> Tom의 형은 그가 주기적으로 비밀번호를 바꾸도록 제안했다. <span class="mini-note">(suggest, change)</span><br>→ Tom’s brother <span class="blank" style="min-width:450px"></span> his password regularly.<div class="answer-panel"><strong>suggested that Tom change</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> 그들은 그 결과가 공개되지 않도록 요구했다. <span class="mini-note">(demand, reveal)</span><br>→ They <span class="blank" style="min-width:520px"></span>.<div class="answer-panel"><strong>demanded that the result not be revealed</strong></div></div>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Integrated Practice 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">GRAMMAR POINT 2</div>
+      <h2><span class="num">2</span>with 구문의 동시 상황</h2>
+      <p class="lead"><code>with + 명사 + 보어</code>는 주절의 상황과 동시에 일어나는 동작이나 상태를 덧붙인다.</p>
+
+      <h3>1. 문맥 속 핵심 예문</h3>
+      <div class="source-box">
+        <p class="en">As the rain poured down, Olivia walked into an old café <span class="focus">with her heart beating loudly in her chest.</span> She grasped the letter she had written in her wet hands. She quickly scanned the crowd, hoping to find the man she had to give the letter to. In the distance, she spotted Alex, sitting <span class="focus">with his arms crossed</span> and deep in thought. With each step she took towards him, Olivia felt her unspoken emotions growing stronger. When she finally stood in front of him, she was smiling, <span class="focus">with tears falling down her cheeks.</span></p>
+      </div>
+
+      <h3>2. 명사와 보어의 관계</h3>
+      <table>
+        <thead><tr><th>구조</th><th>명사와 보어의 관계</th><th>예문</th></tr></thead>
+        <tbody>
+          <tr><td>with + 명사 + -ing</td><td>능동·진행</td><td>with her heart beating / with tears falling</td></tr>
+          <tr><td>with + 명사 + p.p.</td><td>수동·결과 상태</td><td>with his arms crossed</td></tr>
+          <tr><td>with + 명사 + 형용사</td><td>상태</td><td>with the door open</td></tr>
+          <tr><td>with + 명사 + 전치사구</td><td>위치·상태</td><td>with a bag on her back</td></tr>
+        </tbody>
+      </table>
+      <div class="rule">
+        <strong class="big">분사 선택의 기준</strong>
+        명사가 동작을 직접 하면 <mark>-ing</mark>, 동작을 당했거나 결과 상태이면 <mark>p.p.</mark>를 쓴다.
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Grammar Point 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">PRACTICE 2</div>
+      <h2>with 구문 완성하기</h2>
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 주어진 단어로 완성하세요.</div>
+        <div class="q"><span class="q-num">1.</span> The boy was listening to the orchestra with his eyes <span class="blank" style="min-width:220px"></span>. <span class="mini-note">(close)</span><div class="answer-panel"><strong>closed</strong> — 눈이 감긴 상태이므로 과거분사를 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> With the storm <span class="blank" style="min-width:220px"></span>, people got scared and fled the city in a hurry. <span class="mini-note">(approach)</span><div class="answer-panel"><strong>approaching</strong> — 폭풍이 다가오는 능동·진행 관계이다.</div></div>
+        <div class="q"><span class="q-num">3.</span> With every judge <span class="blank" style="min-width:220px"></span> her, the figure skater delivered a perfect performance. <span class="mini-note">(watch)</span><div class="answer-panel"><strong>watching</strong> — 심사위원들이 그녀를 바라보는 능동 관계이다.</div></div>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Practice 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">INTEGRATED PRACTICE 2</div>
+      <h2>with 구문 종합 연습</h2>
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">A</span> 어법상 틀린 부분을 고쳐 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> They went out with the heater turning on.<br><span class="mini-note">히터를 켜 놓은 채 외출했다는 뜻으로 고치세요.</span><br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>They went out with the heater turned on.</strong><br>히터가 켜진 결과 상태이므로 <code>turned on</code>을 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> She studied with the music played in the background.<br><span class="mini-note">음악이 배경에서 계속 흘러나오고 있었다는 뜻으로 고치세요.</span><br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>She studied with the music playing in the background.</strong><br>음악이 계속 재생되는 진행 상황이므로 <code>playing</code>을 쓴다.</div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">B</span> with 구문으로 문장을 완성하세요.</div>
+        <div class="q"><span class="q-num">1.</span> 그는 두 팔을 꼰 채 서 있었다. <span class="mini-note">(his arms, fold)</span><br>→ He stood <span class="blank" style="min-width:380px"></span>.<div class="answer-panel"><strong>with his arms folded</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> 아기가 자고 있어서 우리는 조용히 이야기했다. <span class="mini-note">(the baby, sleep)</span><br>→ <span class="blank" style="min-width:380px"></span>, we talked quietly.<div class="answer-panel"><strong>With the baby sleeping</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> 그녀는 문을 열어 둔 채 방을 나갔다. <span class="mini-note">(the door, open)</span><br>→ She left the room <span class="blank" style="min-width:380px"></span>.<div class="answer-panel"><strong>with the door open</strong></div></div>
+      </div>
+      <div class="footer">English Ⅱ · Lesson 4 · Integrated Practice 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">GRAMMAR AT A GLANCE</div>
+      <h2>두 문법 한눈에 정리</h2>
+      <table>
+        <thead><tr><th>문법</th><th>핵심 구조</th><th>판단 기준</th></tr></thead>
+        <tbody>
+          <tr><td>당위의 should</td><td>that + 주어 + (should) + 동사원형</td><td>주절이 요구·제안·권고의 의미인가</td></tr>
+          <tr><td>당위 구문의 수동</td><td>that + 주어 + (should) be + p.p.</td><td>that절의 주어가 동작을 당하는가</td></tr>
+          <tr><td>사실의 that절</td><td>시제와 수에 맞춘 동사</td><td>사실을 주장하거나 시사하는가</td></tr>
+          <tr><td>with + 명사 + -ing</td><td>능동·진행</td><td>명사가 동작을 직접 하는가</td></tr>
+          <tr><td>with + 명사 + p.p.</td><td>수동·결과 상태</td><td>명사가 동작을 당했거나 상태에 놓였는가</td></tr>
+        </tbody>
+      </table>
+      <div class="footer">English Ⅱ · Lesson 4 · Grammar at a Glance</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">EXIT TICKET</div>
+      <h2>수업 마무리 형성평가</h2>
+      <div class="problem-set">
+        <div class="q"><span class="q-num">1.</span> The teacher recommended that each student ( review / reviews ) the notes.<br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>review</strong> — 권고의 의미이므로 동사원형을 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> He insisted that he ( was / be ) innocent.<br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>was</strong> — 자신이 결백하다는 사실을 주장하는 문맥이다.</div></div>
+        <div class="q"><span class="q-num">3.</span> The scientist demanded that the samples <span class="blank" style="min-width:270px"></span>. <span class="mini-note">(보관되다, store)</span><br><span class="mini-note">should를 생략한 당위 구문으로 쓰세요.</span><div class="answer-panel"><strong>be stored</strong> — 표본이 보관되는 수동 관계이다.</div></div>
+        <div class="q"><span class="q-num">4.</span> She sat with her eyes ( closing / closed ). 근거도 쓰세요.<br>→ <span class="blank" style="min-width:600px"></span><div class="answer-panel"><strong>closed</strong> — 눈이 감긴 결과 상태이므로 과거분사를 쓴다.</div></div>
+        <div class="q"><span class="q-num">5.</span> With the rain <span class="blank" style="min-width:240px"></span>, we stayed indoors. <span class="mini-note">(fall)</span><div class="answer-panel"><strong>falling</strong> — 비가 내리는 능동·진행 관계이다.</div></div>
+      </div>
+
+      <h3>오늘의 최종 체크</h3>
+      <ul class="checklist">
+        <li>✓ 요구·제안·권고의 의미를 확인하고 that절에 동사원형을 쓸 수 있다.</li>
+        <li>✓ 당위 구문의 수동과 부정 형태를 구별할 수 있다.</li>
+        <li>✓ 요구·제안과 사실의 주장·시사를 문맥으로 구별할 수 있다.</li>
+        <li>✓ with 구문에서 명사와 보어의 능동·수동 관계를 판단할 수 있다.</li>
+        <li>✓ with + 명사 + 분사·형용사 형태로 동시 상황을 표현할 수 있다.</li>
+      </ul>
+      <div class="footer">English Ⅱ · Lesson 4 · Exit Ticket</div>
+    </section>
+  </main>
+
+  <script>
+    function toggleAnswers() {
+      const shown = document.body.classList.toggle('show-answers');
+      document.getElementById('answerBtn').textContent = shown ? '정답·해설 숨기기' : '정답·해설 표시';
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
