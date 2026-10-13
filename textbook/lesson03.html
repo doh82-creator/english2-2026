@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Ⅱ Lesson 3 Grammar | Correlative Conjunctions &amp; Compound Relatives</title>
+  <style>
+    :root {
+      --navy: #005daa;
+      --blue: #007dc3;
+      --sky-strong: #13b5ea;
+      --sky: #e8f7fd;
+      --pale: #f2f6fb;
+      --pale-2: #f8fbfe;
+      --line: #cbdcea;
+      --muted: #2978ad;
+      --gold: #f2c230;
+      --gold-bg: #fff8d9;
+      --white: #ffffff;
+      --shadow: 0 8px 24px rgba(0, 93, 170, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background: var(--pale);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    button { font: inherit; }
+    strong, b { color: var(--navy); }
+    mark {
+      padding: .08em .28em;
+      border-radius: .22em;
+      color: var(--navy);
+      background: #fff3b0;
+      font-weight: 900;
+    }
+    code {
+      color: var(--navy);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 20px;
+      color: var(--white);
+      background: rgba(0, 93, 170, .96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 14px rgba(0, 93, 170, .2);
+    }
+    .toolbar-brand { color: var(--white); font-size: 14px; font-weight: 900; letter-spacing: .03em; }
+    .toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toolbar button {
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: var(--white);
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+    }
+    .toolbar button:hover { background: rgba(255,255,255,.2); }
+    .toolbar button.primary { color: var(--navy); background: var(--white); }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 28px auto;
+      padding: 46px 54px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .cover {
+      overflow: hidden;
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 83% 18%, rgba(255,255,255,.17) 0 70px, transparent 71px),
+        radial-gradient(circle at 88% 24%, rgba(255,255,255,.08) 0 135px, transparent 136px),
+        linear-gradient(135deg, #005daa 0%, #007dc3 62%, #13b5ea 100%);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 430px;
+      height: 430px;
+      border: 2px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .cover h1 {
+      position: relative;
+      z-index: 2;
+      max-width: 940px;
+      margin: 24px 0 12px;
+      color: var(--white);
+      font-size: clamp(38px, 5vw, 67px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .cover h1 .sky-title { color: var(--sky-strong); }
+    .cover .subtitle {
+      position: relative;
+      z-index: 2;
+      max-width: 840px;
+      margin: 0;
+      color: rgba(255,255,255,.91);
+      font-size: clamp(19px, 2.3vw, 29px);
+      font-weight: 700;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      color: var(--navy);
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    h2 .num {
+      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: 20px;
+    }
+    h2 .num.sub-num, h2 .num.combined-num {
+      width: auto;
+      min-width: 54px;
+      padding: 0 10px;
+    }
+    h3 { margin: 30px 0 14px; color: var(--blue); font-size: 21px; letter-spacing: -.015em; }
+    h4 { margin: 20px 0 8px; color: var(--navy); font-size: 17px; }
+    p { margin: 9px 0; }
+    ul, ol { margin: 10px 0; padding-left: 1.45em; }
+    li + li { margin-top: 5px; }
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .lead { margin: -12px 0 24px; color: var(--muted); font-size: 17px; }
+    .mini-note { color: var(--muted); font-size: 13px; }
+
+    .two-col, .three-col, .process { display: grid; gap: 16px; }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three-col, .process { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .card.soft { background: var(--pale); }
+    .card.blue { border-color: #bfe0f2; background: var(--sky); }
+    .card.sky { border-color: #a9ddf1; background: #e6f5fb; }
+    .card-title { margin-bottom: 7px; color: var(--navy); font-weight: 900; }
+
+    .sentence {
+      margin: 14px 0;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--navy);
+      background: var(--pale-2);
+    }
+    .sentence .en {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      line-height: 1.58;
+    }
+    .sentence .ko { margin-top: 9px; color: var(--muted); font-size: 15px; }
+    .formula {
+      margin: 16px 0;
+      padding: 17px 20px;
+      border-left: 5px solid var(--gold);
+      border-radius: 0 11px 11px 0;
+      color: var(--navy);
+      background: var(--gold-bg);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .formula small { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .rule {
+      margin: 24px 0;
+      padding: 24px;
+      border: 2px solid var(--sky-strong);
+      border-radius: 14px;
+      color: var(--navy);
+      background: linear-gradient(135deg, #f8fbff, #eaf7fc);
+    }
+    .rule strong.big { display: block; color: var(--navy); font-size: 22px; }
+    .rule p { margin: 7px 0 0; }
+
+    table { width: 100%; margin: 14px 0 22px; border-collapse: collapse; color: var(--navy); font-size: 15px; }
+    th, td { padding: 12px 13px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--white); background: var(--navy); font-weight: 900; }
+    tbody tr:nth-child(even) { background: #f5fafd; }
+    .structure { font-weight: 900; }
+
+    .process { counter-reset: step; }
+    .process-item {
+      position: relative;
+      padding: 18px 17px 17px 52px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .process-item::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 17px;
+      left: 16px;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .process-item b { display: block; margin-bottom: 3px; }
+
+    .problem-set {
+      margin: 20px 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .problem-title { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--navy); font-size: 18px; font-weight: 900; }
+    .problem-title .badge { padding: 3px 9px; border-radius: 999px; color: var(--white); background: var(--blue); font-size: 12px; }
+    .q { margin: 15px 0; padding: 0 0 15px; border-bottom: 1px dashed var(--line); color: var(--navy); }
+    .q:last-child { padding-bottom: 0; border-bottom: 0; }
+    .q-num { color: var(--blue); font-weight: 900; }
+    .options { margin: 7px 0 0 23px; color: var(--blue); }
+    .blank { display: inline-block; min-width: 130px; height: 1.3em; border-bottom: 1.7px solid var(--blue); vertical-align: -.05em; }
+    .underlined { border-bottom: 2px solid var(--blue); padding-bottom: 1px; }
+
+    .answer-panel {
+      display: none;
+      margin-top: 10px;
+      padding: 13px 15px;
+      border-left: 4px solid var(--sky-strong);
+      border-radius: 0 9px 9px 0;
+      color: var(--navy);
+      background: #e6f5fb;
+      font-size: 14px;
+    }
+    body.show-answers .answer-panel { display: block; }
+    .answer-inline { display: none; padding: 1px 5px; border-radius: 4px; color: var(--navy); background: #dff4fc; font-weight: 900; }
+    body.show-answers .answer-inline { display: inline; }
+
+    .source-box {
+      padding: 25px 28px;
+      border: 2px solid var(--sky-strong);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f8fbff, #eaf7fc);
+    }
+    .source-box p { text-indent: 1em; }
+    .source-box p:first-child { text-indent: 0; }
+    .source-box .en { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.75; }
+    .source-box .ko { margin-top: 14px; color: var(--muted); font-size: 14px; }
+
+    .callout { display: flex; gap: 13px; margin: 18px 0; padding: 17px 19px; border-radius: 11px; color: var(--navy); background: var(--pale); }
+    .callout .icon { flex: 0 0 auto; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: var(--white); background: var(--blue); font-weight: 900; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 29px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 1px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--white); background: var(--sky-strong); font-size: 12px; font-weight: 900; }
+    .footer { margin-top: 35px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--blue); font-size: 12px; text-align: right; }
+
+    @media (max-width: 780px) {
+      .page { width: calc(100% - 18px); margin: 12px auto; padding: 28px 22px; border-radius: 12px; }
+      .cover { min-height: 640px; }
+      .two-col, .three-col, .process { grid-template-columns: 1fr; }
+      .toolbar { align-items: flex-start; }
+      th, td { padding: 9px 8px; font-size: 13px; }
+    }
+    @media print {
+      @page { size: A4; margin: 13mm 12mm 14mm; }
+      body { background: var(--white); font-size: 10.5pt; line-height: 1.55; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none !important; }
+      .page { width: 100%; margin: 0; padding: 0; border-radius: 0; box-shadow: none; }
+      .page + .page { page-break-before: always; }
+      .cover { min-height: 257mm; padding: 18mm 14mm; }
+      .cover h1 { font-size: 40pt; }
+      h2 { font-size: 21pt; }
+      h3 { font-size: 15pt; }
+      .sentence .en { font-size: 14pt; }
+      .card, .sentence, .problem-set, table, .rule, .callout, .source-box { break-inside: avoid; }
+      .answer-panel { display: block !important; break-inside: avoid; }
+      .answer-inline { display: inline !important; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar-brand">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 Grammar Lecture</div>
+    <div class="toolbar-actions">
+      <button id="answerBtn" type="button" onclick="toggleAnswers()">정답·해설 표시</button>
+      <button type="button" onclick="scrollToTop()">맨 위로</button>
+      <button class="primary" type="button" onclick="window.print()">인쇄 / PDF 저장</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="page cover" id="top">
+      <div class="eyebrow">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar in Context</div>
+      <h1><span class="sky-title">Correlative Conjunctions</span> &amp;<br><span class="sky-title">Compound Relatives</span></h1>
+      <p class="subtitle">상관접속사와 복합관계대명사</p>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Point 1</div>
+      <h2><span class="num">1</span>상관접속사: <mark>A와 B의 대등한 연결</mark></h2>
+      <p class="lead">둘 이상의 말이 한 쌍을 이루어 문장 성분을 연결할 때, A와 B의 문법적 형태를 맞춘다.</p>
+
+      <h3>1. 핵심 예문</h3>
+      <div class="source-box">
+        <div class="en">
+          <p>• It is <strong>not how much we give, but how much love we put into giving.</strong> — Mother Teresa</p>
+          <p>• You are built <strong>not to shrink down to less, but to blossom into more.</strong> — Oprah Winfrey</p>
+          <p>• It’s <strong>not what happens to you, but how you react to it</strong> that matters. — Epictetus</p>
+          <p>• Our greatest glory is <strong>not in never falling, but in rising every time we fall.</strong> — Confucius</p>
+        </div>
+        <div class="ko">중요한 것은 얼마나 많이 주느냐가 아니라, 주는 일에 얼마나 많은 사랑을 담느냐이다.<br>너는 작아지기 위해서가 아니라 더 크게 꽃피우기 위해 태어났다.<br>중요한 것은 너에게 일어나는 일이 아니라 그것에 어떻게 반응하느냐이다.<br>가장 큰 영광은 결코 넘어지지 않는 데 있지 않고, 넘어질 때마다 일어나는 데 있다.</div>
+      </div>
+
+      <h3>2. A와 B의 형태 확인</h3>
+      <table>
+        <thead><tr><th>A</th><th>B</th><th>공통 역할</th></tr></thead>
+        <tbody>
+          <tr><td>how much we give</td><td>how much love we put into giving</td><td>명사절과 명사절</td></tr>
+          <tr><td>to shrink down to less</td><td>to blossom into more</td><td>to부정사구와 to부정사구</td></tr>
+          <tr><td>what happens to you</td><td>how you react to it</td><td>명사절과 명사절</td></tr>
+          <tr><td>in never falling</td><td>in rising every time we fall</td><td>전치사구와 전치사구</td></tr>
+        </tbody>
+      </table>
+
+      <div class="rule">
+        <strong class="big">반드시 기억할 원리</strong>
+        <p>상관접속사가 연결하는 A와 B는 <strong>문법적으로 대등</strong>해야 한다. 형태를 비교할 때는 접속사 바로 뒤에서 시작하는 어구 전체를 확인한다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar Point 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Practice 1</div>
+      <h2>예문: 병렬구조 바로잡기</h2>
+      <p class="lead">A의 형태를 먼저 확인한 뒤 B를 같은 형태로 고친다.</p>
+
+      <div class="process">
+        <div class="process-item"><b>상관접속사 찾기</b><code>not A but B</code>처럼 A와 B의 범위를 표시한다.</div>
+        <div class="process-item"><b>A의 문법 형태 확인</b>명사·동명사·to부정사·절 가운데 무엇인지 판단한다.</div>
+        <div class="process-item"><b>B의 형태 맞추기</b>의미는 유지하면서 A와 대등한 형태로 고친다.</div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 잘못된 부분을 고쳐 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> The coach told us not to think about the medal, but keeping focusing on the game.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>The coach told us not to think about the medal, but to keep focusing on the game.</strong><br><code>not to think</code>과 대등하도록 <code>but to keep focusing</code>을 쓴다.</div></div>
+        <div class="q"><span class="q-num">2.</span> The most important thing is not winning, but participate and enjoy the experience.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>The most important thing is not winning, but participating in and enjoying the experience.</strong><br><code>winning</code>과 대등한 동명사 <code>participating</code>, <code>enjoying</code>을 사용한다.</div></div>
+        <div class="q"><span class="q-num">3.</span> My teacher told me not to memorize the principles of mathematics, but understands them.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>My teacher told me not to memorize the principles of mathematics, but to understand them.</strong><br><code>not to memorize</code>과 <code>but to understand</code>가 병렬을 이룬다.</div></div>
+      </div>
+
+      <h3>오류를 찾는 빠른 질문</h3>
+      <div class="three-col">
+        <div class="card blue"><div class="card-title">시작점</div><p>A와 B는 각각 어디서 시작하는가?</p></div>
+        <div class="card sky"><div class="card-title">형태</div><p>명사와 명사, 구와 구, 절과 절이 연결되었는가?</p></div>
+        <div class="card soft"><div class="card-title">의미</div><p>형태를 고친 뒤 원래 뜻이 그대로 유지되는가?</p></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Practice 1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 1</div>
+      <h2><span class="num sub-num">1-1</span>필수 상관접속사와 수의 일치</h2>
+      <p class="lead">연결 방식은 비슷하지만, A와 B가 주어일 때 동사를 결정하는 기준은 표현마다 다르다.</p>
+
+      <table>
+        <thead><tr><th>표현</th><th>의미</th><th>A와 B가 주어일 때</th></tr></thead>
+        <tbody>
+          <tr><td><span class="structure">not A but B</span></td><td>A가 아니라 B</td><td>B에 일치</td></tr>
+          <tr><td><span class="structure">both A and B</span></td><td>A와 B 둘 다</td><td>복수동사</td></tr>
+          <tr><td><span class="structure">either A or B</span></td><td>A 또는 B 중 하나</td><td>가까운 주어 B에 일치</td></tr>
+          <tr><td><span class="structure">neither A nor B</span></td><td>A도 B도 아닌</td><td>가까운 주어 B에 일치</td></tr>
+          <tr><td><span class="structure">not only A but also B</span></td><td>A뿐만 아니라 B도</td><td>가까운 주어 B에 일치</td></tr>
+          <tr><td><span class="structure">B as well as A</span></td><td>A뿐만 아니라 B도</td><td>중심 주어 B에 일치</td></tr>
+        </tbody>
+      </table>
+
+      <h3>추가 예문으로 확인하기</h3>
+      <div class="three-col">
+        <div class="sentence"><div class="en">Both my sister and I <mark>were</mark> born in Germany.</div><div class="ko">나의 언니와 나는 둘 다 독일에서 태어났다.</div></div>
+        <div class="sentence"><div class="en">The book was not only entertaining but also informative.</div><div class="ko">그 책은 재미있을 뿐만 아니라 유익했다.</div></div>
+        <div class="sentence"><div class="en">You can either use a travel agency or book tickets by yourself.</div><div class="ko">여행사를 이용하거나 직접 표를 예약할 수 있다.</div></div>
+      </div>
+
+      <div class="formula">
+        Neither the teacher nor the students <mark>are</mark> absent.<br>
+        The teacher as well as the students <mark>is</mark> ready.
+        <small>가까운 명사에 언제나 맞추는 것은 아니다. <code>as well as</code>에서는 앞의 중심 주어가 동사의 기준이다.</small>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 주어와 동사의 수를 맞추세요.</div>
+        <div class="q"><span class="q-num">1.</span> Both Jina and Minho ( is / are ) ready.<div class="answer-panel"><strong>are</strong> — <code>both A and B</code>는 복수 주어이다.</div></div>
+        <div class="q"><span class="q-num">2.</span> Either the students or the teacher ( has / have ) the key.<div class="answer-panel"><strong>has</strong> — 가까운 주어 <code>the teacher</code>에 일치한다.</div></div>
+        <div class="q"><span class="q-num">3.</span> Not the results but the process ( is / are ) important.<div class="answer-panel"><strong>is</strong> — <code>not A but B</code>에서는 B인 <code>the process</code>에 일치한다.</div></div>
+        <div class="q"><span class="q-num">4.</span> The teacher as well as the students ( is / are ) ready.<div class="answer-panel"><strong>is</strong> — 중심 주어는 <code>The teacher</code>이다.</div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar Extension 1-1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Integrated Practice 1</div>
+      <h2><span class="num sub-num">1-2</span>상관접속사 종합 연습</h2>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">A</span> 어법상 알맞은 것을 고르세요.</div>
+        <div class="q"><span class="q-num">1.</span> Neither the teacher nor the students ( knows / know ) the answer.<div class="answer-panel"><strong>know</strong> — 가까운 주어 <code>the students</code>가 복수이다.</div></div>
+        <div class="q"><span class="q-num">2.</span> She enjoys both reading novels and ( writing / to write ) poems.<div class="answer-panel"><strong>writing</strong> — <code>reading</code>과 <code>writing</code>이 병렬을 이룬다.</div></div>
+        <div class="q"><span class="q-num">3.</span> Not only the students but also their teacher ( was / were ) surprised.<div class="answer-panel"><strong>was</strong> — 가까운 주어 <code>their teacher</code>가 단수이다.</div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">B</span> 잘못된 부분을 고쳐 쓰세요.</div>
+        <div class="q"><span class="q-num">1.</span> He studies not to get scholarships but achieving his future goal.<br>→ <span class="blank" style="min-width:560px"></span><div class="answer-panel"><strong>He studies not to get scholarships but to achieve his future goal.</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> The food was neither cheap nor deliciously.<br>→ <span class="blank" style="min-width:520px"></span><div class="answer-panel"><strong>The food was neither cheap nor delicious.</strong> — 형용사 <code>cheap</code>과 <code>delicious</code>가 대등해야 한다.</div></div>
+        <div class="q"><span class="q-num">3.</span> Both the teacher and the student is responsible.<br>→ <span class="blank" style="min-width:520px"></span><div class="answer-panel"><strong>Both the teacher and the student are responsible.</strong></div></div>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">C</span> 같은 뜻이 되도록 바꾸세요.</div>
+        <div class="q"><span class="q-num">1.</span> Jina and Minho both attended the meeting.<br>→ Not only Jina <span class="blank" style="min-width:300px"></span> attended the meeting.<div class="answer-panel"><strong>but also Minho</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> 필요한 것은 속도가 아니라 정확성이다. <span class="mini-note">(speed, accuracy)</span><br>→ What we need is <span class="blank" style="min-width:340px"></span>.<div class="answer-panel"><strong>not speed but accuracy</strong></div></div>
+      </div>
+
+      <h3>선택 심화: 문두의 Not only와 도치</h3>
+      <div class="formula">
+        She not only solved the problem but also explained the reason.<br>
+        → <mark>Not only did she solve the problem,</mark> but she also explained the reason.
+        <small><code>Not only</code>가 절 앞에서 동사구를 강조하면 조동사와 주어를 도치한다. 주어를 연결하는 <code>Not only Jina but also Minho attended ...</code>에는 이 도치를 적용하지 않는다.</small>
+      </div>
+      <div class="problem-set">
+        <div class="q"><span class="q-num">심화 1.</span> He not only helped me but also encouraged me.<br>→ Not only <span class="blank" style="min-width:520px"></span><div class="answer-panel"><strong>did he help me, but he also encouraged me.</strong></div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Integrated Practice 1-2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Point 2</div>
+      <h2><span class="num">2</span>복합관계대명사: <mark>-ever</mark></h2>
+      <p class="lead">관계대명사에 <code>-ever</code>가 결합하여 ‘누구든지·무엇이든지·어느 것이든지’ 또는 양보의 뜻을 나타낸다.</p>
+
+      <h3>1. 핵심 예문</h3>
+      <div class="source-box">
+        <div class="en">
+          We invite you to our Happy Potluck Party, an event where each guest brings a dish for all to share.<br>
+          Date and Time: November 27, 5:00 p.m.<br>
+          Place: Classroom 109, Pyeonghwa High School
+          <p>• <strong>Whoever is willing to prepare and share some food</strong> can join this unique cultural event.</p>
+          <p>• You can bring <strong>whatever you would like to share</strong> with other participants.</p>
+          <p>• The dress code for the party is blue or orange. Choose <strong>whichever you’d like to wear!</strong></p>
+        </div>
+        <div class="ko">음식을 준비하고 나눌 의향이 있는 사람은 누구든지 이 독특한 문화 행사에 참여할 수 있다.<br>다른 참가자들과 나누고 싶은 것은 무엇이든 가져올 수 있다.<br>파란색이나 주황색 중 입고 싶은 것을 선택하라.</div>
+      </div>
+
+      <h3>2. 기본 형태와 두 가지 쓰임</h3>
+      <table>
+        <thead><tr><th>표현</th><th>명사절</th><th>양보 부사절</th></tr></thead>
+        <tbody>
+          <tr><td><span class="structure">whoever</span></td><td><code>anyone who</code> · ~하는 누구든지</td><td><code>no matter who</code> · 누가 ~하더라도</td></tr>
+          <tr><td><span class="structure">whatever</span></td><td><code>anything that</code> · ~하는 무엇이든지</td><td><code>no matter what</code> · 무엇을 ~하더라도</td></tr>
+          <tr><td><span class="structure">whichever</span></td><td><code>any one that</code> · 정해진 범위에서 어느 것이든</td><td><code>no matter which</code> · 어느 것을 ~하더라도</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3. 문장 안에서의 역할</h3>
+      <div class="two-col">
+        <div class="sentence"><div class="en">Take <mark>whatever you need</mark>.</div><div class="ko"><code>whatever</code>절은 <code>Take</code>의 목적어인 명사절이다.<br>→ Take anything that you need.</div></div>
+        <div class="sentence"><div class="en"><mark>Whatever you need</mark>, we will help you.</div><div class="ko"><code>whatever</code>절은 양보의 뜻을 더하는 부사절이다.<br>→ No matter what you need, we will help you.</div></div>
+      </div>
+
+      <div class="rule">
+        <strong class="big">두 가지를 따로 확인하기</strong>
+        <p>① <strong>절 전체의 역할</strong>: 주어·목적어 자리를 채우면 명사절, 완전한 주절에 양보의 조건을 더하면 부사절이다.</p>
+        <p>② <strong>절 내부의 역할</strong>: <code>whoever</code>는 사람, <code>whatever</code>는 사물·내용, <code>whichever</code>는 주어진 선택 범위와 연결된다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar Point 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Practice 2</div>
+      <h2>예문: 복합관계대명사로 바꾸기</h2>
+      <p class="lead"><code>anyone who</code>와 <code>anything that</code>을 하나의 복합관계대명사로 압축한다.</p>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 복합관계대명사로 바꾸세요.</div>
+        <div class="q"><span class="q-num">1.</span> Anyone who wants to cut down on sugar will love this menu.<br>→ <span class="blank" style="min-width:270px"></span> on sugar will love this menu.<div class="answer-panel"><strong>Whoever wants to cut down</strong><br><code>Anyone who</code>를 사람을 나타내는 <code>Whoever</code>로 바꾼다.</div></div>
+        <div class="q"><span class="q-num">2.</span> This app will translate anything that you type into a different language.<br>→ This app will translate <span class="blank" style="min-width:300px"></span> into a different language.<div class="answer-panel"><strong>whatever you type</strong><br><code>anything that</code>을 사물·내용을 나타내는 <code>whatever</code>로 바꾼다.</div></div>
+      </div>
+
+      <h3>바꾸는 순서</h3>
+      <div class="process">
+        <div class="process-item"><b>선행 표현 찾기</b><code>anyone</code>, <code>anything</code>, <code>any one</code>을 찾는다.</div>
+        <div class="process-item"><b>관계사까지 묶기</b><code>who</code> 또는 <code>that</code>과 함께 한 덩어리로 본다.</div>
+        <div class="process-item"><b>-ever로 압축</b>사람·사물·선택 범위에 맞는 복합관계대명사로 바꾼다.</div>
+      </div>
+
+      <div class="formula">
+        <code>no matter what</code>은 양보 부사절을 이끈다.
+        <small>따라서 동사의 목적어 자리에는 <code>Take no matter what you need.</code>처럼 쓸 수 없다.</small>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Practice 2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 2</div>
+      <h2><span class="num sub-num">2-1</span>명사절과 양보 부사절 판별</h2>
+      <p class="lead">뜻만 보지 말고, -ever절이 문장 전체에서 차지하는 자리를 확인한다.</p>
+
+      <table>
+        <thead><tr><th>판별 기준</th><th>명사절</th><th>양보 부사절</th></tr></thead>
+        <tbody>
+          <tr><td>문장 성분</td><td>주어·목적어·보어</td><td>주절 전체를 수식</td></tr>
+          <tr><td>바꾸어 쓰기</td><td><code>anyone who / anything that / any one that</code></td><td><code>no matter who / what / which</code></td></tr>
+          <tr><td>생략 여부</td><td>빼면 주어·목적어 등이 없어져 문장이 불완전해짐</td><td>빼도 주절은 문법적으로 완전함</td></tr>
+          <tr><td>예문</td><td><code>Choose whichever you prefer.</code></td><td><code>Whichever you choose, I will support you.</code></td></tr>
+        </tbody>
+      </table>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Check</span> 밑줄 친 절의 역할을 판단하세요.</div>
+        <div class="q"><span class="q-num">1.</span> <span class="underlined">Whoever finishes first</span> may leave early.<div class="answer-panel"><strong>명사절(주어)</strong> — 절 전체가 <code>may leave</code>의 주어이다.</div></div>
+        <div class="q"><span class="q-num">2.</span> I will accept <span class="underlined">whatever you decide</span>.<div class="answer-panel"><strong>명사절(목적어)</strong> — 절 전체가 <code>accept</code>의 목적어이다.</div></div>
+        <div class="q"><span class="q-num">3.</span> <span class="underlined">Whatever you decide</span>, I will respect your choice.<div class="answer-panel"><strong>양보 부사절</strong> — 뒤의 주절 <code>I will respect your choice</code>는 자체로 완전하다.</div></div>
+        <div class="q"><span class="q-num">4.</span> <span class="underlined">Whichever route we take</span>, we will arrive before noon.<div class="answer-panel"><strong>양보 부사절</strong> — ‘어느 길을 택하더라도’라는 양보의 뜻이다.</div></div>
+      </div>
+
+      <div class="rule">
+        <strong class="big">주의: whoever는 절 안에서도 역할이 있다</strong>
+        <p><code>Whoever wants to join is welcome.</code>에서 <code>whoever</code>는 전체 문장에서는 명사절을 이끌고, 그 절 안에서는 <code>wants</code>의 주어 역할을 한다.</p>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar Extension 2-1</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar Extension 2</div>
+      <h2><span class="num sub-num">2-2</span>복합관계부사와 양보 표현</h2>
+      <p class="lead"><code>whenever</code>, <code>wherever</code>, <code>however</code>는 시간·장소·정도의 양보 의미를 더한다.</p>
+
+      <table>
+        <thead><tr><th>표현</th><th>양보 의미</th><th>예문</th></tr></thead>
+        <tbody>
+          <tr><td><span class="structure">whenever</span></td><td>언제 ~하더라도</td><td>Whenever you call, I will answer.</td></tr>
+          <tr><td><span class="structure">wherever</span></td><td>어디에 ~하더라도</td><td>Wherever you go, I will support you.</td></tr>
+          <tr><td><span class="structure">however + 형용사/부사</span></td><td>아무리 ~하더라도</td><td>However difficult it is, I will try.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="formula">
+        however + 형용사/부사 + 주어 + 동사
+        <small><code>However tired he is</code>, <code>However carefully she works</code>처럼 형용사나 부사가 <code>however</code> 바로 뒤에 온다.</small>
+      </div>
+
+      <div class="problem-set">
+        <div class="problem-title"><span class="badge">Practice</span> 같은 뜻이 되도록 바꾸세요.</div>
+        <div class="q"><span class="q-num">1.</span> Whatever happens, stay calm.<br>→ No matter <span class="blank" style="min-width:250px"></span>, stay calm.<div class="answer-panel"><strong>what happens</strong></div></div>
+        <div class="q"><span class="q-num">2.</span> Whoever wants to join is welcome.<br>→ Anyone <span class="blank" style="min-width:280px"></span> is welcome.<div class="answer-panel"><strong>who wants to join</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> 아무리 피곤하더라도 그는 연습을 계속한다. <span class="mini-note">(tired, be)</span><br>→ However <span class="blank" style="min-width:260px"></span>, he keeps practicing.<div class="answer-panel"><strong>tired he is</strong></div></div>
+      </div>
+
+      <h3>형태를 혼동하지 않기</h3>
+      <div class="two-col">
+        <div class="card blue"><div class="card-title">whatever + 명사 또는 절</div><p><code>whatever choice you make</code><br><code>whatever you choose</code></p></div>
+        <div class="card sky"><div class="card-title">however + 형용사/부사</div><p><code>however difficult the task is</code><br><code>however carefully you plan</code></p></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar Extension 2-2</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Grammar at a Glance</div>
+      <h2><span class="num combined-num">1·2</span>두 문법 한눈에 정리</h2>
+
+      <table>
+        <thead><tr><th>문법</th><th>핵심 구조</th><th>핵심 의미</th><th>판별·풀이 기준</th></tr></thead>
+        <tbody>
+          <tr><td><strong>상관접속사</strong></td><td><span class="structure">not A but B<br>both A and B<br>either A or B</span></td><td>두 성분을 한 쌍으로 연결</td><td>A와 B가 문법적으로 대등한가?</td></tr>
+          <tr><td><strong>주어의 수</strong></td><td><span class="structure">both A and B → 복수<br>or/nor/but also → 가까운 주어</span></td><td>표현에 따라 동사의 기준이 달라짐</td><td><code>as well as</code>는 앞의 중심 주어를 확인</td></tr>
+          <tr><td><strong>복합관계대명사 명사절</strong></td><td><span class="structure">whoever / whatever / whichever</span></td><td>~하는 누구든지·무엇이든지·어느 것이든지</td><td>절 전체가 주어·목적어·보어인가?</td></tr>
+          <tr><td><strong>양보 부사절</strong></td><td><span class="structure">-ever = no matter + 의문사</span></td><td>누가·무엇을·어느 것을 ~하더라도</td><td>-ever절을 빼도 주절이 완전한가?</td></tr>
+          <tr><td><strong>복합관계부사</strong></td><td><span class="structure">whenever / wherever<br>however + 형용사·부사</span></td><td>언제·어디에·아무리 ~하더라도</td><td><code>however</code> 뒤의 형용사·부사 어순 확인</td></tr>
+        </tbody>
+      </table>
+
+      <h3>대표 예문</h3>
+      <div class="two-col">
+        <div class="sentence"><div class="en">The food was <mark>neither cheap nor delicious</mark>.</div><div class="ko"><code>cheap</code>과 <code>delicious</code>가 형용사로 병렬을 이룬다.</div></div>
+        <div class="sentence"><div class="en"><mark>Whoever is willing to prepare some food</mark> can join the event.</div><div class="ko"><code>whoever</code>절 전체가 문장의 주어이다.</div></div>
+      </div>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Grammar at a Glance</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">Exit Ticket</div>
+      <h2><span class="num combined-num">1·2</span>수업 마무리 형성평가</h2>
+      <p class="lead">병렬구조와 수의 일치, -ever절의 역할과 전환을 함께 점검한다.</p>
+
+      <div class="problem-set">
+        <div class="q"><span class="q-num">1.</span> Not only my friends but also my sister ( likes / like ) the book.<div class="answer-panel"><strong>likes</strong> — 가까운 주어 <code>my sister</code>가 단수이다.</div></div>
+        <div class="q"><span class="q-num">2.</span> He went there not to complain but complaining about the service.<br>‘불평하기 위해서가 아니라 서비스에 관해 묻기 위해서’가 되도록 고치세요. <span class="mini-note">(ask)</span><br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>He went there not to complain but to ask about the service.</strong></div></div>
+        <div class="q"><span class="q-num">3.</span> <code>Take whatever you need.</code>에서 <code>whatever</code>절의 문장 성분을 쓰세요.<br>→ <span class="blank" style="min-width:250px"></span><div class="answer-panel"><strong>목적어</strong> — <code>whatever you need</code>는 <code>Take</code>의 목적어인 명사절이다.</div></div>
+        <div class="q"><span class="q-num">4.</span> <code>Whatever you say, I trust you.</code>를 <code>No matter</code>로 시작하도록 바꾸세요.<br>→ <span class="blank" style="min-width:520px"></span><div class="answer-panel"><strong>No matter what you say, I trust you.</strong></div></div>
+        <div class="q"><span class="q-num">5.</span> ( However / Whatever ) difficult the task is, we will finish it.<div class="answer-panel"><strong>However</strong> — 형용사 <code>difficult</code>가 바로 뒤에 오므로 <code>however + 형용사</code> 구조이다.</div></div>
+        <div class="q"><span class="q-num">6.</span> 다음 중 어법상 옳은 문장을 고르시오.<div class="options">① Both the teacher and the student is responsible.<br>② Either the students or the teacher have the key.<br>③ Whatever you choose, I will respect your decision.<br>④ However the task is difficult, we will continue.</div><div class="answer-panel"><strong>정답: ③</strong><br>① <code>is → are</code>, ② 가까운 주어가 <code>the teacher</code>이므로 <code>have → has</code>, ④ <code>However difficult the task is</code>가 올바른 어순이다.</div></div>
+      </div>
+
+      <h3>오늘의 최종 체크</h3>
+      <ul class="checklist">
+        <li>상관접속사가 연결하는 A와 B의 범위를 찾고 대등한 형태로 고칠 수 있다.</li>
+        <li><code>both A and B</code>, <code>either A or B</code>, <code>not only A but also B</code>의 수의 일치를 판단할 수 있다.</li>
+        <li><code>B as well as A</code>에서 중심 주어 B에 동사를 일치시킬 수 있다.</li>
+        <li><code>whoever</code>, <code>whatever</code>, <code>whichever</code>절이 명사절인지 양보 부사절인지 판단할 수 있다.</li>
+        <li>양보의 <code>-ever</code>절을 <code>no matter + 의문사</code>로 바꿀 수 있다.</li>
+        <li><code>however + 형용사/부사 + 주어 + 동사</code>의 어순을 정확히 사용할 수 있다.</li>
+      </ul>
+      <div class="footer">English <span style="font-family:Georgia,'Times New Roman',serif">Ⅱ</span> · Lesson 3 · Exit Ticket</div>
+    </section>
+  </main>
+
+  <script>
+    function toggleAnswers() {
+      const shown = document.body.classList.toggle('show-answers');
+      document.getElementById('answerBtn').textContent = shown ? '정답·해설 숨기기' : '정답·해설 표시';
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
