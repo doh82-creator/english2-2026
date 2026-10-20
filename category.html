@@ -226,10 +226,13 @@
     supplement: {
       label:'부교재',
       eyebrow:'2026 · 2학기 · CNSA 12기',
-      desc:'자이스토리 · 모의고사 12회 · 24차시',
+      desc:'자이스토리 · 모의고사 1~12·14회 · 26차시',
       folder:'supplement',
       type:'rounds',
-      rounds:12
+      rounds:12,
+      extraRounds:[
+        { round:14, examName:'26-10월 학력평가', lesson1:27, lesson2:28 }
+      ]
     },
     textbook: {
       label:'교과서',
@@ -305,6 +308,14 @@
         + '<a class="bubble" href="' + data.folder + '/round' + rr + '-2.html"><span class="num">' + lesson2 + '</span><span class="label"><span class="tag">' + examName + '</span><span class="name">33~45번</span></span></a>'
         + '</div>';
     }
+    (data.extraRounds || []).forEach(function(extra){
+      const rr = String(extra.round).padStart(2,'0');
+      html += '<div class="round-row">'
+        + '<div class="round-tag">' + extra.round + '회</div>'
+        + '<a class="bubble" href="' + data.folder + '/round' + rr + '-1.html"><span class="num">' + extra.lesson1 + '</span><span class="label"><span class="tag">' + extra.examName + '</span><span class="name">18~32번</span></span></a>'
+        + '<a class="bubble" href="' + data.folder + '/round' + rr + '-2.html"><span class="num">' + extra.lesson2 + '</span><span class="label"><span class="tag">' + extra.examName + '</span><span class="name">33~45번</span></span></a>'
+        + '</div>';
+    });
     content.innerHTML = html;
   } else {
     let html = '<div class="grid">';
