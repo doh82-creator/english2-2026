@@ -257,7 +257,8 @@
       label:'블록활동',
       eyebrow:'2026 · 2학기 · CNSA 12기',
       desc:'원서 읽기 · 6차시',
-      folder:'block', type:'lessons', count:6, unitLabel:'블록활동'
+      folder:'block', type:'lessons', count:6, unitLabel:'블록활동',
+      guide:'block/activity-guide.html'
     },
     vocab: {
       label:'단어시험',
@@ -318,7 +319,14 @@
     });
     content.innerHTML = html;
   } else {
-    let html = '<div class="grid">';
+    let html = '';
+    if(data.guide){
+      html += '<a class="bubble" href="' + data.guide + '" style="margin-bottom:16px;">'
+        + '<span class="num" aria-hidden="true">안내</span>'
+        + '<span class="label"><span class="tag">독서활동 개요 · 사이트 사용법</span><span class="name">활동 안내</span></span>'
+        + '</a>';
+    }
+    html += '<div class="grid">';
     for(let i = 1; i <= data.count; i++){
       const ii = String(i).padStart(2,'0');
       const tag = data.tagFn ? data.tagFn(i) : (data.roundWord ? (i + '회') : (i + '차시'));
