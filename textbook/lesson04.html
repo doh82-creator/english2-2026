@@ -191,6 +191,19 @@
       background: var(--gold-bg);
     }
     .rule .big { display: block; margin-bottom: 6px; font-size: 17px; }
+    .with-meanings { border-left-color: var(--sky-strong); }
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 22px;
+      margin-top: 12px;
+    }
+    .meaning-item {
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 125, 195, .18);
+    }
+    .meaning-item.full { grid-column: 1 / -1; }
+    .meaning-item strong { display: block; margin-bottom: 2px; }
     .formula {
       margin: 18px 0;
       padding: 18px 20px;
@@ -248,7 +261,8 @@
       .toolbar { align-items: flex-start; flex-direction: column; }
       .page { width: min(100% - 18px, 1120px); margin: 12px auto; padding: 28px 22px; border-radius: 13px; }
       .cover { min-height: 480px; }
-      .two-col, .three-col { grid-template-columns: 1fr; }
+      .two-col, .three-col, .meaning-grid { grid-template-columns: 1fr; }
+      .meaning-item.full { grid-column: auto; }
       th, td { padding: 10px 9px; font-size: 13px; }
       h2 { font-size: 24px; }
     }
@@ -353,7 +367,6 @@
         They recommended that he (should) <mark>not disclose</mark> the password.
         <small>수동이면 <code>be + p.p.</code>, 부정이면 <code>not + 동사원형</code>을 유지한다.</small>
       </div>
-      <div class="rule">참고: 실제 영어에서는 영국 영어 등의 용법에 따라 직설법도 쓰인다. 이 자료에서는 제시된 당위 구문의 <code>(should) + 동사원형</code>을 연습한다.</div>
       <div class="footer">English Ⅱ · Lesson 4 · Grammar Extension 1-1</div>
     </section>
 
@@ -378,13 +391,6 @@
         <div class="q"><span class="q-num">1.</span> The manager demanded that the equipment ( check / be checked ) before use.<div class="answer-panel"><strong>be checked</strong> — 장비가 점검을 받으므로 수동형을 쓴다.</div></div>
         <div class="q"><span class="q-num">2.</span> The doctor recommended that he ( not skip / does not skip ) meals.<br><span class="mini-note">당위의 동사원형 구문으로 완성하세요.</span><div class="answer-panel"><strong>not skip</strong> — 당위의 부정은 <code>not + 동사원형</code>이다.</div></div>
         <div class="q"><span class="q-num">3.</span> She insisted that she ( was / be ) at home last night.<br><span class="mini-note">그녀는 어젯밤 집에 있었다고 주장했다.</span><div class="answer-panel"><strong>was</strong> — 과거의 사실을 주장하는 문맥이므로 과거형을 쓴다.</div></div>
-      </div>
-
-      <div class="problem-set">
-        <div class="problem-title"><span class="badge">B</span> 제시된 당위 구문의 규칙에 맞게 고쳐 쓰세요.</div>
-        <div class="q"><span class="q-num">1.</span> The teacher suggested that every student brings a dictionary.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>The teacher suggested that every student bring a dictionary.</strong></div></div>
-        <div class="q"><span class="q-num">2.</span> They required that the report submitted by noon.<br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>They required that the report be submitted by noon.</strong></div></div>
-        <div class="q"><span class="q-num">3.</span> It is necessary that he is careful. <span class="mini-note">(should를 생략한 동사원형 구문)</span><br>→ <span class="blank" style="min-width:620px"></span><div class="answer-panel"><strong>It is necessary that he be careful.</strong></div></div>
       </div>
 
       <div class="problem-set">
@@ -415,9 +421,30 @@
           <tr><td>with + 명사 + 전치사구</td><td>위치·상태</td><td>with a bag on her back</td></tr>
         </tbody>
       </table>
-      <div class="rule">
-        <strong class="big">분사 선택의 기준</strong>
-        명사가 동작을 직접 하면 <mark>-ing</mark>, 동작을 당했거나 결과 상태이면 <mark>p.p.</mark>를 쓴다.
+      <div class="rule with-meanings">
+        <strong class="big">with의 다양한 뜻</strong>
+        <div class="meaning-grid">
+          <div class="meaning-item">
+            <strong>① 동반: ~와 함께</strong>
+            <span class="mini-note">예: She went to the library with her friend.</span>
+          </div>
+          <div class="meaning-item">
+            <strong>② 소유·특징: ~을 가진</strong>
+            <span class="mini-note">예: I saw a girl with long hair.</span>
+          </div>
+          <div class="meaning-item">
+            <strong>③ 수단·도구: ~으로, ~을 사용하여</strong>
+            <span class="mini-note">예: He cut the paper with scissors.</span>
+          </div>
+          <div class="meaning-item">
+            <strong>④ 관련·대상: ~에 관하여, ~에 대해</strong>
+            <span class="mini-note">예: There is a problem with the computer.</span>
+          </div>
+          <div class="meaning-item full">
+            <strong>⑤ 부대상황: ~한 채로, ~하면서 (with + 명사 + 보어)</strong>
+            <span class="mini-note">예: He slept with the window open.</span>
+          </div>
+        </div>
       </div>
       <div class="footer">English Ⅱ · Lesson 4 · Grammar Point 2</div>
     </section>
